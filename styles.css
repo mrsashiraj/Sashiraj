@@ -1,7 +1,7 @@
 /* General Styles */
 body {
-    font-family: 'Times New Roman', serif;
-    margin: 0;
+    font-family: 'Open Sans', sans-serif; /* Body font */
+    margin: 20px;
     padding: 0;
     line-height: 1.6;
     color: #333;
@@ -9,7 +9,20 @@ body {
 }
 
 h1, h2, h3 {
-    color: #2c3e50; /* Dark blue for headings */
+    font-family: 'Poppins', sans-serif; /* Heading font */
+    color: #2c3e50;
+}
+
+h1 {
+    font-weight: 700; /* Bold for main heading */
+}
+
+h2 {
+    font-weight: 600; /* Semi-bold for subheadings */
+}
+
+h3 {
+    font-weight: 600; /* Semi-bold for smaller headings */
 }
 
 a {
