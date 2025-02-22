@@ -1,42 +1,43 @@
 /* General Styles */
 body {
-    font-family: 'Open Sans', sans-serif; /* Body font */
+    font-family: 'Open Sans', sans-serif;
     margin: 20px;
     padding: 0;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #2E3440; /* Dark gray for text */
+    background-color: #F8F9FA; /* Light gray background */
 }
 
 h1, h2, h3 {
-    font-family: 'Poppins', sans-serif; /* Heading font */
-    color: #2c3e50;
+    font-family: 'Poppins', sans-serif;
+    color: #6C63FF; /* Soft purple for headings */
 }
 
 h1 {
-    font-weight: 700; /* Bold for main heading */
+    font-weight: 700;
 }
 
 h2 {
-    font-weight: 600; /* Semi-bold for subheadings */
+    font-weight: 600;
 }
 
 h3 {
-    font-weight: 600; /* Semi-bold for smaller headings */
+    font-weight: 600;
 }
 
 a {
-    color: #007BFF;
+    color: #6C63FF; /* Soft purple for links */
     text-decoration: none;
 }
 
 a:hover {
+    color: #FF6584; /* Coral pink on hover */
     text-decoration: underline;
 }
 
 /* Header Styles */
 header {
-    background-color: #007BFF;
+    background-color: #2E3440; /* Dark navy for header */
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -72,9 +73,10 @@ header p {
     display: inline-block;
     margin: 5px;
     padding: 8px 12px;
-    background-color: #e9ecef;
+    background-color: #E9ECEF; /* Light gray for skill tags */
     border-radius: 20px;
     font-size: 0.9rem;
+    color: #2E3440; /* Dark gray for skill text */
 }
 
 /* Project and Experience Styles */
@@ -85,19 +87,19 @@ header p {
 .project h3, .experience h3, .education h3 {
     margin: 0;
     font-size: 1.3rem;
-    color: #007BFF;
+    color: #6C63FF; /* Soft purple for subheadings */
 }
 
 .project p, .experience p, .education p {
     margin: 5px 0;
-    color: #555;
+    color: #555; /* Gray for paragraph text */
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #2c3e50;
+    background-color: #2E3440; /* Dark navy for footer */
     color: white;
     margin-top: 40px;
 }
