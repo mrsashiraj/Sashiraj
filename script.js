@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
     async function fetchAINews() {
         const apiKey = '0656dcd9c763499b85deab7407345ce3'; // your NewsAPI key
         const url = `https://newsapi.org/v2/everything?q=artificial%20intelligence&sortBy=publishedAt&apiKey=${apiKey}`;
-
         try {
             const response = await fetch(url);
             const data = await response.json();
