@@ -18,32 +18,37 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.add("light-theme");
     }
 
-    // Fetch AI News
+    // ✅ API Key & Fetch AI News
+    const apiKey = "0656dcd9c763499b85deab7407345ce3";
+
     async function fetchAINews() {
-        const apiKey = '0656dcd9c763499b85deab7407345ce3'; // your NewsAPI key
-        const url = `https://newsapi.org/v2/everything?q=artificial%20intelligence&sortBy=publishedAt&apiKey=${apiKey}`;
         try {
-            const response = await fetch(url);
+            const response = await fetch(`https://newsapi.org/v2/everything?q=artificial%20intelligence&sortBy=publishedAt&apiKey=${apiKey}`);
             const data = await response.json();
-            
-            newsContainer.innerHTML = "";
-            data.articles.slice(0, 5).forEach(article => {
-                const newsItem = document.createElement("div");
-                newsItem.classList.add("news-item");
-                newsItem.innerHTML = `
-                    <a href="${article.url}" target="_blank">
-                        <img src="${article.urlToImage || 'default-thumbnail.jpg'}" alt="News Thumbnail">
-                        <h3>${article.title}</h3>
-                    </a>
-                    <p>${article.description || "No description available."}</p>
-                `;
-                newsContainer.appendChild(newsItem);
-            });
+
+            if (data.articles) {
+                newsContainer.innerHTML = ""; // Clear default text
+
+                data.articles.slice(0, 5).forEach(article => {  // Show only 5 articles
+                    const newsItem = document.createElement("div");
+                    newsItem.classList.add("news-item");
+
+                    newsItem.innerHTML = `
+                        <a href="${article.url}" target="_blank">
+                            <img src="${article.urlToImage || 'images/default-thumbnail.jpg'}" alt="News Thumbnail">
+                            <h3>${article.title}</h3>
+                        </a>
+                        <p>${article.description || "No description available."}</p>
+                    `;
+                    newsContainer.appendChild(newsItem);
+                });
+            }
         } catch (error) {
-            console.error("Error fetching AI news:", error);
-            newsContainer.innerHTML = "<p>Failed to load AI news.</p>";
+            newsContainer.innerHTML = "<p>Failed to load AI news. Try again later.</p>";
+            console.error("Error fetching news:", error);
         }
     }
 
+    // ✅ Call function on page load
     fetchAINews();
 });
