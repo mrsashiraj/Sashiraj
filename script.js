@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fetch AI News
     async function fetchAINews() {
-        const apiKey = 'YOUR_NEWSAPI_KEY'; // Replace with your NewsAPI key
+        const apiKey = '0656dcd9c763499b85deab7407345ce3'; // your NewsAPI key
         const url = `https://newsapi.org/v2/everything?q=artificial%20intelligence&sortBy=publishedAt&apiKey=${apiKey}`;
 
         try {
