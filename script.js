@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ✅ API Key & Fetch AI News
-    const apiKey = "0656dcd9c763499b85deab7407345ce3";
+    const apiKey = "";
 
     async function fetchAINews() {
         try {
