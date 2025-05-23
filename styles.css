@@ -1,27 +1,28 @@
 /* Universal Styles & Variables */
 :root {
-    /* Light Theme Colors - Analogous Blue-Green */
-    --background-light: #f5fcfc;   /* Very light almost-white with a hint of blue-green */
-    --text-light: #2c3e50;         /* Dark charcoal blue */
-    --header-bg-light: #ffffff;    /* Pure white */
-    --nav-bg-light: #e0f2f7;       /* Very light aqua-blue */
-    --accent-light: #2196f3;       /* Cerulean Blue (primary accent) */
-    --accent-secondary-light: #4caf50; /* Emerald Green (secondary accent for contrast) */
-    --border-light: #a7d9de;       /* Muted blue-green border */
-    --card-bg-light: #ffffff;      /* White cards */
-    --shadow-light: rgba(0, 0, 0, 0.08); /* Soft shadow */
+    /* Light Theme Colors - Calm & Warm */
+    --background-light: #fcf8f3;         /* Soft ivory */
+    --text-light: #3e3e3e;               /* Gentle charcoal */
+    --header-bg-light: #f2ebe4;          /* Light beige */
+    --nav-bg-light: #e6ded6;            /* Pale taupe */
+    --accent-light: #e07a5f;             /* Warm muted coral */
+    --accent-secondary-light: #a6a6a6;   /* Neutral grey */
+    --border-light: #dcd2cb;             /* Light brownish-grey border */
+    --card-bg-light: #ffffff;            /* Clean white cards */
+    --shadow-light: rgba(0, 0, 0, 0.05); /* Very soft shadow */
 
-    /* Dark Theme Colors - Analogous Blue-Green */
-    --background-dark: #1f2937;    /* Deep dark blue-grey */
-    --text-dark: #e0f7fa;          /* Very light aqua */
-    --header-bg-dark: #2a3848;     /* Darker blue-grey */
-    --nav-bg-dark: #263238;        /* Even darker blue-grey */
-    --accent-dark: #64b5f6;        /* Lighter Cerulean Blue */
-    --accent-secondary-dark: #81c784; /* Lighter Emerald Green */
-    --border-dark: #455a64;        /* Dark muted blue-green border */
-    --card-bg-dark: #2a3848;       /* Darker blue-grey cards */
-    --shadow-dark: rgba(0, 0, 0, 0.4); /* Stronger shadow */
+    /* Dark Theme Colors - Soft Contrast */
+    --background-dark: #1c1a1a;          /* Deep charcoal brown */
+    --text-dark: #f4ede8;                /* Soft warm white */
+    --header-bg-dark: #2a2727;           /* Warm dark grey */
+    --nav-bg-dark: #252121;              /* Slightly darker grey */
+    --accent-dark: #f28482;              /* Soft warm red-pink */
+    --accent-secondary-dark: #b0a9a3;    /* Soft taupe-grey */
+    --border-dark: #3f3a38;              /* Muted warm dark border */
+    --card-bg-dark: #2f2b2a;             /* Warm muted black */
+    --shadow-dark: rgba(0, 0, 0, 0.2);   /* Soft but deeper shadow */
 }
+
 /* Base Styling */
 body {
     font-family: 'Open Sans', sans-serif;
