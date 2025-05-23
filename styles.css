@@ -1,38 +1,56 @@
 /* Universal Styles & Variables */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Light Theme Colors - Modern & Aesthetic */
-    --background-light: #F8F9FA;           /* Very light grey/off-white */
-    --text-light: #343A40;                 /* Charcoal grey */
-    --header-bg-light: #E9ECEF;            /* Light grey */
-    --nav-bg-light: #DEE2E6;               /* Slightly darker grey */
-    --accent-light: #007BFF;               /* Vibrant blue */
-    --accent-secondary-light: #6C757D;     /* Muted grey */
-    --border-light: #CED4DA;               /* Light border grey */
-    --card-bg-light: #FFFFFF;              /* Pure white */
-    --shadow-light: rgba(0, 0, 0, 0.08);   /* Slightly more pronounced soft shadow */
+    /* Light Theme */
+    --background-light: #F9FAFB;  /* Soft white */
+    --text-light: #2D2F33;        /* Muted dark grey */
+    --accent-light: #007AFF;      /* Calming blue */
+    --border-light: #E1E4E8;      /* Light border */
+    --shadow-light: rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    
+    /* Dark Theme */
+    --background-dark: #181A1B;   /* Soft black */
+    --text-dark: #E8E9EB;         /* Light grey */
+    --accent-dark: #509BFF;       /* Muted vibrant blue */
+    --border-dark: #3A3D40;       /* Deep border */
+    --shadow-dark: rgba(255, 255, 255, 0.08); /* Gentle glow */
 
-    /* Dark Theme Colors - Modern & Aesthetic */
-    --background-dark: #212529;            /* Deep charcoal */
-    --text-dark: #F8F9FA;                  /* Very light grey */
-    --header-bg-dark: #343A40;             /* Darker charcoal */
-    --nav-bg-dark: #495057;                /* Deep blue-grey */
-    --accent-dark: #66B2FF;                /* Lighter, vibrant blue */
-    --accent-secondary-dark: #ADB5BD;      /* Lighter muted grey */
-    --border-dark: #495057;                /* Darker border grey */
-    --card-bg-dark: #2C3034;               /* Slightly lighter dark card */
-    --shadow-dark: rgba(0, 0, 0, 0.3);     /* More pronounced dark shadow */
+    /* Adaptive Accent */
+    --gradient-light: linear-gradient(45deg, #007AFF, #4A90E2);
+    --gradient-dark: linear-gradient(45deg, #509BFF, #6A57FF);
+}
 
-    /* AI/ML Gradients & Glows (Adjusted for new palette) */
-    --gradient-light-ai: linear-gradient(45deg, #007BFF, #6A057F); /* Vibrant blue to deep purple */
-    --gradient-dark-ai: linear-gradient(45deg, #66B2FF, #8A2BE2); /* Lighter blue to brighter purple */
+/* Base Minimalist Styling */
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-    --grid-pattern-light: rgba(0, 0, 0, 0.03); /* Very light grey for grid lines */
-    --grid-pattern-dark: rgba(255, 255, 255, 0.05); /* Light white for grid lines */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 24px;
+    border: 1px solid var(--border-light);
+    box-shadow: 2px 2px 10px var(--shadow-light);
+}
 
-    --glow-light: rgba(0, 123, 255, 0.6); /* Using accent-light's RGB with alpha */
-    --glow-dark: rgba(102, 178, 255, 0.6); /* Using accent-dark's RGB with alpha */
+/* Minimalist Button */
+button {
+    background: var(--accent-light);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3; /* Slightly darker on hover */
 }
 
 /* Base Styling */
