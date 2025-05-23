@@ -30,6 +30,9 @@ body {
     transition: background-color 0.3s, color 0.3s;
     background-color: var(--background-light);
     color: var(--text-light);
+    /* IMPORTANT: If your script.js does NOT add 'light-theme' explicitly, and light is default,
+       then remove any '.light-theme' specific styles from here if they exist.
+       The default --light variables already define the light theme. */
 }
 
 body.dark-theme {
@@ -195,7 +198,7 @@ body.dark-theme .main-nav li a.active {
 main {
     max-width: 1200px; /* Wider main content for better layouts */
     margin: 1.5em auto;
-    padding: 0 1em; /* Horizontal padding */
+    padding: 0 1em; /* Horizontal padding for smaller screens */
 }
 
 /* Generic Section Styling */
@@ -1223,6 +1226,7 @@ body.dark-theme footer {
 
 @media (min-width: 1200px) {
     main {
-        padding: 0; /* No horizontal padding on very large screens, letting max-width control it */
+        /* Reintroduced minimal horizontal padding for very large screens */
+        padding: 0 2em; /* Added 2em padding on left/right for very large screens */
     }
 }
