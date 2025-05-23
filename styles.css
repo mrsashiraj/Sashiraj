@@ -2,37 +2,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap');
 
 :root {
-    /* Light Theme Colors - Calm & Warm */
-    --background-light: #fcf8f3;           /* Soft ivory */
-    --text-light: #3e3e3e;                 /* Gentle charcoal */
-    --header-bg-light: #f2ebe4;            /* Light beige */
-    --nav-bg-light: #e6ded6;               /* Pale taupe */
-    --accent-light: #e07a5f;               /* Warm muted coral */
-    --accent-secondary-light: #a6a6a6;     /* Neutral grey */
-    --border-light: #dcd2cb;               /* Light brownish-grey border */
-    --card-bg-light: #ffffff;              /* Clean white cards */
-    --shadow-light: rgba(0, 0, 0, 0.05);   /* Very soft shadow */
+    /* Light Theme Colors - Modern & Aesthetic */
+    --background-light: #F8F9FA;           /* Very light grey/off-white */
+    --text-light: #343A40;                 /* Charcoal grey */
+    --header-bg-light: #E9ECEF;            /* Light grey */
+    --nav-bg-light: #DEE2E6;               /* Slightly darker grey */
+    --accent-light: #007BFF;               /* Vibrant blue */
+    --accent-secondary-light: #6C757D;     /* Muted grey */
+    --border-light: #CED4DA;               /* Light border grey */
+    --card-bg-light: #FFFFFF;              /* Pure white */
+    --shadow-light: rgba(0, 0, 0, 0.08);   /* Slightly more pronounced soft shadow */
 
-    /* Dark Theme Colors - Soft Contrast */
-    --background-dark: #1c1a1a;            /* Deep charcoal brown */
-    --text-dark: #f4ede8;                  /* Soft warm white */
-    --header-bg-dark: #2a2727;             /* Warm dark grey */
-    --nav-bg-dark: #252121;                /* Slightly darker grey */
-    --accent-dark: #f28482;                /* Soft warm red-pink */
-    --accent-secondary-dark: #b0a9a3;      /* Soft taupe-grey */
-    --border-dark: #3f3a38;                /* Muted warm dark border */
-    --card-bg-dark: #2f2b2a;               /* Warm muted black */
-    --shadow-dark: rgba(0, 0, 0, 0.2);     /* Soft but deeper shadow */
+    /* Dark Theme Colors - Modern & Aesthetic */
+    --background-dark: #212529;            /* Deep charcoal */
+    --text-dark: #F8F9FA;                  /* Very light grey */
+    --header-bg-dark: #343A40;             /* Darker charcoal */
+    --nav-bg-dark: #495057;                /* Deep blue-grey */
+    --accent-dark: #66B2FF;                /* Lighter, vibrant blue */
+    --accent-secondary-dark: #ADB5BD;      /* Lighter muted grey */
+    --border-dark: #495057;                /* Darker border grey */
+    --card-bg-dark: #2C3034;               /* Slightly lighter dark card */
+    --shadow-dark: rgba(0, 0, 0, 0.3);     /* More pronounced dark shadow */
 
-    /* AI/ML Gradients & Glows (NEW) */
-    --gradient-light-ai: linear-gradient(45deg, var(--accent-light), #8a57df); /* Coral to a soft purple */
-    --gradient-dark-ai: linear-gradient(45deg, var(--accent-dark), #b873ff); /* Warm red-pink to a brighter purple */
+    /* AI/ML Gradients & Glows (Adjusted for new palette) */
+    --gradient-light-ai: linear-gradient(45deg, #007BFF, #6A057F); /* Vibrant blue to deep purple */
+    --gradient-dark-ai: linear-gradient(45deg, #66B2FF, #8A2BE2); /* Lighter blue to brighter purple */
 
     --grid-pattern-light: rgba(0, 0, 0, 0.03); /* Very light grey for grid lines */
     --grid-pattern-dark: rgba(255, 255, 255, 0.05); /* Light white for grid lines */
 
-    --glow-light: rgba(224, 122, 95, 0.6); /* Using accent-light's RGB with alpha */
-    --glow-dark: rgba(242, 132, 130, 0.6); /* Using accent-dark's RGB with alpha */
+    --glow-light: rgba(0, 123, 255, 0.6); /* Using accent-light's RGB with alpha */
+    --glow-dark: rgba(102, 178, 255, 0.6); /* Using accent-dark's RGB with alpha */
 }
 
 /* Base Styling */
@@ -400,7 +400,7 @@ body.dark-theme .hero-image-container {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
     border: 1px solid var(--border-light);
     display: flex; /* Flex container for content */
-    flex-direction: column; /* Stack image, text, link */
+    flex-direction: column;
     height: 100%; /* Ensure cards in a row have same height */
 }
 body.dark-theme .project-card {
@@ -420,7 +420,7 @@ body.dark-theme .project-card:hover {
 .project-card img {
     width: 100%;
     height: 180px; /* Fixed height for consistent look */
-    object-fit: cover; /* Cover ensures image fills space */
+    object-fit: cover;
     border-radius: 4px;
     margin-bottom: 1em;
     display: block;
@@ -1004,7 +1004,7 @@ body.dark-theme .form-group label {
     border-radius: 5px;
     background-color: var(--background-light);
     color: var(--text-light);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif; /* Ensure form inputs use Inter */
     transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
     box-sizing: border-box; /* Include padding in width */
 }
@@ -1403,21 +1403,21 @@ body.dark-theme .ai-stat-box {
 @keyframes pulseBorder {
     0% {
         border-color: var(--accent-light);
-        box-shadow: 0 0 0 0px rgba(224, 122, 95, 0.5); /* Outer glow starts small */
+        box-shadow: 0 0 0 0px rgba(0, 123, 255, 0.5); /* Outer glow starts small */
     }
     100% {
-        border-color: rgba(224, 122, 95, 0.7); /* Border gets slightly brighter */
-        box-shadow: 0 0 0 10px rgba(224, 122, 95, 0); /* Outer glow expands and fades */
+        border-color: rgba(0, 123, 255, 0.7); /* Border gets slightly brighter */
+        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0); /* Outer glow expands and fades */
     }
 }
 body.dark-theme @keyframes pulseBorder {
     0% {
         border-color: var(--accent-dark);
-        box-shadow: 0 0 0 0px rgba(242, 132, 130, 0.5);
+        box-shadow: 0 0 0 0px rgba(102, 178, 255, 0.5);
     }
     100% {
-        border-color: rgba(242, 132, 130, 0.7);
-        box-shadow: 0 0 0 10px rgba(242, 132, 130, 0);
+        border-color: rgba(102, 178, 255, 0.7);
+        box-shadow: 0 0 0 10px rgba(102, 178, 255, 0);
     }
 }
 
