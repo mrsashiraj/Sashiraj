@@ -1,26 +1,36 @@
 /* Universal Styles & Variables */
 :root {
     /* Light Theme Colors - Calm & Warm */
-    --background-light: #fcf8f3;         /* Soft ivory */
-    --text-light: #3e3e3e;               /* Gentle charcoal */
-    --header-bg-light: #f2ebe4;          /* Light beige */
-    --nav-bg-light: #e6ded6;            /* Pale taupe */
-    --accent-light: #e07a5f;             /* Warm muted coral */
-    --accent-secondary-light: #a6a6a6;   /* Neutral grey */
-    --border-light: #dcd2cb;             /* Light brownish-grey border */
-    --card-bg-light: #ffffff;            /* Clean white cards */
-    --shadow-light: rgba(0, 0, 0, 0.05); /* Very soft shadow */
+    --background-light: #fcf8f3;           /* Soft ivory */
+    --text-light: #3e3e3e;                 /* Gentle charcoal */
+    --header-bg-light: #f2ebe4;            /* Light beige */
+    --nav-bg-light: #e6ded6;               /* Pale taupe */
+    --accent-light: #e07a5f;               /* Warm muted coral */
+    --accent-secondary-light: #a6a6a6;     /* Neutral grey */
+    --border-light: #dcd2cb;               /* Light brownish-grey border */
+    --card-bg-light: #ffffff;              /* Clean white cards */
+    --shadow-light: rgba(0, 0, 0, 0.05);   /* Very soft shadow */
 
     /* Dark Theme Colors - Soft Contrast */
-    --background-dark: #1c1a1a;          /* Deep charcoal brown */
-    --text-dark: #f4ede8;                /* Soft warm white */
-    --header-bg-dark: #2a2727;           /* Warm dark grey */
-    --nav-bg-dark: #252121;              /* Slightly darker grey */
-    --accent-dark: #f28482;              /* Soft warm red-pink */
-    --accent-secondary-dark: #b0a9a3;    /* Soft taupe-grey */
-    --border-dark: #3f3a38;              /* Muted warm dark border */
-    --card-bg-dark: #2f2b2a;             /* Warm muted black */
-    --shadow-dark: rgba(0, 0, 0, 0.2);   /* Soft but deeper shadow */
+    --background-dark: #1c1a1a;            /* Deep charcoal brown */
+    --text-dark: #f4ede8;                  /* Soft warm white */
+    --header-bg-dark: #2a2727;             /* Warm dark grey */
+    --nav-bg-dark: #252121;                /* Slightly darker grey */
+    --accent-dark: #f28482;                /* Soft warm red-pink */
+    --accent-secondary-dark: #b0a9a3;      /* Soft taupe-grey */
+    --border-dark: #3f3a38;                /* Muted warm dark border */
+    --card-bg-dark: #2f2b2a;               /* Warm muted black */
+    --shadow-dark: rgba(0, 0, 0, 0.2);     /* Soft but deeper shadow */
+
+    /* AI/ML Gradients & Glows (NEW) */
+    --gradient-light-ai: linear-gradient(45deg, var(--accent-light), #8a57df); /* Coral to a soft purple */
+    --gradient-dark-ai: linear-gradient(45deg, var(--accent-dark), #b873ff); /* Warm red-pink to a brighter purple */
+
+    --grid-pattern-light: rgba(0, 0, 0, 0.03); /* Very light grey for grid lines */
+    --grid-pattern-dark: rgba(255, 255, 255, 0.05); /* Light white for grid lines */
+
+    --glow-light: rgba(224, 122, 95, 0.6); /* Using accent-light's RGB with alpha */
+    --glow-dark: rgba(242, 132, 130, 0.6); /* Using accent-dark's RGB with alpha */
 }
 
 /* Base Styling */
@@ -1231,4 +1241,192 @@ body.dark-theme footer {
         /* Reintroduced minimal horizontal padding for very large screens */
         padding: 0 2em; /* Added 2em padding on left/right for very large screens */
     }
+}
+
+
+/* --- AI/ML Specific Enhancements --- */
+
+/* Apply gradient background to the Hero Section (or a specific AI/ML hero) */
+.hero-section.ai-hero { /* Add 'ai-hero' class to your HTML's hero section */
+    background: var(--gradient-light-ai);
+    color: white; /* Ensure text is readable on gradient */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+body.dark-theme .hero-section.ai-hero {
+    background: var(--gradient-dark-ai);
+}
+
+/* Ensure text elements within the AI hero are readable */
+.hero-section.ai-hero .hero-text h2,
+.hero-section.ai-hero .hero-text .subheadline,
+.hero-section.ai-hero .hero-text p {
+    color: white;
+}
+body.dark-theme .hero-section.ai-hero .hero-text h2,
+body.dark-theme .hero-section.ai-hero .hero-text .subheadline,
+body.dark-theme .hero-section.ai-hero .hero-text p {
+    color: var(--text-dark); /* Keep dark theme text color for consistency */
+}
+
+
+/* Gradient buttons (Primary Button with AI/ML flair) */
+/* This overrides the original .primary-button background/border */
+.primary-button {
+    background: var(--gradient-light-ai); /* Use gradient instead of solid color */
+    border: none; /* Remove solid border if gradient is the main style */
+    color: white; /* Ensure text is white on the gradient */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Existing shadow */
+}
+
+body.dark-theme .primary-button {
+    background: var(--gradient-dark-ai);
+}
+
+.primary-button:hover {
+    background-size: 150%; /* Make gradient slightly larger on hover */
+    background-position: right center; /* Shift gradient on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), 0 0 20px var(--glow-light); /* Add a subtle glow on hover */
+}
+body.dark-theme .primary-button:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), 0 0 20px var(--glow-dark);
+}
+
+/* Gradient Text for site logo and main project titles */
+.site-logo,
+.project-header h2 {
+    background: var(--gradient-light-ai);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for browsers */
+}
+body.dark-theme .site-logo,
+body.dark-theme .project-header h2 {
+    background: var(--gradient-dark-ai);
+}
+
+
+/* "Digital Grid" Background for AI/ML specific sections or cards */
+.section-ai-ml, /* Apply this class to a <section> in your HTML */
+.project-card.ai-themed, /* Apply this class to a .project-card in your HTML */
+.skill-area-card.ai-themed { /* Apply this class to a .skill-area-card in your HTML */
+    position: relative;
+    overflow: hidden; /* Important to contain the pseudo-element grid */
+}
+
+/* The actual grid pattern */
+.section-ai-ml::before,
+.project-card.ai-themed::before,
+.skill-area-card.ai-themed::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(0deg, var(--grid-pattern-light) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-pattern-light) 1px, transparent 1px);
+    background-size: 25px 25px; /* Size of the grid cells */
+    opacity: 0.15; /* Make it very subtle */
+    z-index: 0;
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+body.dark-theme .section-ai-ml::before,
+body.dark-theme .project-card.ai-themed::before,
+body.dark-theme .skill-area-card.ai-themed::before {
+    background-image:
+        linear-gradient(0deg, var(--grid-pattern-dark) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-pattern-dark) 1px, transparent 1px);
+}
+
+/* Ensure content is above the grid for specific elements */
+.section-ai-ml > *,
+.project-card.ai-themed > *,
+.skill-area-card.ai-themed > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Enhanced Glow Effect on Hover/Focus for cards and inputs */
+/* This modifies existing hover/focus styles to add a glow */
+.project-card:hover,
+.skill-area-card:hover,
+.tech-list-grid li:hover,
+.certification-item:hover,
+.job-item:hover,
+.education-item:hover {
+    box-shadow: 0 8px 16px var(--shadow-light), 0 0 15px var(--glow-light);
+}
+body.dark-theme .project-card:hover,
+body.dark-theme .skill-area-card:hover,
+body.dark-theme .tech-list-grid li:hover,
+body.dark-theme .certification-item:hover,
+body.dark-theme .job-item:hover,
+body.dark-theme .education-item:hover {
+    box-shadow: 0 8px 16px var(--shadow-dark), 0 0 15px var(--glow-dark);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25), 0 0 10px var(--glow-light);
+}
+body.dark-theme .form-group input[type="text"]:focus,
+body.dark-theme input[type="email"]:focus,
+body.dark-theme textarea:focus {
+    box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.25), 0 0 10px var(--glow-dark);
+}
+
+
+/* Animated "Pulse" for a key AI metric or box (example) */
+.ai-stat-box { /* You'll need to add this class to a <div> in your HTML */
+    padding: 1.5em;
+    border: 2px solid var(--accent-light);
+    border-radius: 8px;
+    text-align: center;
+    background-color: var(--card-bg-light);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    animation: pulseBorder 2s infinite alternate ease-in-out;
+}
+
+body.dark-theme .ai-stat-box {
+    border-color: var(--accent-dark);
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 2px 8px var(--shadow-dark);
+}
+
+@keyframes pulseBorder {
+    0% {
+        border-color: var(--accent-light);
+        box-shadow: 0 0 0 0px rgba(224, 122, 95, 0.5); /* Outer glow starts small */
+    }
+    100% {
+        border-color: rgba(224, 122, 95, 0.7); /* Border gets slightly brighter */
+        box-shadow: 0 0 0 10px rgba(224, 122, 95, 0); /* Outer glow expands and fades */
+    }
+}
+body.dark-theme @keyframes pulseBorder {
+    0% {
+        border-color: var(--accent-dark);
+        box-shadow: 0 0 0 0px rgba(242, 132, 130, 0.5);
+    }
+    100% {
+        border-color: rgba(242, 132, 130, 0.7);
+        box-shadow: 0 0 0 10px rgba(242, 132, 130, 0);
+    }
+}
+
+/* Styling for specific AI/ML images within content */
+.project-case-study img.ai-visual { /* Apply 'ai-visual' to images in your case studies */
+    filter: grayscale(20%) brightness(1.1) contrast(1.1); /* Slightly desaturated, punchier look */
+    border: 2px solid var(--accent-light);
+    box-shadow: 0 5px 15px var(--shadow-light), 0 0 10px var(--glow-light);
+}
+body.dark-theme .project-case-study img.ai-visual {
+    filter: grayscale(10%) brightness(1.2) contrast(1.2);
+    border-color: var(--accent-dark);
+    box-shadow: 0 5px 15px var(--shadow-dark), 0 0 10px var(--glow-dark);
 }
