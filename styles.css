@@ -1,27 +1,28 @@
 /* Universal Styles & Variables */
 :root {
-    /* Light Theme Colors - Futuristic Neon */
-    --background-light: #0d0d0d;          /* Deep black */
-    --text-light: #00ffe7;                /* Neon turquoise */
-    --header-bg-light: #141414;          /* Very dark grey */
-    --nav-bg-light: #1a1a1a;             /* Dark grey */
-    --accent-light: #00ff9c;             /* Neon green */
-    --accent-secondary-light: #00bfff;   /* Electric blue */
-    --border-light: #2f2f2f;             /* Medium grey border */
-    --card-bg-light: #1c1c1c;            /* Slightly lighter black */
-    --shadow-light: rgba(0, 255, 230, 0.2); /* Turquoise glow shadow */
+    /* Light Theme Colors - Soft & Readable */
+    --background-light: #f5f7fa;         /* Very light grey with a cool tone */
+    --text-light: #2e3a59;               /* Soft dark navy */
+    --header-bg-light: #e8edf3;          /* Pale bluish grey */
+    --nav-bg-light: #dbe3ea;             /* Light desaturated blue-grey */
+    --accent-light: #3a86ff;             /* Muted vivid blue */
+    --accent-secondary-light: #6c757d;   /* Neutral medium grey */
+    --border-light: #ced4da;             /* Light grey border */
+    --card-bg-light: #ffffff;            /* Pure white cards */
+    --shadow-light: rgba(0, 0, 0, 0.08);  /* Subtle soft shadow */
 
-    /* Dark Theme Colors - Futuristic Neon */
-    --background-dark: #000000;          /* Absolute black */
-    --text-dark: #ff00ff;                /* Neon magenta */
-    --header-bg-dark: #0a0a0a;           /* Deep dark grey */
-    --nav-bg-dark: #131313;              /* Slightly lighter grey */
-    --accent-dark: #ff0090;              /* Neon pink */
-    --accent-secondary-dark: #ff6ec7;    /* Light neon pink */
-    --border-dark: #3f3f3f;              /* Soft grey border */
-    --card-bg-dark: #121212;             /* Dark grey */
-    --shadow-dark: rgba(255, 0, 255, 0.3); /* Magenta glow shadow */
+    /* Dark Theme Colors - Eye-Friendly Night Mode */
+    --background-dark: #1e1e2f;          /* Deep navy/indigo */
+    --text-dark: #dfe6ed;                /* Light, gentle white-blue */
+    --header-bg-dark: #2a2a3c;           /* Slightly lighter navy */
+    --nav-bg-dark: #232334;              /* Muted indigo */
+    --accent-dark: #61dafb;              /* Calming light blue */
+    --accent-secondary-dark: #8899aa;    /* Muted bluish-grey */
+    --border-dark: #3b3b4d;              /* Cool dark border */
+    --card-bg-dark: #2c2c3f;             /* Deep indigo background */
+    --shadow-dark: rgba(0, 0, 0, 0.3);    /* Subtle soft dark shadow */
 }
+
 
 /* Base Styling */
 body {
