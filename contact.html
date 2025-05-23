@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sashiraj - Contact Me</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script>
+    <meta name="description" content="Contact Sashiraj for data analysis, business intelligence, or AI-related inquiries. Connect via email, LinkedIn, or GitHub.">
+    <meta property="og:title" content="Contact Sashiraj - Data & Business Analyst">
+    <meta property="og:description" content="Get in touch with Sashiraj for collaborations, opportunities, or questions about data-driven insights.">
+    <meta property="og:image" content="https://yourwebsite.com/images/og-contact.jpg"> <meta property="og:url" content="https://yourwebsite.com/contact.html">
+    <meta property="og:type" content="website">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="site-logo">SASHIRAJ</h1>
+            <p class="tagline">AI Enthusiast & Data Analyst</p>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle dark and light theme">Toggle Theme</button>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="contact-page">
+        <section id="contact-intro" class="contact-section intro-section">
+            <h2>Let's Connect</h2>
+            <p>
+                Whether you have a project in mind, a question about data analytics, or just want to say hello, feel free to reach out! I'm always open to new opportunities and collaborations.
+            </p>
+        </section>
+
+        <section id="contact-form-section" class="contact-section">
+            <h3>Send Me a Message</h3>
+            <form id="contactForm" class="contact-form" action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Your message here..."></textarea>
+                </div>
+                <button type="submit" class="button primary-button">Send Message</button>
+            </form>
+            <p class="form-notes">
+                * Note: For this contact form to work, you'll need to configure a backend service (e.g., Netlify Forms, Formspree, or a custom serverless function).
+            </p>
+        </section>
+
+        <section id="social-links" class="contact-section">
+            <h3>Find Me Online</h3>
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.linkedin.com/in/sashiraj" target="_blank" aria-label="LinkedIn Profile">
+                        <i class="fa-brands fa-linkedin fa-2x"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/your-github-username" target="_blank" aria-label="GitHub Profile">
+                        <i class="fa-brands fa-github fa-2x"></i>
+                        <span>GitHub</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://kaggle.com/your-kaggle-username" target="_blank" aria-label="Kaggle Profile">
+                        <i class="fa-brands fa-kaggle fa-2x"></i>
+                        <span>Kaggle</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:mrsashiraj@gmail.com" aria-label="Send me an email">
+                        <i class="fa-solid fa-envelope fa-2x"></i>
+                        <span>Email</span>
+                    </a>
+                </li>
+                </ul>
+        </section>
+
+        <section id="calendly-booking" class="contact-section">
+            <h3>Schedule a Chat</h3>
+            <p>Prefer to schedule a direct conversation? Book a time that works for you:</p>
+            <a href="https://calendly.com/your-calendly-username/30min" target="_blank" class="button secondary-button">Book a Meeting <i class="fa-solid fa-calendar-alt"></i></a>
+        </section>
+
+        </main>
+
+    <footer>
+        <p>&copy; 2023 Sashiraj</p>
+    </footer>
+
+</body>
+</html>
