@@ -1,25 +1,25 @@
 /* Universal Styles & Variables */
 :root {
-    /* Light Theme Colors - Triadic Teal, Coral, Gold-Green */
-    --background-light: #f9fdfc;   /* Very light almost-white with cool tint */
-    --text-light: #333333;         /* Dark grey */
+    /* Light Theme Colors - Analogous Blue-Green */
+    --background-light: #f5fcfc;   /* Very light almost-white with a hint of blue-green */
+    --text-light: #2c3e50;         /* Dark charcoal blue */
     --header-bg-light: #ffffff;    /* Pure white */
-    --nav-bg-light: #e6f7f5;       /* Light aqua */
-    --accent-light: #20c997;       /* Teal (primary accent) */
-    --accent-secondary-light: #fd7e14; /* Coral/Orange (secondary pop) */
-    --border-light: #cfe8e6;       /* Soft teal border */
+    --nav-bg-light: #e0f2f7;       /* Very light aqua-blue */
+    --accent-light: #2196f3;       /* Cerulean Blue (primary accent) */
+    --accent-secondary-light: #4caf50; /* Emerald Green (secondary accent for contrast) */
+    --border-light: #a7d9de;       /* Muted blue-green border */
     --card-bg-light: #ffffff;      /* White cards */
     --shadow-light: rgba(0, 0, 0, 0.08); /* Soft shadow */
 
-    /* Dark Theme Colors - Triadic Teal, Coral, Gold-Green */
-    --background-dark: #212121;    /* Deep charcoal */
-    --text-dark: #f0f0f0;          /* Light grey */
-    --header-bg-dark: #2c2c2c;     /* Darker charcoal */
-    --nav-bg-dark: #333333;        /* Even darker charcoal */
-    --accent-dark: #48d1cc;        /* Lighter Teal */
-    --accent-secondary-dark: #ff8c00; /* Dark Orange/Gold */
-    --border-dark: #4a4a4a;        /* Dark grey border */
-    --card-bg-dark: #2c2c2c;       /* Darker charcoal cards */
+    /* Dark Theme Colors - Analogous Blue-Green */
+    --background-dark: #1f2937;    /* Deep dark blue-grey */
+    --text-dark: #e0f7fa;          /* Very light aqua */
+    --header-bg-dark: #2a3848;     /* Darker blue-grey */
+    --nav-bg-dark: #263238;        /* Even darker blue-grey */
+    --accent-dark: #64b5f6;        /* Lighter Cerulean Blue */
+    --accent-secondary-dark: #81c784; /* Lighter Emerald Green */
+    --border-dark: #455a64;        /* Dark muted blue-green border */
+    --card-bg-dark: #2a3848;       /* Darker blue-grey cards */
     --shadow-dark: rgba(0, 0, 0, 0.4); /* Stronger shadow */
 }
 /* Base Styling */
