@@ -8,13 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script>
+
     <meta name="description" content="View Sashiraj's professional resume online, detailing skills, experience, education, and certifications in data analysis and business intelligence.">
     <meta property="og:title" content="Sashiraj's Professional Resume - Data Analyst">
     <meta property="og:description" content="Download Sashiraj's resume and explore his expertise in SQL, Tableau, Python, and impactful data projects.">
-    <meta property="og:image" content="https://yourwebsite.com/images/og-resume.jpg"> <meta property="og:url" content="https://yourwebsite.com/resume.html">
-    <meta property="og:type" content="profile">
+    <meta property="og:image" content="https://www.yourwebsite.com/images/og-resume.jpg"> <meta property="og:url" content="https://www.yourwebsite.com/resume.html"> <meta property="og:type" content="profile">
 </head>
 <body>
 
@@ -105,7 +108,7 @@
                 <h4>Tableau Desktop Specialist</h4>
                 <p>Tableau | Issued: May 2023</p>
             </div>
-            </section>
+        </section>
 
         <section id="resume-experience" class="resume-section">
             <h3>Work Experience</h3>
@@ -128,7 +131,7 @@
                     <li>Gained foundational knowledge in data collection methods and business operations.</li>
                 </ul>
             </div>
-            </section>
+        </section>
 
         <section id="resume-education" class="resume-section">
             <h3>Education</h3>
@@ -138,14 +141,17 @@
                 <p>Graduated: 2021</p>
                 <p>Relevant Coursework: Data Structures, Algorithms, Database Management Systems, Statistics, Artificial Intelligence</p>
             </div>
-            </section>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Sashiraj</p>
+        <p>&copy; <span id="current-year-resume"></span> Sashiraj</p>
     </footer>
 
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script>
+    <script>
+        // JavaScript to automatically update the copyright year for this page
+        document.getElementById('current-year-resume').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
