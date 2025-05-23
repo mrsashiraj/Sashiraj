@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sashiraj - Project: MUNAL</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css"> <script defer src="../script.js"></script>
+    <meta name="description" content="Detailed case study of the MUNAL project by Sashiraj, focusing on customer segmentation and CLTV prediction for a luxury car brand in Nepal.">
+    <meta property="og:title" content="MUNAL Project Case Study by Sashiraj">
+    <meta property="og:description" content="Explore how data analysis and machine learning were used to understand luxury car customer segments and predict lifetime value in Nepal.">
+    <meta property="og:image" content="https://yourwebsite.com/images/project2-thumbnail.jpg"> <meta property="og:url" content="https://yourwebsite.com/projects/munal.html">
+    <meta property="og:type" content="article">
+</head>
+<body>
 
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="site-logo">SASHIRAJ</h1>
+            <p class="tagline">AI Enthusiast & Data Analyst</p>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle dark and light theme">Toggle Theme</button>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About Me</a></li>
+            <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="../resume.html">Resume</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="project-case-study">
+        <section class="project-header">
+            <h2>MUNAL: My Ultimate Next-gen Auto Lifestyle</h2>
+            <p class="project-subtitle">Customer Segmentation & Lifetime Value Prediction for a Luxury Car Brand</p>
+            <div class="project-details-meta">
+                <span class="meta-item"><strong>Category:</strong> Customer Analytics, Predictive Modeling</span>
+                <span class="meta-item"><strong>Tools:</strong> Python (Pandas, Scikit-learn, Matplotlib), SQL</span>
+                <span class="meta-item"><strong>Date:</strong> November 2023</span>
+            </div>
+            <img src="../images/project2-hero.jpg" alt="MUNAL Project Hero Image" class="project-hero-image" loading="lazy">
+        </section>
+
+        <section class="project-section">
+            <h3>1. Project Background & Business Problem</h3>
+            <p>
+                MUNAL, a budding **luxury car brand with its base in Nepal**, was looking to deepen its understanding of its high-value customer base and predict future purchasing behaviors. The primary business problem was to identify key customer segments within the Nepalese luxury automotive market and forecast customer lifetime value (CLTV) to optimize marketing spend and personalize outreach strategies. This was crucial for a brand looking to establish a strong, loyal customer presence in a competitive niche market.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h3>2. Approach & Tools Used</h3>
+            <p>My approach involved a comprehensive data science pipeline:</p>
+            <ul>
+                <li><strong>Data Acquisition & Preprocessing:</strong> Gathered customer transaction data, demographics, vehicle maintenance history, and interaction logs from MUNAL's CRM and sales databases using SQL. Performed extensive data cleaning, handling missing values, and feature engineering in Python (Pandas) to prepare the dataset for modeling.</li>
+                <li><strong>Exploratory Data Analysis (EDA):</strong> Used Python (Pandas, Matplotlib, Seaborn) to visualize customer purchasing patterns, popular models, service frequency, and geographic distribution. This helped identify initial trends and potential segmentation variables.</li>
+                <li><strong>Customer Segmentation:</strong> Applied unsupervised machine learning techniques (K-Means clustering with Scikit-learn) to segment customers based on their purchasing behavior, brand engagement, and vehicle preferences. Identified distinct segments such as "Early Adopters & Innovators," "Loyal Enthusiasts," and "Value-Conscious Buyers."</li>
+                <li><strong>Customer Lifetime Value (CLTV) Prediction:</strong> Developed a predictive model using regression algorithms (e.g., Linear Regression, Random Forest Regressor with Scikit-learn) to forecast the future revenue a customer is expected to generate over their relationship with MUNAL. Key features included past purchase frequency, average purchase value, and recency of last purchase.</li>
+                <li><strong>Model Evaluation & Validation:</strong> Evaluated model performance using metrics like MAE, RMSE, and R-squared, ensuring robustness and accuracy.</li>
+            </ul>
+            <p><strong>Tools Used:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), SQL (MySQL).</p>
+        </section>
+
+        <section class="project-section">
+            <h3>3. Visualizations & Model Outputs</h3>
+            <p>Below are examples of key visualizations and model outputs that provided actionable insights.</p>
+            <div class="visual-gallery">
+                <figure>
+                    <img src="../images/munal_segmentation_clusters.jpg" alt="Customer Segmentation Clusters Visualization" loading="lazy">
+                    <figcaption>Figure 1: Customer Segments Identified via K-Means Clustering</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/munal_cltv_prediction_plot.jpg" alt="Predicted vs Actual CLTV Plot" loading="lazy">
+                    <figcaption>Figure 2: Actual vs. Predicted Customer Lifetime Value</figcaption>
+                </figure>
+                </div>
+        </section>
+
+        <section class="project-section">
+            <h3>4. Insights Generated & Business Impact</h3>
+            <p>The project yielded significant insights and actionable recommendations:</p>
+            <ul>
+                <li>**Targeted Marketing:** The identified customer segments allowed MUNAL's marketing team to tailor campaigns more effectively. For instance, "Early Adopters" received previews of new models, while "Loyal Enthusiasts" were offered exclusive service packages.</li>
+                <li>**Optimized CLTV:** By predicting CLTV, MUNAL could focus retention efforts on high-value customers and adjust acquisition strategies to target profiles with high predicted CLTV.</li>
+                <li>**Personalized Outreach:** Sales teams were equipped with insights into each customer's segment, enabling more personalized communication and product recommendations.</li>
+                <li>**Resource Allocation:** The analysis informed more efficient allocation of resources, reducing marketing spend on less profitable segments and increasing investment in high-potential customer groups.</li>
+            </ul>
+            <p>Overall, this project provided MUNAL with a data-driven framework to understand and engage their luxury customer base, fostering brand loyalty and supporting strategic growth in the Nepalese market.</p>
+        </section>
+
+        <section class="project-links">
+            <h3>Project Resources</h3>
+            <ul>
+                <li><a href="https://github.com/your-github/munal-cltv-repo" target="_blank">GitHub Repository <i class="fa-brands fa-github"></i></a></li>
+                <li><a href="../assets/MUNAL_CLTV_Report.pdf" download>Download PDF Report <i class="fa-solid fa-file-pdf"></i></a></li>
+                </ul>
+        </section>
+
+        <section class="back-to-portfolio">
+            <a href="../portfolio.html" class="button primary-button">&larr; Back to Portfolio</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Sashiraj</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
