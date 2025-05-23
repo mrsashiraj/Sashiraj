@@ -8,12 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+
     <meta name="description" content="Learn more about Sashiraj, a Business & Data Analyst, his background, expertise, tools, and business domains.">
     <meta property="og:title" content="About Sashiraj - Business & Data Analyst">
     <meta property="og:description" content="Discover Sashiraj's journey, skills in SQL, Tableau, Python, and experience in various business domains.">
-    <meta property="og:image" content="https://yourwebsite.com/images/og-image.jpg"> <meta property="og:url" content="https://yourwebsite.com/about.html"> <meta property="og:type" content="profile">
+    <meta property="og:image" content="https://www.yourwebsite.com/images/og-image.jpg"> <meta property="og:url" content="https://www.yourwebsite.com/about.html"> <meta property="og:type" content="profile">
 </head>
 <body>
 
@@ -128,8 +132,13 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 Sashiraj</p>
+        <p>&copy; <span id="current-year-about"></span> Sashiraj</p>
     </footer>
+
+    <script>
+        // JavaScript to automatically update the copyright year for this page
+        document.getElementById('current-year-about').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
