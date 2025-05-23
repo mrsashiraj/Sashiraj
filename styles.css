@@ -1,28 +1,27 @@
 /* Universal Styles & Variables */
 :root {
-    /* Light Theme Colors */
-    --background-light: #0f1624;          /* Very dark navy blue */
-    --text-light: #a0d8f7;                /* Soft cyan/sky blue */
-    --header-bg-light: #112240;           /* Dark navy */
-    --nav-bg-light: #152a46;              /* Slightly lighter navy */
-    --accent-light: #00ffff;              /* Bright cyan */
-    --accent-secondary-light: #75e6da;   /* Soft aqua */
-    --border-light: #1e2e46;              /* Deep blue border */
-    --card-bg-light: #192a44;             /* Dark blue card background */
-    --shadow-light: rgba(0, 255, 255, 0.2); /* Cyan glow shadow */
+    /* Light Theme Colors - Sophisticated & Deep */
+    --background-light: #f7fcfb;   /* Very light greenish-white */
+    --text-light: #2d3b48;         /* Deep blue-green */
+    --header-bg-light: #edf2f4;    /* Light grey-blue */
+    --nav-bg-light: #dde5e9;       /* Medium light grey-blue */
+    --accent-light: #28a745;       /* Forest Green */
+    --accent-secondary-light: #708090; /* Slate grey */
+    --border-light: #cdd9df;       /* Grey-blue border */
+    --card-bg-light: #ffffff;      /* White cards */
+    --shadow-light: rgba(0, 0, 0, 0.12); /* Slightly stronger shadow */
 
-    /* Dark Theme Colors */
-    --background-dark: #0a0f1e;           /* Almost black navy */
-    --text-dark: #00ffff;                 /* Bright cyan text */
-    --header-bg-dark: #0c1225;            /* Dark navy */
-    --nav-bg-dark: #101a36;               /* Darker navy */
-    --accent-dark: #a970ff;               /* Neon purple */
-    --accent-secondary-dark: #6a5acd;    /* Medium purple */
-    --border-dark: #4b367c;               /* Purple border */
-    --card-bg-dark: #121a44;              /* Dark navy card background */
-    --shadow-dark: rgba(169, 112, 255, 0.3); /* Purple glow shadow */
+    /* Dark Theme Colors - Sophisticated & Deep */
+    --background-dark: #0f1a20;    /* Very dark teal/blue */
+    --text-dark: #f0f7f5;          /* Off-white/pale green */
+    --header-bg-dark: #1e2b34;     /* Darker teal/blue */
+    --nav-bg-dark: #1a242c;        /* Even darker teal/blue */
+    --accent-dark: #81c784;        /* Light Pastel Green */
+    --accent-secondary-dark: #ffd700; /* Gold */
+    --border-dark: #3a4b56;        /* Dark teal/blue border */
+    --card-bg-dark: #1e2b34;       /* Dark teal/blue cards */
+    --shadow-dark: rgba(0, 0, 0, 0.6); /* Stronger shadow */
 }
-
 /* Base Styling */
 body {
     font-family: 'Open Sans', sans-serif;
