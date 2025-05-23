@@ -1,29 +1,27 @@
 /* Universal Styles & Variables */
 :root {
-    /* Light Theme Colors - Soft & Readable */
-    --background-light: #f5f7fa;         /* Very light grey with a cool tone */
-    --text-light: #2e3a59;               /* Soft dark navy */
-    --header-bg-light: #e8edf3;          /* Pale bluish grey */
-    --nav-bg-light: #dbe3ea;             /* Light desaturated blue-grey */
-    --accent-light: #3a86ff;             /* Muted vivid blue */
-    --accent-secondary-light: #6c757d;   /* Neutral medium grey */
-    --border-light: #ced4da;             /* Light grey border */
-    --card-bg-light: #ffffff;            /* Pure white cards */
-    --shadow-light: rgba(0, 0, 0, 0.08);  /* Subtle soft shadow */
+    /* Light Theme Colors - Triadic Teal, Coral, Gold-Green */
+    --background-light: #f9fdfc;   /* Very light almost-white with cool tint */
+    --text-light: #333333;         /* Dark grey */
+    --header-bg-light: #ffffff;    /* Pure white */
+    --nav-bg-light: #e6f7f5;       /* Light aqua */
+    --accent-light: #20c997;       /* Teal (primary accent) */
+    --accent-secondary-light: #fd7e14; /* Coral/Orange (secondary pop) */
+    --border-light: #cfe8e6;       /* Soft teal border */
+    --card-bg-light: #ffffff;      /* White cards */
+    --shadow-light: rgba(0, 0, 0, 0.08); /* Soft shadow */
 
-    /* Dark Theme Colors - Eye-Friendly Night Mode */
-    --background-dark: #1e1e2f;          /* Deep navy/indigo */
-    --text-dark: #dfe6ed;                /* Light, gentle white-blue */
-    --header-bg-dark: #2a2a3c;           /* Slightly lighter navy */
-    --nav-bg-dark: #232334;              /* Muted indigo */
-    --accent-dark: #61dafb;              /* Calming light blue */
-    --accent-secondary-dark: #8899aa;    /* Muted bluish-grey */
-    --border-dark: #3b3b4d;              /* Cool dark border */
-    --card-bg-dark: #2c2c3f;             /* Deep indigo background */
-    --shadow-dark: rgba(0, 0, 0, 0.3);    /* Subtle soft dark shadow */
+    /* Dark Theme Colors - Triadic Teal, Coral, Gold-Green */
+    --background-dark: #212121;    /* Deep charcoal */
+    --text-dark: #f0f0f0;          /* Light grey */
+    --header-bg-dark: #2c2c2c;     /* Darker charcoal */
+    --nav-bg-dark: #333333;        /* Even darker charcoal */
+    --accent-dark: #48d1cc;        /* Lighter Teal */
+    --accent-secondary-dark: #ff8c00; /* Dark Orange/Gold */
+    --border-dark: #4a4a4a;        /* Dark grey border */
+    --card-bg-dark: #2c2c2c;       /* Darker charcoal cards */
+    --shadow-dark: rgba(0, 0, 0, 0.4); /* Stronger shadow */
 }
-
-
 /* Base Styling */
 body {
     font-family: 'Open Sans', sans-serif;
