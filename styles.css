@@ -1,26 +1,27 @@
 /* Universal Styles & Variables */
 :root {
-    --background-light: #f4f7f6;
-    --text-light: #333;
-    --header-bg-light: #e0e6e4;
-    --nav-bg-light: #d3d9d7; /* Slightly darker than header for contrast */
-    --accent-light: #007bff; /* Primary blue */
-    --accent-secondary-light: #6c757d; /* Grey for secondary buttons/borders */
-    --border-light: #ddd;
-    --card-bg-light: #ffffff; /* White for cards */
+    /* Light Theme Colors */
+    --background-light: #f4f7f6; /* Very light grey/off-white */
+    --text-light: #333;          /* Dark grey */
+    --header-bg-light: #e0e6e4;  /* Light grey/greenish */
+    --nav-bg-light: #d3d9d7;     /* Slightly darker grey/greenish */
+    --accent-light: #007bff;     /* Bright blue */
+    --accent-secondary-light: #6c757d; /* Medium grey */
+    --border-light: #ddd;        /* Light grey border */
+    --card-bg-light: #ffffff;    /* White cards */
     --shadow-light: rgba(0, 0, 0, 0.08);
 
-    --background-dark: #2c3e50;
-    --text-dark: #ecf0f1;
-    --header-bg-dark: #34495e;
-    --nav-bg-dark: #2b3a4a; /* Slightly lighter than header for contrast */
-    --accent-dark: #8e44ad; /* Purple accent */
-    --accent-secondary-dark: #95a5a6; /* Grey for secondary buttons/borders */
-    --border-dark: #555;
-    --card-bg-dark: #3f556d; /* Darker background for cards */
+    /* Dark Theme Colors */
+    --background-dark: #2c3e50;  /* Dark blue/grey */
+    --text-dark: #ecf0f1;        /* Light off-white */
+    --header-bg-dark: #34495e;   /* Slightly lighter dark blue/grey */
+    --nav-bg-dark: #2b3a4a;      /* Even lighter dark blue/grey */
+    --accent-dark: #8e44ad;      /* Purple */
+    --accent-secondary-dark: #95a5a6; /* Medium grey */
+    --border-dark: #555;         /* Dark grey border */
+    --card-bg-dark: #3f556d;     /* Darker blue/grey cards */
     --shadow-dark: rgba(0, 0, 0, 0.3);
 }
-
 /* Base Styling */
 body {
     font-family: 'Open Sans', sans-serif;
