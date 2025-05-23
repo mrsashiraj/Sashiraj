@@ -1,27 +1,28 @@
 /* Universal Styles & Variables */
 :root {
-    /* Light Theme Colors - Warm & Inviting */
-    --background-light: #fefcf3;   /* Soft, warm off-white */
-    --text-light: #4a4e69;         /* Dark blue-grey */
-    --header-bg-light: #fef9ed;    /* Slightly lighter warm off-white */
-    --nav-bg-light: #f5eeed;       /* Light peach-beige */
-    --accent-light: #f48c06;       /* Vibrant Orange */
-    --accent-secondary-light: #a98877; /* Muted brownish-orange */
-    --border-light: #e0d9d3;       /* Warm light grey border */
-    --card-bg-light: #ffffff;      /* Clean white cards */
-    --shadow-light: rgba(0, 0, 0, 0.1); /* Soft shadow */
+    /* Light Theme Colors - Futuristic Neon */
+    --background-light: #0d0d0d;          /* Deep black */
+    --text-light: #00ffe7;                /* Neon turquoise */
+    --header-bg-light: #141414;          /* Very dark grey */
+    --nav-bg-light: #1a1a1a;             /* Dark grey */
+    --accent-light: #00ff9c;             /* Neon green */
+    --accent-secondary-light: #00bfff;   /* Electric blue */
+    --border-light: #2f2f2f;             /* Medium grey border */
+    --card-bg-light: #1c1c1c;            /* Slightly lighter black */
+    --shadow-light: rgba(0, 255, 230, 0.2); /* Turquoise glow shadow */
 
-    /* Dark Theme Colors - Warm & Inviting */
-    --background-dark: #261f1c;    /* Deep warm black/brown */
-    --text-dark: #f0ead2;          /* Pale creamy white */
-    --header-bg-dark: #3a2b27;     /* Dark reddish-brown */
-    --nav-bg-dark: #302621;        /* Slightly darker reddish-brown */
-    --accent-dark: #f8a02a;        /* Lighter vibrant orange */
-    --accent-secondary-dark: #c2aa99; /* Light brownish-orange */
-    --border-dark: #5c4a45;        /* Warm dark grey border */
-    --card-bg-dark: #3a2b27;       /* Dark reddish-brown cards */
-    --shadow-dark: rgba(0, 0, 0, 0.4); /* Deeper shadow */
+    /* Dark Theme Colors - Futuristic Neon */
+    --background-dark: #000000;          /* Absolute black */
+    --text-dark: #ff00ff;                /* Neon magenta */
+    --header-bg-dark: #0a0a0a;           /* Deep dark grey */
+    --nav-bg-dark: #131313;              /* Slightly lighter grey */
+    --accent-dark: #ff0090;              /* Neon pink */
+    --accent-secondary-dark: #ff6ec7;    /* Light neon pink */
+    --border-dark: #3f3f3f;              /* Soft grey border */
+    --card-bg-dark: #121212;             /* Dark grey */
+    --shadow-dark: rgba(255, 0, 255, 0.3); /* Magenta glow shadow */
 }
+
 /* Base Styling */
 body {
     font-family: 'Open Sans', sans-serif;
