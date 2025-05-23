@@ -1,27 +1,28 @@
 /* Universal Styles & Variables */
 :root {
     /* Light Theme Colors */
-    --background-light: #f4f7f6; /* Very light grey/off-white */
-    --text-light: #333;          /* Dark grey */
-    --header-bg-light: #e0e6e4;  /* Light grey/greenish */
-    --nav-bg-light: #d3d9d7;     /* Slightly darker grey/greenish */
-    --accent-light: #007bff;     /* Bright blue */
-    --accent-secondary-light: #6c757d; /* Medium grey */
-    --border-light: #ddd;        /* Light grey border */
-    --card-bg-light: #ffffff;    /* White cards */
-    --shadow-light: rgba(0, 0, 0, 0.08);
+    --background-light: #0f1624;          /* Very dark navy blue */
+    --text-light: #a0d8f7;                /* Soft cyan/sky blue */
+    --header-bg-light: #112240;           /* Dark navy */
+    --nav-bg-light: #152a46;              /* Slightly lighter navy */
+    --accent-light: #00ffff;              /* Bright cyan */
+    --accent-secondary-light: #75e6da;   /* Soft aqua */
+    --border-light: #1e2e46;              /* Deep blue border */
+    --card-bg-light: #192a44;             /* Dark blue card background */
+    --shadow-light: rgba(0, 255, 255, 0.2); /* Cyan glow shadow */
 
     /* Dark Theme Colors */
-    --background-dark: #2c3e50;  /* Dark blue/grey */
-    --text-dark: #ecf0f1;        /* Light off-white */
-    --header-bg-dark: #34495e;   /* Slightly lighter dark blue/grey */
-    --nav-bg-dark: #2b3a4a;      /* Even lighter dark blue/grey */
-    --accent-dark: #8e44ad;      /* Purple */
-    --accent-secondary-dark: #95a5a6; /* Medium grey */
-    --border-dark: #555;         /* Dark grey border */
-    --card-bg-dark: #3f556d;     /* Darker blue/grey cards */
-    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --background-dark: #0a0f1e;           /* Almost black navy */
+    --text-dark: #00ffff;                 /* Bright cyan text */
+    --header-bg-dark: #0c1225;            /* Dark navy */
+    --nav-bg-dark: #101a36;               /* Darker navy */
+    --accent-dark: #a970ff;               /* Neon purple */
+    --accent-secondary-dark: #6a5acd;    /* Medium purple */
+    --border-dark: #4b367c;               /* Purple border */
+    --card-bg-dark: #121a44;              /* Dark navy card background */
+    --shadow-dark: rgba(169, 112, 255, 0.3); /* Purple glow shadow */
 }
+
 /* Base Styling */
 body {
     font-family: 'Open Sans', sans-serif;
