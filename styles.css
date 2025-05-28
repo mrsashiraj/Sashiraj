@@ -1,36 +1,36 @@
 /* Universal Styles & Variables */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Light Theme Colors - Modern Palette */
+    /* Light Theme Colors - Tech Professional Palette */
     --background-light: #FDFDFD;                /* Very light, clean off-white */
     --text-light: #333A45;                      /* Deep, cool grey-blue */
-    --accent-light: #38A89D;                    /* Sophisticated teal */
+    --accent-light: #007BFF;                    /* Classic tech blue */
     --border-light: #EDEDED;                    /* Subtle light grey */
-    --shadow-light: rgba(51, 58, 69, 0.07);      /* Shadow based on new text color */
+    --shadow-light: rgba(51, 58, 69, 0.07);      /* Shadow based on text color */
     --card-bg-light: #FFFFFF;                   /* Pure white for card backgrounds */
     --secondary-text-light: #6A7380;            /* Muted grey-blue */
     --header-bg-light: #FFFFFF;                 /* Header background */
     --nav-bg-light: #F8F9FA;                    /* Slightly off-white for nav */
     --accent-secondary-light: #A0A7B0;          /* Lighter grey-blue */
 
-    /* Dark Theme Colors - Modern Palette */
+    /* Dark Theme Colors - Tech Professional Palette */
     --background-dark: #1A1D23;                 /* Very dark, cool charcoal */
     --text-dark: #EAEBEE;                       /* Soft, light grey */
-    --accent-dark: #50C8B9;                     /* Brighter, sophisticated teal */
+    --accent-dark: #3395FF;                     /* Brighter tech blue for dark mode */
     --border-dark: #2A2F38;                     /* Subtle darker border */
-    --shadow-dark: rgba(234, 235, 238, 0.08);    /* Shadow based on new text color */
+    --shadow-dark: rgba(234, 235, 238, 0.08);    /* Shadow based on text color */
     --card-bg-dark: #23272F;                    /* Slightly lighter charcoal for cards */
     --secondary-text-dark: #9DA3AD;             /* Muted light grey */
     --header-bg-dark: #1F2228;                  /* Header background for dark theme */
     --nav-bg-dark: #23272F;                     /* Navigation bar background for dark theme */
     --accent-secondary-dark: #7A828E;           /* Muted grey */
 
-    /* Adaptive Accent Gradients (Modernized) */
-    --gradient-light: linear-gradient(45deg, #38A89D, #50C8B9); /* Teal gradient */
-    --gradient-dark: linear-gradient(45deg, #50C8B9, #6AE8D9);  /* Brighter teal gradient for dark */
+    /* Adaptive Accent Gradients (Tech Blue) */
+    --gradient-light: linear-gradient(45deg, #007BFF, #0056B3); /* Tech blue gradient */
+    --gradient-dark: linear-gradient(45deg, #3395FF, #0062CC);  /* Brighter tech blue gradient for dark */
 
-    /* AI/ML Specific Gradients & Glows (Modernized) */
+    /* AI/ML Specific Gradients & Glows (Modernized Purple - often used in tech for innovation) */
     --gradient-light-ai: linear-gradient(90deg, #8A3FFC, #C06CFF); /* Vibrant, modern purple */
     --gradient-dark-ai: linear-gradient(90deg, #A46BFF, #D79FFF);  /* Lighter, glowing purple for dark */
     --glow-light: rgba(138, 63, 252, 0.4);  /* Purple glow */
@@ -38,7 +38,7 @@
 
     /* Typography Variables - Updated Fonts */
     --font-primary: 'Montserrat', sans-serif;
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Inter', sans-serif; /* Changed to Inter for a clean tech look */
     --font-size-base: 1rem; /* 16px */
     --line-height-base: 1.6;
 
@@ -84,12 +84,12 @@ body.dark-theme {
 
 /* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading); /* Use Playfair Display for headings */
+    font-family: var(--font-heading); /* Use Inter for headings */
     color: var(--text-light); /* Default heading color for light theme */
     margin-top: var(--spacing-lg);
     margin-bottom: var(--spacing-sm);
     line-height: 1.2;
-    font-weight: 700; /* Playfair Display typically looks good bold */
+    font-weight: 700; 
     transition: color 0.4s ease; /* Smooth color transition for headings */
 }
 
@@ -103,11 +103,11 @@ body.dark-theme h6 {
     color: var(--text-dark);
 }
 
-/* Specific font sizes for headings - adjust if needed for new font */
-h1 { font-size: 2.8rem; }
-h2 { font-size: 2.2rem; }
-h3 { font-size: 1.8rem; }
-h4 { font-size: 1.4rem; }
+/* Specific font sizes for headings - Inter is generally more compact than Playfair */
+h1 { font-size: 2.5rem; } /* Slightly adjusted for Inter */
+h2 { font-size: 2.0rem; } /* Slightly adjusted for Inter */
+h3 { font-size: 1.7rem; } /* Slightly adjusted for Inter */
+h4 { font-size: 1.3rem; } /* Slightly adjusted for Inter */
 h5 { font-size: 1.1rem; }
 h6 { font-size: 0.9rem; }
 
@@ -128,8 +128,8 @@ body.dark-theme a {
 }
 
 a:hover {
-    opacity: 0.8; /* Subtle dim on hover */
-    text-decoration: underline; /* Underline on hover for clarity */
+    opacity: 0.8; 
+    text-decoration: underline; 
 }
 
 /* --- Utility Classes --- */
@@ -151,7 +151,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    flex-wrap: wrap; 
 }
 
 body.dark-theme .main-header {
@@ -160,19 +160,19 @@ body.dark-theme .main-header {
 }
 
 .header-content {
-    flex-grow: 1; /* Allows content to take available space */
+    flex-grow: 1; 
     text-align: left;
 }
 
 .site-logo {
     margin: 0;
-    font-size: 2.2em; /* Adjust if Playfair Display renders differently */
+    font-size: 2.0em; /* Adjusted for Inter */
     font-weight: 700;
-    color: var(--text-light); /* Fallback */
+    color: var(--text-light); 
 }
 
 body.dark-theme .site-logo {
-    color: var(--text-dark); /* Fallback */
+    color: var(--text-dark); 
 }
 
 .tagline {
@@ -283,7 +283,7 @@ body.dark-theme section {
 section h2 {
     text-align: center;
     margin-bottom: var(--spacing-md);
-    font-size: 2em; /* Adjust if Playfair Display renders differently */
+    font-size: 1.8em; /* Adjusted for Inter */
     color: var(--accent-light);
 }
 
@@ -302,7 +302,7 @@ body.dark-theme section h2 {
     white-space: nowrap; 
     text-align: center; 
     cursor: pointer;
-    font-family: var(--font-primary); /* Ensure buttons use Montserrat */
+    font-family: var(--font-primary); 
 }
 
 .primary-button {
@@ -314,17 +314,18 @@ body.dark-theme section h2 {
 body.dark-theme .primary-button {
     background-color: var(--accent-dark);
     border-color: var(--accent-dark);
+    color: white; /* Ensuring text color is white for primary button in dark mode */
 }
 
 .primary-button:hover {
-    background-color: #2C8C81; /* Darker teal */
-    border-color: #2C8C81;
+    background-color: #0056b3; /* Darker tech blue */
+    border-color: #0056b3;
     transform: translateY(-3px);
     box-shadow: 0 6px 12px var(--shadow-light);
 }
 body.dark-theme .primary-button:hover {
-    background-color: #3EAE9E; /* Slightly darker accent for dark theme */
-    border-color: #3EAE9E;
+    background-color: #0062CC; /* Slightly darker accent for dark theme */
+    border-color: #0062CC;
     box-shadow: 0 6px 12px var(--shadow-dark);
 }
 
@@ -337,6 +338,7 @@ body.dark-theme .primary-button:hover {
 body.dark-theme .secondary-button {
     color: var(--accent-dark);
     border-color: var(--accent-dark);
+    background-color: var(--card-bg-dark); /* Added distinct background for secondary button in dark mode */
 }
 
 .secondary-button:hover {
@@ -346,8 +348,8 @@ body.dark-theme .secondary-button {
     box-shadow: 0 6px 12px var(--shadow-light);
 }
 body.dark-theme .secondary-button:hover {
-    background-color: var(--accent-dark);
-    color: white;
+    background-color: var(--accent-dark); /* On hover, it gets the accent background */
+    color: white; /* Ensure text color changes for contrast */
     box-shadow: 0 6px 12px var(--shadow-dark);
 }
 
@@ -362,7 +364,7 @@ body.dark-theme .secondary-button:hover {
 }
 
 .hero-text h2 {
-    font-size: 2.5em; /* Adjust for Playfair */
+    font-size: 2.2em; /* Adjusted for Inter */
     margin-bottom: 0.5em;
     color: var(--accent-light); 
 }
@@ -478,7 +480,7 @@ body.dark-theme .project-card:hover {
 }
 
 .project-card h3 {
-    font-size: 1.3em; /* Adjust for Playfair */
+    font-size: 1.25em; /* Adjusted for Inter */
     margin-top: 0;
     margin-bottom: 0.5em;
     color: var(--accent-light);
@@ -572,7 +574,7 @@ body.dark-theme .skill-area-card {
     color: var(--accent-light);
     margin-top: 0;
     margin-bottom: 0.5em;
-    font-size: 1.25em; /* Adjust for Playfair */
+    font-size: 1.2em; /* Adjusted for Inter */
 }
 body.dark-theme .skill-area-card h3 {
     color: var(--accent-dark);
@@ -673,7 +675,7 @@ body.dark-theme .project-card-full:hover {
 }
 
 .project-card-full h3 {
-    font-size: 1.4em; /* Adjust for Playfair */
+    font-size: 1.35em; /* Adjusted for Inter */
     margin-top: 0;
     margin-bottom: 0.6em;
     color: var(--accent-light);
@@ -695,7 +697,7 @@ body.dark-theme .project-card-full h3 {
 }
 
 .project-header h2 {
-    font-size: 2.5em; /* Adjust for Playfair */
+    font-size: 2.2em; /* Adjusted for Inter */
     margin-bottom: 0.3em;
     color: var(--accent-light); 
 }
@@ -746,7 +748,7 @@ body.dark-theme .project-hero-image {
 }
 
 .project-section h3 {
-    font-size: 1.8em; /* Adjust for Playfair */
+    font-size: 1.6em; /* Adjusted for Inter */
     color: var(--accent-light);
     margin-top: var(--spacing-xxl);
     margin-bottom: var(--spacing-sm);
@@ -871,13 +873,13 @@ body.dark-theme .project-links li a {
 }
 
 .project-links li a:hover {
-    background-color: #2C8C81; /* Darker teal */
+    background-color: #0056b3; /* Darker tech blue */
     transform: translateY(-3px);
     box-shadow: 0 4px 8px var(--shadow-light);
     text-decoration: none;
 }
 body.dark-theme .project-links li a:hover {
-    background-color: #3EAE9E; /* Darker accent for dark theme */
+    background-color: #0062CC; /* Darker accent for dark theme */
     box-shadow: 0 4px 8px var(--shadow-dark);
 }
 
@@ -924,7 +926,7 @@ body.dark-theme .resume-page .resume-section h3 {
 .skills-category h4 {
     margin-top: 1.2em;
     margin-bottom: 0.8em;
-    font-size: 1.1em; /* Adjust for Playfair */
+    font-size: 1.1em; 
     color: var(--text-light);
 }
 body.dark-theme .skills-category h4 {
@@ -978,7 +980,7 @@ body.dark-theme .education-item {
     margin-top: 0;
     margin-bottom: 0.3em;
     color: var(--accent-light);
-    font-size: 1.2em; /* Adjust for Playfair */
+    font-size: 1.15em; /* Adjusted for Inter */
 }
 body.dark-theme .certification-item h4,
 body.dark-theme .job-item h4,
@@ -1052,13 +1054,13 @@ body.dark-theme .form-group label {
     border-radius: 5px; 
     background-color: var(--card-bg-light);
     color: var(--text-light);
-    font-family: var(--font-primary); /* Ensure form inputs use Montserrat */
+    font-family: var(--font-primary); 
     transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
     box-sizing: border-box; 
 }
 body.dark-theme .form-group input[type="text"],
-body.dark-theme .form-group input[type="email"], /* Fixed selector */
-body.dark-theme .form-group textarea { /* Fixed selector */
+body.dark-theme .form-group input[type="email"], 
+body.dark-theme .form-group textarea { 
     background-color: var(--card-bg-dark);
     border-color: var(--border-dark);
     color: var(--text-dark);
@@ -1069,13 +1071,13 @@ body.dark-theme .form-group textarea { /* Fixed selector */
 .form-group textarea:focus {
     border-color: var(--accent-light);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(56, 168, 157, 0.25); /* Teal focus glow */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Tech blue focus glow */
 }
 body.dark-theme .form-group input[type="text"]:focus,
-body.dark-theme .form-group input[type="email"]:focus, /* Fixed selector */
-body.dark-theme .form-group textarea:focus { /* Fixed selector */
+body.dark-theme .form-group input[type="email"]:focus, 
+body.dark-theme .form-group textarea:focus { 
     border-color: var(--accent-dark);
-    box-shadow: 0 0 0 3px rgba(80, 200, 185, 0.25); /* Adjusted dark theme teal glow */
+    box-shadow: 0 0 0 3px rgba(51, 149, 255, 0.25); /* Adjusted dark theme tech blue glow */
 }
 
 .form-notes {
@@ -1149,7 +1151,7 @@ body.dark-theme footer {
         padding: var(--spacing-sm) var(--spacing-lg);
     }
     .site-logo {
-        font-size: 2.5em; /* Adjust for Playfair */
+        font-size: 2.2em; /* Adjusted for Inter */
     }
     .tagline {
         font-size: 1.1em;
@@ -1173,7 +1175,7 @@ body.dark-theme footer {
         flex-shrink: 0; 
     }
     .hero-text h2 {
-        font-size: 3em; /* Adjust for Playfair */
+        font-size: 2.8em; /* Adjusted for Inter */
     }
     .hero-text .subheadline {
         font-size: 1.4em;
@@ -1215,9 +1217,9 @@ body.dark-theme footer {
 
 @media (min-width: 768px) {
     /* Further refinements for tablet and larger */
-    h1 { font-size: 3rem; } /* Adjust for Playfair */
-    h2 { font-size: 2.4rem; } /* Adjust for Playfair */
-    h3 { font-size: 1.9rem; } /* Adjust for Playfair */
+    h1 { font-size: 2.8rem; } 
+    h2 { font-size: 2.2rem; } 
+    h3 { font-size: 1.8rem; } 
 
     .main-nav ul {
         flex-wrap: nowrap; 
@@ -1260,7 +1262,7 @@ body.dark-theme footer {
         padding: 0 var(--spacing-md); 
     }
     .hero-text h2 {
-        font-size: 3.5em; /* Adjust for Playfair */
+        font-size: 3.2em; /* Adjusted for Inter */
     }
     .hero-text .subheadline {
         font-size: 1.5em;
