@@ -10,8 +10,8 @@
     --font-primary: 'Libre Baskerville', serif; /* For body and paragraphs */
     --font-heading: 'Libre Baskerville', serif; /* For headings */
 
-    --font-size-base: 1rem; /* 16px for paragraphs */
-    --line-height-base: 1.6;
+    --font-size-base: 1.125rem; /* Increased base font size to 18px */
+    --line-height-base: 1.7; /* Slightly increased line height for readability */
 
     /* Colors - New Specification */
     /* Light Mode */
@@ -59,7 +59,7 @@
 
     /* Border Radius Variables */
     --border-radius-sm: 0.5rem; /* rounded-lg for buttons */
-    --border-radius-md: 1rem;   /* rounded-2xl for cards */
+    --border-radius-md: 1rem;    /* rounded-2xl for cards */
     --border-radius-lg: 1rem; /* Keeping consistent for now */
 }
 
@@ -73,7 +73,7 @@ html {
     background-color: var(--background-light);
     color: var(--text-primary-light);
     font-family: var(--font-primary);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-base); /* Base font size now 1.125rem */
     line-height: var(--line-height-base);
     /* Smooth transition for theme changes */
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -115,18 +115,19 @@ html.dark h6 {
 }
 
 /* Specific font sizes and weights for headings based on brief */
-h1 { font-size: 2rem; font-weight: 700; /* Use for large titles if needed, adjust if h2 is main heading */}
-h2 { font-size: 1.25rem; font-weight: 600; }
-h3 { font-size: 1.125rem; font-weight: 500; }
-h4 { font-size: 1.1rem; font-weight: 500; /* Default for smaller subheadings */}
-h5 { font-size: 1rem; font-weight: 400; }
-h6 { font-size: 0.9rem; font-weight: 400; }
+h1 { font-size: 3rem; font-weight: 700; /* Increased from 2.5rem */ }
+h2 { font-size: 2.25rem; font-weight: 700; } /* Increased from 1.75rem */
+h3 { font-size: 1.75rem; font-weight: 600; } /* Increased from 1.25rem */
+h4 { font-size: 1.375rem; font-weight: 500; } /* Increased from 1.125rem */
+h5 { font-size: 1.25rem; font-weight: 400; } /* Increased from 1rem */
+h6 { font-size: 1.125rem; font-weight: 400; } /* Increased from 0.9rem - now matches base */
 
 
 p {
-    font-size: var(--font-size-base); /* 1rem */
+    font-size: var(--font-size-base); /* Stays at 1.125rem */
     font-weight: 400;
     margin-bottom: var(--spacing-md);
+    line-height: var(--line-height-base); /* Ensure paragraphs also use base line height */
 }
 
 /* Link styling */
@@ -151,7 +152,7 @@ a:hover {
     text-align: center;
     max-width: 800px;
     margin: var(--spacing-md) auto var(--spacing-xxl) auto; /* Adjusted margins */
-    font-size: 1.1em;
+    font-size: 1.25rem; /* Increased from 1.1em (approx 1.1rem) */
     opacity: 0.9;
     color: var(--text-secondary-light); /* Use secondary text color */
 }
@@ -181,7 +182,7 @@ html.dark .main-header {
 .site-logo {
     margin: 0;
     font-family: var(--font-logo); /* Montserrat */
-    font-size: 2rem; /* 32px */
+    font-size: 2.5rem; /* Increased from 2rem */
     font-weight: 700;
     text-transform: uppercase; /* Uppercase */
     letter-spacing: 0.15em; /* Letter spacing */
@@ -198,7 +199,7 @@ html.dark .site-logo {
 }
 
 .tagline {
-    font-size: 1em;
+    font-size: 1.125rem; /* Increased from 1em */
     margin-top: 0.2em;
     opacity: 0.8;
     color: var(--text-secondary-light); /* Use secondary text */
@@ -215,10 +216,11 @@ html.dark .tagline {
     padding: var(--spacing-sm) var(--spacing-md); /* 0.5rem 1rem */
     border-radius: var(--border-radius-sm); /* rounded-lg */
     cursor: pointer;
-    font-size: 0.9em;
+    font-size: 1rem; /* Increased from 0.9em */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     flex-shrink: 0;
     margin-left: var(--spacing-md);
+    outline: none; /* Add outline none for default */
 }
 
 html.dark #theme-toggle {
@@ -235,6 +237,14 @@ html.dark #theme-toggle:hover {
     background-color: var(--button-hover-bg-dark);
     box-shadow: 0 4px 8px var(--shadow-dark);
 }
+
+#theme-toggle:focus-visible { /* Added focus-visible for accessibility */
+    box-shadow: 0 0 0 3px var(--focus-ring-light);
+}
+html.dark #theme-toggle:focus-visible {
+    box-shadow: 0 0 0 3px var(--focus-ring-dark);
+}
+
 
 /* --- Navigation --- */
 .main-nav {
@@ -261,7 +271,8 @@ html.dark .main-nav {
     display: block;
     padding: 1em 1.5em;
     color: var(--text-primary-light);
-    font-weight: 600; /* Montserrat bold */ /* Use a weight available in Libre Baskerville for consistency if not Montserrat */
+    font-weight: 700; /* Use 700 if available for Libre Baskerville for navigation prominence */
+    font-size: 1.125rem; /* Increased from current implicit size */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -308,8 +319,8 @@ html.dark section {
 section h2 {
     text-align: center;
     margin-bottom: var(--spacing-lg);
-    font-size: 1.25rem; /* From brief */
-    font-weight: 600;
+    font-size: 2.25rem; /* Consistent with new h2 size */
+    font-weight: 700;
     color: var(--logo-color-light); /* Using logo color as section title accent */
 }
 
@@ -322,6 +333,7 @@ html.dark section h2 {
     padding: var(--spacing-sm) var(--spacing-md); /* px-4 py-2 */
     border-radius: var(--border-radius-sm); /* rounded-lg */
     font-weight: 600;
+    font-size: 1.05rem; /* Slightly increased button font size */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
     display: inline-block;
@@ -412,9 +424,10 @@ html.dark .hero-section {
 }
 
 .hero-text h2 {
-    font-size: 2.2em; /* Adjusted for impact */
+    font-size: 3rem; /* Increased from 2.5em to match h1 */
     margin-bottom: 0.5em;
     color: var(--logo-color-light); /* Use logo color as accent */
+    font-weight: 700; /* Ensured bold for impact */
 }
 
 html.dark .hero-text h2 {
@@ -422,7 +435,7 @@ html.dark .hero-text h2 {
 }
 
 .hero-text .subheadline {
-    font-size: 1.2em;
+    font-size: 1.5rem; /* Increased from 1.2em */
     margin-bottom: 1.5em;
     opacity: 0.9;
     color: var(--text-secondary-light);
@@ -442,8 +455,8 @@ html.dark .hero-text .subheadline {
 .hero-image-container {
     margin-top: var(--spacing-lg);
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 250px; /* Slightly larger image container */
+    height: 250px; /* Slightly larger image container */
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 4px 10px var(--shadow-light);
@@ -478,7 +491,7 @@ html.dark .hero-image-container {
 }
 
 .value-prop {
-    font-size: 1.1em;
+    font-size: 1.25rem; /* Increased from 1.1em */
     max-width: 700px;
     margin: 0 auto;
     opacity: 0.9;
@@ -538,7 +551,7 @@ html.dark .project-card:hover {
 
 .project-card img {
     width: 100%;
-    height: 180px;
+    height: 200px; /* Slightly increased image height */
     object-fit: cover;
     border-radius: var(--border-radius-sm); /* rounded-lg for image */
     margin-bottom: var(--spacing-md);
@@ -546,8 +559,8 @@ html.dark .project-card:hover {
 }
 
 .project-card h3 {
-    font-size: 1.125rem; /* From brief */
-    font-weight: 500;
+    font-size: 1.5rem; /* Increased from 1.125rem */
+    font-weight: 600; /* Matching h3 weight */
     margin-top: 0;
     margin-bottom: 0.5em;
     color: var(--text-primary-light); /* Changed to primary text color */
@@ -564,7 +577,7 @@ html.dark .project-card h3 {
     display: inline-block;
     background-color: var(--button-bg-light); /* Using button color for tags */
     color: white;
-    font-size: 0.75em;
+    font-size: 0.875rem; /* Increased from 0.75em */
     padding: 0.3em 0.7em;
     border-radius: var(--border-radius-sm);
     margin-right: 0.5em;
@@ -576,7 +589,7 @@ html.dark .project-tags span {
 }
 
 .project-card p {
-    font-size: 0.9em;
+    font-size: 1rem; /* Increased from 0.9em */
     margin-bottom: var(--spacing-md);
     color: var(--text-secondary-light); /* Changed to secondary text */
     flex-grow: 1;
@@ -588,6 +601,7 @@ html.dark .project-card p {
 .read-more-link {
     display: inline-block;
     font-weight: 600;
+    font-size: 1.05rem; /* Increased from current implicit size */
     color: var(--logo-color-light); /* Using logo color for links */
     margin-top: auto;
     text-decoration: none;
@@ -645,8 +659,8 @@ html.dark .skill-area-card {
     color: var(--logo-color-light);
     margin-top: 0;
     margin-bottom: 0.5em;
-    font-size: 1.125rem; /* From brief */
-    font-weight: 500;
+    font-size: 1.75rem; /* Increased from 1.125rem - matches new h3 */
+    font-weight: 600;
 }
 html.dark .skill-area-card h3 {
     color: var(--logo-color-dark);
@@ -673,6 +687,7 @@ html.dark .skill-area-card h3 {
     margin-bottom: 0.5em;
     transition: background-color 0.3s, border-color 0.3s;
     color: var(--text-primary-light);
+    font-size: 1.125rem; /* Explicitly set to base font size */
 }
 html.dark .tech-list-grid li {
     background-color: var(--card-bg-dark);
@@ -696,6 +711,7 @@ html.dark .tech-list-grid li {
     border-radius: var(--border-radius-sm);
     transition: background-color 0.3s, border-color 0.3s;
     color: var(--text-primary-light);
+    font-size: 1.125rem; /* Explicitly set to base font size */
 }
 html.dark .domain-list li {
     background-color: var(--card-bg-dark);
@@ -752,7 +768,7 @@ html.dark .project-card-full:hover {
 
 .project-card-full img {
     width: 100%;
-    height: 220px;
+    height: 250px; /* Increased from 220px */
     object-fit: cover;
     border-radius: var(--border-radius-sm);
     margin-bottom: var(--spacing-md);
@@ -760,8 +776,8 @@ html.dark .project-card-full:hover {
 }
 
 .project-card-full h3 {
-    font-size: 1.125rem; /* From brief */
-    font-weight: 500;
+    font-size: 1.5rem; /* Increased from 1.125rem - matches featured card h3 */
+    font-weight: 600;
     margin-top: 0;
     margin-bottom: 0.6em;
     color: var(--text-primary-light);
@@ -783,7 +799,7 @@ html.dark .project-card-full h3 {
 }
 
 .project-header h2 {
-    font-size: 2.2em;
+    font-size: 3rem; /* Increased from 2.2em to match h1 */
     margin-bottom: 0.3em;
     color: var(--logo-color-light);
 }
@@ -792,7 +808,7 @@ html.dark .project-header h2 {
 }
 
 .project-subtitle {
-    font-size: 1.2em;
+    font-size: 1.5rem; /* Increased from 1.2em */
     color: var(--text-secondary-light);
     opacity: 0.9;
     margin-bottom: var(--spacing-md);
@@ -807,7 +823,7 @@ html.dark .project-subtitle {
     justify-content: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
-    font-size: 0.9em;
+    font-size: 1rem; /* Increased from 0.9em */
     color: var(--text-secondary-light);
 }
 html.dark .project-details-meta {
@@ -823,7 +839,7 @@ html.dark .project-details-meta strong {
 
 .project-hero-image {
     width: 100%;
-    max-height: 400px;
+    max-height: 500px; /* Increased from 400px */
     object-fit: cover;
     border-radius: var(--border-radius-md);
     box-shadow: 0 5px 15px var(--shadow-light);
@@ -834,7 +850,7 @@ html.dark .project-hero-image {
 }
 
 .project-section h3 {
-    font-size: 1.8rem; /* Adjusted for case study sub-sections */
+    font-size: 2rem; /* Increased from 1.8rem */
     color: var(--logo-color-light); /* Changed to logo color */
     margin-top: var(--spacing-xxl);
     margin-bottom: var(--spacing-md);
@@ -867,6 +883,7 @@ html.dark .project-section ul {
 
 .project-section li {
     margin-bottom: 0.5em;
+    font-size: 1.125rem; /* Explicitly set to base font size */
 }
 
 .visual-gallery {
@@ -905,7 +922,7 @@ html.dark .visual-gallery figure {
 
 .visual-gallery figcaption {
     font-style: italic;
-    font-size: 0.9em;
+    font-size: 1rem; /* Increased from 0.9em */
     color: var(--text-secondary-light);
     opacity: 0.8;
 }
@@ -932,6 +949,7 @@ html.dark .dashboard-embed {
 .dashboard-embed h4 {
     margin-top: 0;
     color: var(--logo-color-light);
+    font-size: 1.375rem; /* Matches new h4 size */
 }
 html.dark .dashboard-embed h4 {
     color: var(--logo-color-dark);
@@ -939,7 +957,7 @@ html.dark .dashboard-embed h4 {
 
 .dashboard-embed .tableauViz {
     width: 100% !important;
-    height: 450px !important;
+    height: 500px !important; /* Slightly increased height for larger view */
 }
 
 .project-links ul {
@@ -963,6 +981,7 @@ html.dark .dashboard-embed h4 {
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
     box-shadow: 0 2px 4px var(--shadow-light);
+    font-size: 1.05rem; /* Matches button font size */
 }
 html.dark .project-links li a {
     background-color: var(--button-bg-dark);
@@ -983,7 +1002,7 @@ html.dark .project-links li a:hover {
 
 .project-links li a .fa-brands,
 .project-links li a .fa-solid {
-    font-size: 1.2em;
+    font-size: 1.3em; /* Slightly increased icon size */
 }
 
 .back-to-portfolio {
@@ -1011,6 +1030,7 @@ html.dark .project-links li a:hover {
     border-bottom: 1px solid var(--border-light);
     padding-bottom: 0.3em;
     font-weight: 500; /* From brief */
+    font-size: 1.75rem; /* Matches h3 */
 }
 html.dark .resume-page .resume-section h3 {
     color: var(--logo-color-dark);
@@ -1025,7 +1045,7 @@ html.dark .resume-page .resume-section h3 {
 .skills-category h4 {
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-sm);
-    font-size: 1.1em;
+    font-size: 1.25rem; /* Increased from 1.1em */
     color: var(--text-primary-light);
 }
 html.dark .skills-category h4 {
@@ -1046,7 +1066,7 @@ html.dark .skills-category h4 {
     padding: 0.5em 1em;
     border-radius: var(--border-radius-sm);
     border: 1px solid var(--border-light);
-    font-size: 0.9em;
+    font-size: 1rem; /* Increased from 0.9em */
     transition: background-color 0.3s, border-color 0.3s;
     color: var(--text-primary-light);
 }
@@ -1081,7 +1101,7 @@ html.dark .education-item {
     margin-top: 0;
     margin-bottom: 0.3em;
     color: var(--logo-color-light);
-    font-size: 1.15em;
+    font-size: 1.375rem; /* Increased from 1.15em - matches h4 */
 }
 html.dark .certification-item h4,
 html.dark .job-item h4,
@@ -1093,7 +1113,7 @@ html.dark .education-item h4 {
     font-weight: 400;
     color: var(--text-secondary-light);
     opacity: 0.9;
-    font-size: 0.9em;
+    font-size: 1.05rem; /* Increased from 0.9em */
     margin-left: 0.5em;
 }
 html.dark .job-company {
@@ -1102,7 +1122,7 @@ html.dark .job-company {
 
 .job-dates {
     font-style: italic;
-    font-size: 0.9em;
+    font-size: 1rem; /* Increased from 0.9em */
     color: var(--text-secondary-light);
     margin-bottom: 0.8em;
     display: block;
@@ -1123,7 +1143,7 @@ html.dark .job-item ul {
 
 .job-item li {
     margin-bottom: 0.5em;
-    font-size: 0.95em;
+    font-size: 1.05rem; /* Increased from 0.95em */
 }
 
 /* --- Contact Page Specifics --- */
@@ -1145,6 +1165,7 @@ html.dark .job-item ul {
     margin-bottom: 0.5em;
     font-weight: 600;
     color: var(--text-primary-light);
+    font-size: 1.125rem; /* Explicitly set to base font size */
 }
 html.dark .form-group label {
     color: var(--text-primary-dark);
@@ -1162,209 +1183,282 @@ html.dark .form-group label {
     font-family: var(--font-primary);
     transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
     box-sizing: border-box;
+    font-size: 1.125rem; /* Explicitly set to base font size */
 }
 html.dark .form-group input[type="text"],
 html.dark .form-group input[type="email"],
 html.dark .form-group textarea {
     background-color: var(--card-bg-dark);
-    border-color: var(--border-dark);
     color: var(--text-primary-dark);
+    border-color: var(--border-dark);
 }
 
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
     border-color: var(--focus-ring-light);
+    box-shadow: 0 0 0 3px var(--focus-ring-light);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25); /* Based on logo color */
 }
+
 html.dark .form-group input[type="text"]:focus,
 html.dark .form-group input[type="email"]:focus,
 html.dark .form-group textarea:focus {
     border-color: var(--focus-ring-dark);
-    box-shadow: 0 0 0 3px rgba(165, 180, 252, 0.25); /* Based on logo color */
+    box-shadow: 0 0 0 3px var(--focus-ring-dark);
 }
 
-.form-notes {
-    font-size: 0.85em;
-    color: var(--text-secondary-light);
-    margin-top: var(--spacing-md);
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-info {
     text-align: center;
-}
-html.dark .form-notes {
-    color: var(--text-secondary-dark);
+    margin-top: var(--spacing-xxl);
+    margin-bottom: var(--spacing-lg);
 }
 
-.social-icons {
+.contact-info p {
+    font-size: 1.125rem; /* Explicitly set to base font size */
+    margin-bottom: var(--spacing-sm);
+}
+
+.social-links {
     list-style: none;
     padding: 0;
+    margin: var(--spacing-lg) 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xxl);
+    gap: var(--spacing-md);
 }
 
-.social-icons li a {
-    display: flex;
-    flex-direction: column;
+.social-links li a {
+    display: inline-flex;
     align-items: center;
-    color: var(--text-primary-light);
-    transition: color 0.3s ease, transform 0.2s ease;
-    text-decoration: none;
-    font-size: 0.9em;
+    justify-content: center;
+    width: 48px; /* Larger social icons */
+    height: 48px; /* Larger social icons */
+    border-radius: 50%;
+    background-color: var(--button-bg-light);
+    color: var(--button-text-light);
+    font-size: 1.5rem; /* Increased icon size */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px var(--shadow-light);
 }
-html.dark .social-icons li a {
-    color: var(--text-primary-dark);
-}
-
-.social-icons li a:hover {
-    color: var(--logo-color-light);
-    transform: translateY(-5px);
-    text-decoration: none;
-}
-html.dark .social-icons li a:hover {
-    color: var(--logo-color-dark);
+html.dark .social-links li a {
+    background-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
+    box-shadow: 0 2px 4px var(--shadow-dark);
 }
 
-.social-icons li a .fa-brands,
-.social-icons li a .fa-solid {
-    font-size: 2.5em;
-    margin-bottom: 0.2em;
+.social-links li a:hover {
+    background-color: var(--button-hover-bg-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-light);
+}
+html.dark .social-links li a:hover {
+    background-color: var(--button-hover-bg-dark);
+    box-shadow: 0 4px 8px var(--shadow-dark);
 }
 
 /* --- Footer --- */
-footer {
-    text-align: center;
-    padding: var(--spacing-lg) var(--spacing-xl);
-    margin-top: var(--spacing-xxl);
+.main-footer {
     background-color: var(--header-bg-light);
-    color: var(--text-footer-light); /* Dedicated footer text color */
+    padding: var(--spacing-lg); /* Tailwind p-6 */
+    text-align: center;
+    color: var(--text-footer-light);
+    font-size: 1rem; /* Adjusted for readability */
     box-shadow: 0 -2px 5px var(--shadow-light);
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-html.dark footer {
+html.dark .main-footer {
     background-color: var(--header-bg-dark);
     color: var(--text-footer-dark);
     box-shadow: 0 -2px 5px var(--shadow-dark);
 }
 
+.main-footer .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg); /* Increased gap for better spacing */
+}
 
-/* --- Responsive Design --- */
-@media (min-width: 640px) { /* Changed from 600px to 640px for typical Tailwind 'sm' breakpoint */
+.main-footer .footer-nav a {
+    color: var(--text-footer-light);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 1.05rem; /* Increased for readability */
+}
+
+html.dark .main-footer .footer-nav a {
+    color: var(--text-footer-dark);
+}
+
+.main-footer .footer-nav a:hover {
+    color: var(--logo-color-light); /* Hover to accent color */
+    text-decoration: underline;
+}
+html.dark .main-footer .footer-nav a:hover {
+    color: var(--logo-color-dark);
+}
+
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-social-links a {
+    color: var(--text-footer-light);
+    font-size: 1.5rem; /* Large enough to be clickable */
+    transition: color 0.3s ease;
+}
+html.dark .footer-social-links a {
+    color: var(--text-footer-dark);
+}
+
+.footer-social-links a:hover {
+    color: var(--logo-color-light);
+}
+html.dark .footer-social-links a:hover {
+    color: var(--logo-color-dark);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
     main {
-        padding: 0 var(--spacing-xl); /* Tailwind p-8 */
+        padding: 0 var(--spacing-lg); /* Adjust page padding for tablets */
     }
+
+    h1 { font-size: 2.75rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1.25rem; }
+    h5 { font-size: 1.125rem; }
+    h6 { font-size: 1rem; }
+
+    .hero-text h2 { font-size: 2.75rem; }
+    .hero-text .subheadline { font-size: 1.375rem; }
+    .project-header h2 { font-size: 2.75rem; }
+    .project-section h3 { font-size: 1.8rem; }
+    .project-subtitle { font-size: 1.3rem; }
+    .dashboard-embed h4 { font-size: 1.25rem; }
+}
+
+@media (max-width: 768px) {
     .main-header {
-        padding: var(--spacing-lg) var(--spacing-xl);
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
     }
     .site-logo {
-        font-size: 2.2em;
+        margin-bottom: var(--spacing-xs);
     }
     .tagline {
-        font-size: 1.1em;
+        margin-bottom: var(--spacing-sm);
     }
-    .hero-section {
-        flex-direction: row;
-        text-align: left;
-        padding: var(--spacing-xxl) var(--spacing-xl);
-        justify-content: center;
+    #theme-toggle {
+        margin-left: 0;
+        width: 100%;
+        max-width: 200px; /* Constrain button width */
     }
-    .hero-text {
-        flex: 1;
-        padding-right: var(--spacing-lg);
-        max-width: 600px;
-    }
-    .hero-image-container {
-        margin-top: 0;
-        margin-left: var(--spacing-lg);
-        width: 250px;
-        height: 250px;
-        flex-shrink: 0;
-    }
-    .hero-text h2 {
-        font-size: 2.8em;
-    }
-    .hero-text .subheadline {
-        font-size: 1.4em;
-    }
-    .cta-buttons {
-        justify-content: flex-start;
-    }
-    .intro-section, .featured-projects {
-        padding: var(--spacing-xxl) var(--spacing-xl);
-    }
-    .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    /* About Page */
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .tech-list-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .domain-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Portfolio Page */
-    .project-grid-full {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-
-    /* Project Case Study */
-    .visual-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-@media (min-width: 768px) { /* Tailwind 'md' breakpoint */
-    /* Further refinements for tablet and larger */
-    h1 { font-size: 2.8rem; }
-    h2 { font-size: 2.2rem; }
-    h3 { font-size: 1.8rem; }
-
     .main-nav ul {
-        flex-wrap: nowrap;
+        flex-direction: column;
+        width: 100%;
+    }
+    .main-nav li a {
+        text-align: center;
+        width: 100%;
     }
 
-    .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-    .project-grid-full {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    }
-
-    .dashboard-embed .tableauViz {
-        height: 550px !important;
-    }
-}
-
-@media (min-width: 1024px) { /* Tailwind 'lg' breakpoint, changed from 992px */
-    /* Desktop styles */
-    .project-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .project-grid-full {
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    }
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .tech-list-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .visual-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    }
-}
-
-@media (min-width: 1280px) { /* Tailwind 'xl' breakpoint, changed from 1200px */
-    /* Larger desktop styles */
     main {
-        padding: 0 var(--spacing-md);
+        margin: var(--spacing-xl) auto;
+        padding: 0 var(--spacing-md); /* More padding on smaller screens */
+    }
+
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.125rem; }
+    h5 { font-size: 1rem; }
+    h6 { font-size: 0.9rem; }
+
+    .hero-text h2 { font-size: 2.25rem; }
+    .hero-text .subheadline { font-size: 1.25rem; }
+    .project-header h2 { font-size: 2.25rem; }
+    .project-section h3 { font-size: 1.6rem; }
+    .project-subtitle { font-size: 1.125rem; }
+    .dashboard-embed h4 { font-size: 1.125rem; }
+
+    .project-grid,
+    .project-grid-full,
+    .skills-grid,
+    .tech-list-grid,
+    .domain-list,
+    .visual-gallery {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px; /* Constrain button group width */
+    }
+    .button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .site-logo {
+        font-size: 2rem;
+    }
+    .tagline {
+        font-size: 1rem;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.1rem; }
+    h5 { font-size: 1rem; }
+    h6 { font-size: 0.9rem; }
+
+    .hero-text h2 { font-size: 2rem; }
+    .hero-text .subheadline { font-size: 1.125rem; }
+    .project-header h2 { font-size: 2rem; }
+    .project-section h3 { font-size: 1.4rem; }
+    .project-subtitle { font-size: 1rem; }
+    .dashboard-embed h4 { font-size: 1.05rem; }
+
+    .section-description {
+        font-size: 1.125rem;
+    }
+
+    .hero-image-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .project-card img, .project-card-full img {
+        height: 160px;
+    }
+
+    .social-links li a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .main-footer .footer-nav ul {
+        gap: var(--spacing-md);
     }
 }
