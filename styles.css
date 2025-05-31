@@ -10,7 +10,8 @@
     --font-primary: 'Libre Baskerville', serif; /* For body and paragraphs */
     --font-heading: 'Libre Baskerville', serif; /* For headings */
 
-    --font-size-base: 1.125rem; /* Increased base font size to 18px */
+    /* Base Font Size and Line Height */
+    --font-size-base: 1rem; /* Start with a standard base for better scaling */
     --line-height-base: 1.7; /* Slightly increased line height for readability */
 
     /* Colors - New Specification */
@@ -73,7 +74,7 @@ html {
     background-color: var(--background-light);
     color: var(--text-primary-light);
     font-family: var(--font-primary);
-    font-size: var(--font-size-base); /* Base font size now 1.125rem */
+    font-size: var(--font-size-base); /* Base font size is now 1rem */
     line-height: var(--line-height-base);
     /* Smooth transition for theme changes */
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -115,12 +116,22 @@ html.dark h6 {
 }
 
 /* Specific font sizes and weights for headings based on brief */
-h1 { font-size: 3rem; font-weight: 700; /* Increased from 2.5rem */ }
-h2 { font-size: 2.25rem; font-weight: 700; } /* Increased from 1.75rem */
-h3 { font-size: 1.75rem; font-weight: 600; } /* Increased from 1.25rem */
-h4 { font-size: 1.375rem; font-weight: 500; } /* Increased from 1.125rem */
-h5 { font-size: 1.25rem; font-weight: 400; } /* Increased from 1rem */
-h6 { font-size: 1.125rem; font-weight: 400; } /* Increased from 0.9rem - now matches base */
+/* Using clamp for fluid typography for major headings (H1, H2, H3) */
+h1 {
+    font-size: clamp(2.5rem, 7vw + 1rem, 4rem); /* min, preferred (fluid), max */
+    font-weight: 700;
+}
+h2 {
+    font-size: clamp(2rem, 5vw + 1rem, 3rem);
+    font-weight: 700;
+}
+h3 {
+    font-size: clamp(1.5rem, 4vw + 0.5rem, 2.25rem);
+    font-weight: 600;
+}
+h4 { font-size: 1.375rem; font-weight: 500; }
+h5 { font-size: 1.25rem; font-weight: 400; }
+h6 { font-size: 1.125rem; font-weight: 400; }
 
 
 p {
@@ -152,7 +163,7 @@ a:hover {
     text-align: center;
     max-width: 800px;
     margin: var(--spacing-md) auto var(--spacing-xxl) auto; /* Adjusted margins */
-    font-size: 1.25rem; /* Increased from 1.1em (approx 1.1rem) */
+    font-size: clamp(1.125rem, 2vw + 0.5rem, 1.25rem); /* Fluid font size */
     opacity: 0.9;
     color: var(--text-secondary-light); /* Use secondary text color */
 }
@@ -182,7 +193,7 @@ html.dark .main-header {
 .site-logo {
     margin: 0;
     font-family: var(--font-logo); /* Montserrat */
-    font-size: 2.5rem; /* Increased from 2rem */
+    font-size: clamp(1.8rem, 5vw + 1rem, 2.5rem); /* Fluid logo size */
     font-weight: 700;
     text-transform: uppercase; /* Uppercase */
     letter-spacing: 0.15em; /* Letter spacing */
@@ -199,7 +210,7 @@ html.dark .site-logo {
 }
 
 .tagline {
-    font-size: 1.125rem; /* Increased from 1em */
+    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.125rem); /* Fluid tagline */
     margin-top: 0.2em;
     opacity: 0.8;
     color: var(--text-secondary-light); /* Use secondary text */
@@ -272,7 +283,7 @@ html.dark .main-nav {
     padding: 1em 1.5em;
     color: var(--text-primary-light);
     font-weight: 700; /* Use 700 if available for Libre Baskerville for navigation prominence */
-    font-size: 1.125rem; /* Increased from current implicit size */
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); /* Fluid nav link size */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -319,7 +330,7 @@ html.dark section {
 section h2 {
     text-align: center;
     margin-bottom: var(--spacing-lg);
-    font-size: 2.25rem; /* Consistent with new h2 size */
+    font-size: clamp(1.8rem, 5vw + 1rem, 2.25rem); /* Consistent with new h2 size, but fluid */
     font-weight: 700;
     color: var(--logo-color-light); /* Using logo color as section title accent */
 }
@@ -333,7 +344,7 @@ html.dark section h2 {
     padding: var(--spacing-sm) var(--spacing-md); /* px-4 py-2 */
     border-radius: var(--border-radius-sm); /* rounded-lg */
     font-weight: 600;
-    font-size: 1.05rem; /* Slightly increased button font size */
+    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.05rem); /* Fluid button font size */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
     display: inline-block;
@@ -424,7 +435,7 @@ html.dark .hero-section {
 }
 
 .hero-text h2 {
-    font-size: 3rem; /* Increased from 2.5em to match h1 */
+    font-size: clamp(2.5rem, 7vw + 1rem, 3.5rem); /* Fluid hero heading */
     margin-bottom: 0.5em;
     color: var(--logo-color-light); /* Use logo color as accent */
     font-weight: 700; /* Ensured bold for impact */
@@ -435,7 +446,7 @@ html.dark .hero-text h2 {
 }
 
 .hero-text .subheadline {
-    font-size: 1.5rem; /* Increased from 1.2em */
+    font-size: clamp(1.2rem, 3vw + 0.5rem, 1.5rem); /* Fluid subheadline */
     margin-bottom: 1.5em;
     opacity: 0.9;
     color: var(--text-secondary-light);
@@ -491,7 +502,7 @@ html.dark .hero-image-container {
 }
 
 .value-prop {
-    font-size: 1.25rem; /* Increased from 1.1em */
+    font-size: clamp(1.125rem, 2vw + 0.5rem, 1.25rem); /* Fluid value prop */
     max-width: 700px;
     margin: 0 auto;
     opacity: 0.9;
@@ -559,7 +570,7 @@ html.dark .project-card:hover {
 }
 
 .project-card h3 {
-    font-size: 1.5rem; /* Increased from 1.125rem */
+    font-size: clamp(1.25rem, 3vw + 0.5rem, 1.5rem); /* Fluid project card heading */
     font-weight: 600; /* Matching h3 weight */
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -589,7 +600,7 @@ html.dark .project-tags span {
 }
 
 .project-card p {
-    font-size: 1rem; /* Increased from 0.9em */
+    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1rem); /* Fluid project card paragraph */
     margin-bottom: var(--spacing-md);
     color: var(--text-secondary-light); /* Changed to secondary text */
     flex-grow: 1;
@@ -601,7 +612,7 @@ html.dark .project-card p {
 .read-more-link {
     display: inline-block;
     font-weight: 600;
-    font-size: 1.05rem; /* Increased from current implicit size */
+    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1.05rem); /* Fluid read more link */
     color: var(--logo-color-light); /* Using logo color for links */
     margin-top: auto;
     text-decoration: none;
@@ -659,7 +670,7 @@ html.dark .skill-area-card {
     color: var(--logo-color-light);
     margin-top: 0;
     margin-bottom: 0.5em;
-    font-size: 1.75rem; /* Increased from 1.125rem - matches new h3 */
+    font-size: clamp(1.5rem, 4vw + 0.5rem, 1.75rem); /* Fluid skill card heading */
     font-weight: 600;
 }
 html.dark .skill-area-card h3 {
@@ -687,7 +698,7 @@ html.dark .skill-area-card h3 {
     margin-bottom: 0.5em;
     transition: background-color 0.3s, border-color 0.3s;
     color: var(--text-primary-light);
-    font-size: 1.125rem; /* Explicitly set to base font size */
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); /* Fluid tech list item */
 }
 html.dark .tech-list-grid li {
     background-color: var(--card-bg-dark);
@@ -711,7 +722,7 @@ html.dark .tech-list-grid li {
     border-radius: var(--border-radius-sm);
     transition: background-color 0.3s, border-color 0.3s;
     color: var(--text-primary-light);
-    font-size: 1.125rem; /* Explicitly set to base font size */
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); /* Fluid domain list item */
 }
 html.dark .domain-list li {
     background-color: var(--card-bg-dark);
@@ -776,7 +787,7 @@ html.dark .project-card-full:hover {
 }
 
 .project-card-full h3 {
-    font-size: 1.5rem; /* Increased from 1.125rem - matches featured card h3 */
+    font-size: clamp(1.25rem, 3vw + 0.5rem, 1.5rem); /* Fluid full project card heading */
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 0.6em;
@@ -799,7 +810,7 @@ html.dark .project-card-full h3 {
 }
 
 .project-header h2 {
-    font-size: 3rem; /* Increased from 2.2em to match h1 */
+    font-size: clamp(2.5rem, 7vw + 1rem, 3.5rem); /* Fluid project header heading */
     margin-bottom: 0.3em;
     color: var(--logo-color-light);
 }
@@ -808,7 +819,7 @@ html.dark .project-header h2 {
 }
 
 .project-subtitle {
-    font-size: 1.5rem; /* Increased from 1.2em */
+    font-size: clamp(1.2rem, 3vw + 0.5rem, 1.5rem); /* Fluid project subtitle */
     color: var(--text-secondary-light);
     opacity: 0.9;
     margin-bottom: var(--spacing-md);
@@ -823,7 +834,7 @@ html.dark .project-subtitle {
     justify-content: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
-    font-size: 1rem; /* Increased from 0.9em */
+    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1rem); /* Fluid project meta detail */
     color: var(--text-secondary-light);
 }
 html.dark .project-details-meta {
@@ -850,7 +861,7 @@ html.dark .project-hero-image {
 }
 
 .project-section h3 {
-    font-size: 2rem; /* Increased from 1.8rem */
+    font-size: clamp(1.6rem, 4vw + 0.5rem, 2rem); /* Fluid project section heading */
     color: var(--logo-color-light); /* Changed to logo color */
     margin-top: var(--spacing-xxl);
     margin-bottom: var(--spacing-md);
@@ -883,7 +894,7 @@ html.dark .project-section ul {
 
 .project-section li {
     margin-bottom: 0.5em;
-    font-size: 1.125rem; /* Explicitly set to base font size */
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); /* Fluid project section list item */
 }
 
 .visual-gallery {
@@ -922,7 +933,7 @@ html.dark .visual-gallery figure {
 
 .visual-gallery figcaption {
     font-style: italic;
-    font-size: 1rem; /* Increased from 0.9em */
+    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1rem); /* Fluid figcaption */
     color: var(--text-secondary-light);
     opacity: 0.8;
 }
@@ -949,7 +960,7 @@ html.dark .dashboard-embed {
 .dashboard-embed h4 {
     margin-top: 0;
     color: var(--logo-color-light);
-    font-size: 1.375rem; /* Matches new h4 size */
+    font-size: clamp(1.125rem, 2vw + 0.5rem, 1.375rem); /* Fluid dashboard embed heading */
 }
 html.dark .dashboard-embed h4 {
     color: var(--logo-color-dark);
@@ -981,7 +992,7 @@ html.dark .dashboard-embed h4 {
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
     box-shadow: 0 2px 4px var(--shadow-light);
-    font-size: 1.05rem; /* Matches button font size */
+    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1.05rem); /* Fluid project link button */
 }
 html.dark .project-links li a {
     background-color: var(--button-bg-dark);
@@ -1030,7 +1041,7 @@ html.dark .project-links li a:hover {
     border-bottom: 1px solid var(--border-light);
     padding-bottom: 0.3em;
     font-weight: 500; /* From brief */
-    font-size: 1.75rem; /* Matches h3 */
+    font-size: clamp(1.5rem, 4vw + 0.5rem, 1.75rem); /* Fluid resume h3 */
 }
 html.dark .resume-page .resume-section h3 {
     color: var(--logo-color-dark);
@@ -1045,7 +1056,7 @@ html.dark .resume-page .resume-section h3 {
 .skills-category h4 {
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-sm);
-    font-size: 1.25rem; /* Increased from 1.1em */
+    font-size: clamp(1.125rem, 2vw + 0.5rem, 1.25rem); /* Fluid skills category heading */
     color: var(--text-primary-light);
 }
 html.dark .skills-category h4 {
@@ -1066,7 +1077,7 @@ html.dark .skills-category h4 {
     padding: 0.5em 1em;
     border-radius: var(--border-radius-sm);
     border: 1px solid var(--border-light);
-    font-size: 1rem; /* Increased from 0.9em */
+    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1rem); /* Fluid skill list item */
     transition: background-color 0.3s, border-color 0.3s;
     color: var(--text-primary-light);
 }
@@ -1100,8 +1111,8 @@ html.dark .education-item {
 .education-item h4 {
     margin-top: 0;
     margin-bottom: 0.3em;
-    color: var(--logo-color-light);
-    font-size: 1.375rem; /* Increased from 1.15em - matches h4 */
+    color: var(--logo-color-light); /* Changed to logo color for consistency */
+    font-size: clamp(1.125rem, 2vw + 0.5rem, 1.375rem); /* Fluid heading */
 }
 html.dark .certification-item h4,
 html.dark .job-item h4,
@@ -1109,167 +1120,43 @@ html.dark .education-item h4 {
     color: var(--logo-color-dark);
 }
 
-.job-company {
-    font-weight: 400;
+.job-item p,
+.education-item p {
+    font-size: clamp(1rem, 1.5vw + 0.2rem, 1.125rem); /* Fluid paragraph */
     color: var(--text-secondary-light);
-    opacity: 0.9;
-    font-size: 1.05rem; /* Increased from 0.9em */
-    margin-left: 0.5em;
 }
-html.dark .job-company {
+html.dark .job-item p,
+html.dark .education-item p {
     color: var(--text-secondary-dark);
 }
 
-.job-dates {
-    font-style: italic;
-    font-size: 1rem; /* Increased from 0.9em */
-    color: var(--text-secondary-light);
-    margin-bottom: 0.8em;
-    display: block;
-}
-html.dark .job-dates {
-    color: var(--text-secondary-dark);
-}
-
-.job-item ul {
+.job-item ul,
+.education-item ul {
     list-style: disc;
-    margin-left: var(--spacing-md);
-    margin-top: 0.5em;
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     color: var(--text-primary-light);
 }
-html.dark .job-item ul {
+html.dark .job-item ul,
+html.dark .education-item ul {
     color: var(--text-primary-dark);
 }
 
-.job-item li {
+.job-item li,
+.education-item li {
     margin-bottom: 0.5em;
-    font-size: 1.05rem; /* Increased from 0.95em */
-}
-
-/* --- Contact Page Specifics --- */
-.contact-page .contact-section {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md); /* Tailwind gap-6 */
-    margin-top: var(--spacing-lg);
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5em;
-    font-weight: 600;
-    color: var(--text-primary-light);
-    font-size: 1.125rem; /* Explicitly set to base font size */
-}
-html.dark .form-group label {
-    color: var(--text-primary-dark);
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-    width: 100%;
-    padding: 0.8em;
-    border: 1px solid var(--border-light);
-    border-radius: var(--border-radius-sm);
-    background-color: var(--card-bg-light);
-    color: var(--text-primary-light);
-    font-family: var(--font-primary);
-    transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
-    box-sizing: border-box;
-    font-size: 1.125rem; /* Explicitly set to base font size */
-}
-html.dark .form-group input[type="text"],
-html.dark .form-group input[type="email"],
-html.dark .form-group textarea {
-    background-color: var(--card-bg-dark);
-    color: var(--text-primary-dark);
-    border-color: var(--border-dark);
-}
-
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group textarea:focus {
-    border-color: var(--focus-ring-light);
-    box-shadow: 0 0 0 3px var(--focus-ring-light);
-    outline: none;
-}
-
-html.dark .form-group input[type="text"]:focus,
-html.dark .form-group input[type="email"]:focus,
-html.dark .form-group textarea:focus {
-    border-color: var(--focus-ring-dark);
-    box-shadow: 0 0 0 3px var(--focus-ring-dark);
-}
-
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.contact-info {
-    text-align: center;
-    margin-top: var(--spacing-xxl);
-    margin-bottom: var(--spacing-lg);
-}
-
-.contact-info p {
-    font-size: 1.125rem; /* Explicitly set to base font size */
-    margin-bottom: var(--spacing-sm);
-}
-
-.social-links {
-    list-style: none;
-    padding: 0;
-    margin: var(--spacing-lg) 0;
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-md);
-}
-
-.social-links li a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px; /* Larger social icons */
-    height: 48px; /* Larger social icons */
-    border-radius: 50%;
-    background-color: var(--button-bg-light);
-    color: var(--button-text-light);
-    font-size: 1.5rem; /* Increased icon size */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 2px 4px var(--shadow-light);
-}
-html.dark .social-links li a {
-    background-color: var(--button-bg-dark);
-    color: var(--button-text-dark);
-    box-shadow: 0 2px 4px var(--shadow-dark);
-}
-
-.social-links li a:hover {
-    background-color: var(--button-hover-bg-light);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-light);
-}
-html.dark .social-links li a:hover {
-    background-color: var(--button-hover-bg-dark);
-    box-shadow: 0 4px 8px var(--shadow-dark);
+    font-size: clamp(1rem, 1.5vw + 0.2rem, 1.125rem); /* Fluid list item */
 }
 
 /* --- Footer --- */
 .main-footer {
     background-color: var(--header-bg-light);
-    padding: var(--spacing-lg); /* Tailwind p-6 */
+    padding: var(--spacing-lg);
     text-align: center;
     color: var(--text-footer-light);
-    font-size: 1rem; /* Adjusted for readability */
+    font-size: 0.9em;
     box-shadow: 0 -2px 5px var(--shadow-light);
+    margin-top: var(--spacing-xxl);
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
@@ -1279,186 +1166,175 @@ html.dark .main-footer {
     box-shadow: 0 -2px 5px var(--shadow-dark);
 }
 
-.main-footer .footer-nav ul {
+.footer-nav ul {
     list-style: none;
     padding: 0;
-    margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    margin: var(--spacing-md) 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-lg); /* Increased gap for better spacing */
+    gap: var(--spacing-lg);
 }
 
-.main-footer .footer-nav a {
+.footer-nav li a {
     color: var(--text-footer-light);
-    font-weight: 600;
-    transition: color 0.3s ease;
-    font-size: 1.05rem; /* Increased for readability */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 1rem; /* Consistent with other navigation */
 }
 
-html.dark .main-footer .footer-nav a {
+html.dark .footer-nav li a {
     color: var(--text-footer-dark);
 }
 
-.main-footer .footer-nav a:hover {
+.footer-nav li a:hover {
     color: var(--logo-color-light); /* Hover to accent color */
     text-decoration: underline;
 }
-html.dark .main-footer .footer-nav a:hover {
+html.dark .footer-nav li a:hover {
     color: var(--logo-color-dark);
 }
 
-.footer-social-links {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
+.social-links {
+    margin-top: var(--spacing-md);
 }
 
-.footer-social-links a {
+.social-links a {
     color: var(--text-footer-light);
-    font-size: 1.5rem; /* Large enough to be clickable */
-    transition: color 0.3s ease;
+    font-size: 1.5rem; /* Increased social icon size */
+    margin: 0 0.7em;
+    transition: color 0.3s;
 }
-html.dark .footer-social-links a {
+html.dark .social-links a {
     color: var(--text-footer-dark);
 }
 
-.footer-social-links a:hover {
+.social-links a:hover {
     color: var(--logo-color-light);
 }
-html.dark .footer-social-links a:hover {
+html.dark .social-links a:hover {
     color: var(--logo-color-dark);
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 1024px) {
+/* --- Responsive Adjustments (Media Queries) --- */
+
+/* Small devices (phones, 600px and down) - These are often the default, so adjust as needed */
+/* Your current code is already mobile-first, but you can explicitly reduce font-sizes if they become too big */
+@media (max-width: 600px) {
+    /* Adjust main padding for smaller screens */
     main {
-        padding: 0 var(--spacing-lg); /* Adjust page padding for tablets */
+        padding: 0 var(--spacing-md); /* Reduce overall page padding */
     }
 
-    h1 { font-size: 2.75rem; }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.6rem; }
-    h4 { font-size: 1.25rem; }
-    h5 { font-size: 1.125rem; }
-    h6 { font-size: 1rem; }
-
-    .hero-text h2 { font-size: 2.75rem; }
-    .hero-text .subheadline { font-size: 1.375rem; }
-    .project-header h2 { font-size: 2.75rem; }
-    .project-section h3 { font-size: 1.8rem; }
-    .project-subtitle { font-size: 1.3rem; }
-    .dashboard-embed h4 { font-size: 1.25rem; }
-}
-
-@media (max-width: 768px) {
+    /* Reduce header padding slightly */
     .main-header {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+        flex-direction: column; /* Stack logo and theme toggle */
+        gap: var(--spacing-sm);
     }
+
     .site-logo {
-        margin-bottom: var(--spacing-xs);
+        font-size: clamp(1.8rem, 7vw, 2.2rem); /* Even smaller range for logo on tiny screens */
     }
+
     .tagline {
-        margin-bottom: var(--spacing-sm);
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
     }
+
     #theme-toggle {
-        margin-left: 0;
-        width: 100%;
-        max-width: 200px; /* Constrain button width */
+        margin-left: 0; /* Center toggle if stacking */
+        width: 100%; /* Full width button */
+        max-width: 150px; /* But keep it reasonable */
     }
+
     .main-nav ul {
-        flex-direction: column;
-        width: 100%;
+        flex-direction: column; /* Stack nav links */
+        align-items: center;
     }
+
     .main-nav li a {
-        text-align: center;
-        width: 100%;
+        padding: 0.8em 1em;
+        font-size: 1rem; /* Fixed smaller size for mobile nav */
     }
 
-    main {
-        margin: var(--spacing-xl) auto;
-        padding: 0 var(--spacing-md); /* More padding on smaller screens */
-    }
-
-    h1 { font-size: 2.25rem; }
-    h2 { font-size: 1.75rem; }
-    h3 { font-size: 1.5rem; }
-    h4 { font-size: 1.125rem; }
-    h5 { font-size: 1rem; }
-    h6 { font-size: 0.9rem; }
-
-    .hero-text h2 { font-size: 2.25rem; }
-    .hero-text .subheadline { font-size: 1.25rem; }
-    .project-header h2 { font-size: 2.25rem; }
-    .project-section h3 { font-size: 1.6rem; }
-    .project-subtitle { font-size: 1.125rem; }
-    .dashboard-embed h4 { font-size: 1.125rem; }
-
-    .project-grid,
-    .project-grid-full,
-    .skills-grid,
-    .tech-list-grid,
-    .domain-list,
-    .visual-gallery {
-        grid-template-columns: 1fr; /* Stack columns on small screens */
+    .hero-section {
+        padding: var(--spacing-xl) var(--spacing-md); /* Less padding */
     }
 
     .cta-buttons {
-        flex-direction: column;
+        flex-direction: column; /* Stack CTA buttons */
         width: 100%;
-        max-width: 300px; /* Constrain button group width */
     }
-    .button {
+    .cta-buttons .button {
         width: 100%;
+        max-width: 250px; /* Limit button width */
+    }
+
+    .project-card, .project-card-full, .skill-area-card,
+    .certification-item, .job-item, .education-item, .visual-gallery figure {
+        padding: var(--spacing-md); /* Reduce card padding */
+    }
+
+    .project-grid, .project-grid-full, .skills-grid, .tech-list-grid, .domain-list, .visual-gallery {
+        gap: var(--spacing-md); /* Reduce grid gap */
+    }
+
+    .dashboard-embed .tableauViz {
+        height: 400px !important; /* Adjust height for smaller screens */
     }
 }
 
-@media (max-width: 480px) {
-    /* Further adjustments for very small screens */
-    .site-logo {
-        font-size: 2rem;
-    }
-    .tagline {
-        font-size: 1rem;
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* Adjust base font size for tablets for a more comfortable read */
+    html {
+        font-size: 1.05rem; /* Slightly larger base font */
     }
 
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.25rem; }
-    h4 { font-size: 1.1rem; }
-    h5 { font-size: 1rem; }
-    h6 { font-size: 0.9rem; }
-
-    .hero-text h2 { font-size: 2rem; }
-    .hero-text .subheadline { font-size: 1.125rem; }
-    .project-header h2 { font-size: 2rem; }
-    .project-section h3 { font-size: 1.4rem; }
-    .project-subtitle { font-size: 1rem; }
-    .dashboard-embed h4 { font-size: 1.05rem; }
-
-    .section-description {
-        font-size: 1.125rem;
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for featured projects */
     }
 
-    .hero-image-container {
-        width: 180px;
-        height: 180px;
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for skills */
     }
 
-    .project-card img, .project-card-full img {
-        height: 160px;
+    .project-grid-full {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for full portfolio */
     }
 
-    .social-links li a {
-        width: 40px;
-        height: 40px;
-        font-size: 1.25rem;
+    .tech-list-grid, .domain-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tech/domains */
+    }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+    html {
+        font-size: 1.125rem; /* Your original larger base font size for desktops */
     }
 
-    .main-footer .footer-nav ul {
-        gap: var(--spacing-md);
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for featured projects */
+    }
+
+    .project-grid-full {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for full portfolio */
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for skills */
+    }
+
+    .tech-list-grid, .domain-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for tech/domains */
+    }
+}
+
+/* Extra large devices (large desktops, 1280px and up) */
+@media (min-width: 1280px) {
+    main {
+        padding: 0; /* Remove horizontal padding as max-width controls it */
     }
 }
