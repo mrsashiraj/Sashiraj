@@ -1338,3 +1338,46 @@ html.dark .social-links a:hover {
         padding: 0; /* Remove horizontal padding as max-width controls it */
     }
 }
+/* Unify font color across all sections for both light and dark modes */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+.section-description,
+.value-prop,
+.project-card p,
+.project-section p,
+.project-card h3,
+.project-card-full h3,
+.project-section li,
+.domain-list li,
+.tech-list-grid li,
+.about-section p,
+.project-subtitle,
+.read-more-link,
+a,
+.main-nav li a,
+.hero-text .subheadline,
+.tagline {
+    color: var(--text-primary-light) !important;
+}
+html.dark body,
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6,
+html.dark p,
+html.dark .section-description,
+html.dark .value-prop,
+html.dark .project-card p,
+html.dark .project-section p,
+html.dark .project-card h3,
+html.dark .project-card-full h3,
+html.dark .project-section li,
+html.dark .domain-list li,
+html.dark .tech-list-grid li,
+html.dark .about-section p,
+html.dark .project-subtitle,
+html.dark .read-more-link,
+html.dark a,
+html.dark .main-nav li a,
+html.dark .hero-text .subheadline,
+html.dark .tagline {
+    color: var(--text-primary-dark) !important;
+}
