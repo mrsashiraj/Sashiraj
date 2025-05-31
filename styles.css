@@ -1,226 +1,250 @@
 /* Universal Styles & Variables */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&display=swap');
+/* The font imports below should be in your HTML <head> */
+/* <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" /> */
+/* <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" /> */
+
 
 :root {
-    /* Light Theme Colors - Tech Professional Palette */
-    --background-light: #FDFDFD;                /* Very light, clean off-white */
-    --text-light: #333A45;                      /* Deep, cool grey-blue */
-    --accent-light: #007BFF;                    /* Classic tech blue */
-    --border-light: #EDEDED;                    /* Subtle light grey */
-    --shadow-light: rgba(51, 58, 69, 0.07);      /* Shadow based on text color */
-    --card-bg-light: #FFFFFF;                   /* Pure white for card backgrounds */
-    --secondary-text-light: #6A7380;            /* Muted grey-blue */
-    --header-bg-light: #FFFFFF;                 /* Header background */
-    --nav-bg-light: #F8F9FA;                    /* Slightly off-white for nav */
-    --accent-secondary-light: #A0A7B0;          /* Lighter grey-blue */
+    /* Fonts - New Specification */
+    --font-logo: 'Montserrat', sans-serif;
+    --font-primary: 'Libre Baskerville', serif; /* For body and paragraphs */
+    --font-heading: 'Libre Baskerville', serif; /* For headings */
 
-    /* Dark Theme Colors - Tech Professional Palette */
-    --background-dark: #1A1D23;                 /* Very dark, cool charcoal */
-    --text-dark: #EAEBEE;                       /* Soft, light grey */
-    --accent-dark: #3395FF;                     /* Brighter tech blue for dark mode */
-    --border-dark: #2A2F38;                     /* Subtle darker border */
-    --shadow-dark: rgba(234, 235, 238, 0.08);    /* Shadow based on text color */
-    --card-bg-dark: #23272F;                    /* Slightly lighter charcoal for cards */
-    --secondary-text-dark: #9DA3AD;             /* Muted light grey */
-    --header-bg-dark: #1F2228;                  /* Header background for dark theme */
-    --nav-bg-dark: #23272F;                     /* Navigation bar background for dark theme */
-    --accent-secondary-dark: #7A828E;           /* Muted grey */
-
-    /* Adaptive Accent Gradients (Tech Blue) */
-    --gradient-light: linear-gradient(45deg, #007BFF, #0056B3); /* Tech blue gradient */
-    --gradient-dark: linear-gradient(45deg, #3395FF, #0062CC);  /* Brighter tech blue gradient for dark */
-
-    /* AI/ML Specific Gradients & Glows (Modernized Purple - often used in tech for innovation) */
-    --gradient-light-ai: linear-gradient(90deg, #8A3FFC, #C06CFF); /* Vibrant, modern purple */
-    --gradient-dark-ai: linear-gradient(90deg, #A46BFF, #D79FFF);  /* Lighter, glowing purple for dark */
-    --glow-light: rgba(138, 63, 252, 0.4);  /* Purple glow */
-    --glow-dark: rgba(164, 107, 255, 0.5); /* Lighter purple glow */
-
-    /* Typography Variables - Updated Fonts */
-    --font-primary: 'Montserrat', sans-serif;
-    --font-heading: 'Inter', sans-serif; /* Changed to Inter for a clean tech look */
-    --font-size-base: 1rem; /* 16px */
+    --font-size-base: 1rem; /* 16px for paragraphs */
     --line-height-base: 1.6;
 
-    /* Spacing Scale (based on 8px grid) - Unchanged */
-    --spacing-xs: 0.5rem;   /* 8px */
-    --spacing-sm: 1rem;     /* 16px */
-    --spacing-md: 1.5rem;   /* 24px */
-    --spacing-lg: 2rem;     /* 32px */
-    --spacing-xl: 3rem;     /* 48px */
-    --spacing-xxl: 4rem;    /* 64px */
+    /* Colors - New Specification */
+    /* Light Mode */
+    --background-light: #f5f5f5;
+    --header-bg-light: #eeeeee;
+    --card-bg-light: #ffffff;
+    --text-primary-light: #111111;
+    --text-secondary-light: #444444;
+    --text-footer-light: #666666;
+    --logo-color-light: #4f46e5; /* Indigo-600 */
+    --button-bg-light: #5c5470; /* Muted purple */
+    --button-hover-bg-light: #7a6f9b;
+    --button-text-light: #ffffff;
+    --focus-ring-light: #bcb2e5; /* Light purple for focus */
+    --border-light: #e0e0e0; /* A neutral light border, adjust if needed */
+    --shadow-light: rgba(17, 17, 17, 0.1); /* Based on primary text */
 
-    /* Border Radius Variables - Unchanged */
-    --border-radius-sm: 4px;
-    --border-radius-md: 8px;
-    --border-radius-lg: 12px;
+    /* Dark Mode */
+    --background-dark: #0f0f0f;
+    --header-bg-dark: #161616;
+    --card-bg-dark: #1a1a1a;
+    --text-primary-dark: #e6e6e6;
+    --text-secondary-dark: #999999;
+    --text-footer-dark: #999999;
+    --logo-color-dark: #a5b4fc; /* Indigo-400 */
+    --button-bg-dark: #5c5470; /* Same as light mode */
+    --button-hover-bg-dark: #7a6f9b; /* Same as light mode */
+    --button-text-dark: #ffffff; /* Same as light mode */
+    --focus-ring-dark: #a5b4fc; /* Darker purple for focus, matching logo */
+    --border-dark: #333333; /* A neutral dark border, adjust if needed */
+    --shadow-dark: rgba(230, 230, 230, 0.08); /* Based on primary text */
+
+    /* Card accent border colors */
+    --project-alpha-accent: #bcb2e5; /* light purple */
+    --project-beta-accent: #e6a8d7; /* pinkish purple */
+    --project-gamma-accent: #a8d0da; /* light blue */
+
+    /* Spacing Scale (based on your Tailwind references) */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem;  /* 8px - px-2 */
+    --spacing-md: 1rem;    /* 16px - px-4 / py-2 */
+    --spacing-lg: 1.5rem;  /* 24px - p-6, gap-6 */
+    --spacing-xl: 2rem;    /* 32px - p-8 */
+    --spacing-xxl: 2.5rem; /* 40px - mb-10 */
+
+    /* Border Radius Variables */
+    --border-radius-sm: 0.5rem; /* rounded-lg for buttons */
+    --border-radius-md: 1rem;   /* rounded-2xl for cards */
+    --border-radius-lg: 1rem; /* Keeping consistent for now */
 }
 
 /* --- Base Styling & Global Resets --- */
-/* Apply box-sizing globally for consistent layout behavior */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-/* Base body styles, applying light theme by default */
-body {
+/* Apply light theme by default. `html` class will handle dark mode */
+html {
     background-color: var(--background-light);
-    color: var(--text-light);
+    color: var(--text-primary-light);
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    margin: 0;
-    padding: 0;
     /* Smooth transition for theme changes */
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- Dark Theme Activation --- */
-/* When 'dark-theme' class is applied to body, switch to dark mode variables */
-body.dark-theme {
+/* Dark Theme Activation - When 'dark' class is applied to html, switch variables */
+html.dark { /* Changed from body.dark-theme to html.dark */
     background-color: var(--background-dark);
-    color: var(--text-dark);
+    color: var(--text-primary-dark);
 }
+
+/* Base body styles (remove background/color/font from body if html handles it) */
+body {
+    margin: 0;
+    padding: 0;
+    /* This ensures body takes up full height and respects html background */
+    min-height: 100vh;
+}
+
 
 /* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading); /* Use Inter for headings */
-    color: var(--text-light); /* Default heading color for light theme */
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-heading);
+    color: var(--text-primary-light); /* Default heading color for light theme */
+    margin-top: var(--spacing-xxl); /* Start with larger top margin for headings */
+    margin-bottom: var(--spacing-md);
     line-height: 1.2;
-    font-weight: 700; 
-    transition: color 0.4s ease; /* Smooth color transition for headings */
+    transition: color 0.3s ease; /* Smooth color transition for headings */
 }
 
 /* Headings in dark theme */
-body.dark-theme h1,
-body.dark-theme h2,
-body.dark-theme h3,
-body.dark-theme h4,
-body.dark-theme h5,
-body.dark-theme h6 {
-    color: var(--text-dark);
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+    color: var(--text-primary-dark);
 }
 
-/* Specific font sizes for headings - Inter is generally more compact than Playfair */
-h1 { font-size: 2.5rem; } /* Slightly adjusted for Inter */
-h2 { font-size: 2.0rem; } /* Slightly adjusted for Inter */
-h3 { font-size: 1.7rem; } /* Slightly adjusted for Inter */
-h4 { font-size: 1.3rem; } /* Slightly adjusted for Inter */
-h5 { font-size: 1.1rem; }
-h6 { font-size: 0.9rem; }
+/* Specific font sizes and weights for headings based on brief */
+h1 { font-size: 2rem; font-weight: 700; /* Use for large titles if needed, adjust if h2 is main heading */}
+h2 { font-size: 1.25rem; font-weight: 600; }
+h3 { font-size: 1.125rem; font-weight: 500; }
+h4 { font-size: 1.1rem; font-weight: 500; /* Default for smaller subheadings */}
+h5 { font-size: 1rem; font-weight: 400; }
+h6 { font-size: 0.9rem; font-weight: 400; }
+
 
 p {
-    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-base); /* 1rem */
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
 }
 
 /* Link styling */
 a {
-    color: var(--accent-light);
+    color: var(--logo-color-light); /* Using the main accent color for links */
     text-decoration: none;
     transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 /* Links in dark theme */
-body.dark-theme a {
-    color: var(--accent-dark);
+html.dark a {
+    color: var(--logo-color-dark);
 }
 
 a:hover {
-    opacity: 0.8; 
-    text-decoration: underline; 
+    opacity: 0.8;
+    text-decoration: underline;
 }
 
 /* --- Utility Classes --- */
 .section-description {
     text-align: center;
     max-width: 800px;
-    margin: 1em auto 2em auto;
+    margin: var(--spacing-md) auto var(--spacing-xxl) auto; /* Adjusted margins */
     font-size: 1.1em;
     opacity: 0.9;
+    color: var(--text-secondary-light); /* Use secondary text color */
 }
+html.dark .section-description {
+    color: var(--text-secondary-dark);
+}
+
 
 /* --- Header --- */
 .main-header {
     background-color: var(--header-bg-light);
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-lg); /* Tailwind p-6 */
     box-shadow: 0 2px 5px var(--shadow-light);
     position: relative;
     transition: background-color 0.3s, box-shadow 0.3s;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
-body.dark-theme .main-header {
+html.dark .main-header {
     background-color: var(--header-bg-dark);
     box-shadow: 0 2px 5px var(--shadow-dark);
 }
 
-.header-content {
-    flex-grow: 1; 
-    text-align: left;
-}
-
 .site-logo {
     margin: 0;
-    font-size: 2.0em; /* Adjusted for Inter */
+    font-family: var(--font-logo); /* Montserrat */
+    font-size: 2rem; /* 32px */
     font-weight: 700;
-    color: var(--text-light); 
+    text-transform: uppercase; /* Uppercase */
+    letter-spacing: 0.15em; /* Letter spacing */
+    color: var(--logo-color-light);
+    user-select: none; /* Disable text highlight */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For IE/Edge */
+    transition: color 0.3s ease;
 }
 
-body.dark-theme .site-logo {
-    color: var(--text-dark); 
+html.dark .site-logo {
+    color: var(--logo-color-dark);
 }
 
 .tagline {
     font-size: 1em;
     margin-top: 0.2em;
     opacity: 0.8;
-    color: var(--text-light);
+    color: var(--text-secondary-light); /* Use secondary text */
 }
 
-body.dark-theme .tagline {
-    color: var(--text-dark);
+html.dark .tagline {
+    color: var(--text-secondary-dark);
 }
 
 #theme-toggle {
-    background-color: var(--accent-light);
-    color: white;
+    background-color: var(--button-bg-light);
+    color: var(--button-text-light);
     border: none;
-    padding: 0.6em 1.2em;
-    border-radius: var(--border-radius-md); 
+    padding: var(--spacing-sm) var(--spacing-md); /* 0.5rem 1rem */
+    border-radius: var(--border-radius-sm); /* rounded-lg */
     cursor: pointer;
     font-size: 0.9em;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    flex-shrink: 0; 
-    margin-left: var(--spacing-sm); 
+    flex-shrink: 0;
+    margin-left: var(--spacing-md);
 }
 
-body.dark-theme #theme-toggle {
-    background-color: var(--accent-dark);
+html.dark #theme-toggle {
+    background-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
 }
 
 #theme-toggle:hover {
-    opacity: 0.9;
+    background-color: var(--button-hover-bg-light);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px var(--shadow-light);
 }
-body.dark-theme #theme-toggle:hover {
+html.dark #theme-toggle:hover {
+    background-color: var(--button-hover-bg-dark);
     box-shadow: 0 4px 8px var(--shadow-dark);
 }
 
 /* --- Navigation --- */
 .main-nav {
-    background-color: var(--nav-bg-light);
+    background-color: var(--header-bg-light); /* Using header-bg for nav for consistency */
     box-shadow: 0 1px 3px var(--shadow-light);
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-body.dark-theme .main-nav {
-    background-color: var(--nav-bg-dark);
+html.dark .main-nav {
+    background-color: var(--header-bg-dark);
     box-shadow: 0 1px 3px var(--shadow-dark);
 }
 
@@ -230,185 +254,214 @@ body.dark-theme .main-nav {
     margin: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .main-nav li a {
     display: block;
     padding: 1em 1.5em;
-    color: var(--text-light);
-    font-weight: 600; /* Montserrat bold */
+    color: var(--text-primary-light);
+    font-weight: 600; /* Montserrat bold */ /* Use a weight available in Libre Baskerville for consistency if not Montserrat */
     transition: background-color 0.3s, color 0.3s;
 }
 
-body.dark-theme .main-nav li a {
-    color: var(--text-dark);
+html.dark .main-nav li a {
+    color: var(--text-primary-dark);
 }
 
 .main-nav li a:hover,
 .main-nav li a.active {
-    background-color: var(--accent-light);
-    color: white;
+    background-color: var(--button-hover-bg-light); /* Use button hover color */
+    color: white; /* Ensure good contrast */
     text-decoration: none;
 }
 
-body.dark-theme .main-nav li a:hover,
-body.dark-theme .main-nav li a.active {
-    background-color: var(--accent-dark);
+html.dark .main-nav li a:hover,
+html.dark .main-nav li a.active {
+    background-color: var(--button-hover-bg-dark);
     color: white;
 }
 
 /* --- Main Content Area (General Sections) --- */
 main {
-    max-width: 1200px; 
-    margin: var(--spacing-md) auto;
-    padding: 0 var(--spacing-sm); 
+    max-width: 1200px;
+    margin: var(--spacing-xl) auto; /* Adjusted margin-top for consistency */
+    padding: 0 var(--spacing-xl); /* Tailwind p-8 (for page padding) */
 }
 
 /* Generic Section Styling */
 section {
-    padding: var(--spacing-lg) var(--spacing-md);
-    margin-bottom: var(--spacing-lg); 
+    padding: var(--spacing-lg); /* Tailwind p-6 */
+    margin-bottom: var(--spacing-xxl); /* Tailwind mb-10 */
     background-color: var(--card-bg-light);
-    border-radius: var(--border-radius-md);
-    box-shadow: 0 2px 8px var(--shadow-light);
+    border-radius: var(--border-radius-md); /* Tailwind rounded-2xl */
+    box-shadow: 0 4px 10px var(--shadow-light); /* Subtle shadow by default */
     transition: background-color 0.3s, box-shadow 0.3s;
+    border-top: 4px solid transparent; /* Placeholder for card accent border */
 }
 
-body.dark-theme section {
+html.dark section {
     background-color: var(--card-bg-dark);
-    box-shadow: 0 2px 8px var(--shadow-dark);
+    box-shadow: 0 4px 10px var(--shadow-dark);
 }
 
 section h2 {
     text-align: center;
-    margin-bottom: var(--spacing-md);
-    font-size: 1.8em; /* Adjusted for Inter */
-    color: var(--accent-light);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.25rem; /* From brief */
+    font-weight: 600;
+    color: var(--logo-color-light); /* Using logo color as section title accent */
 }
 
-body.dark-theme section h2 {
-    color: var(--accent-dark);
+html.dark section h2 {
+    color: var(--logo-color-dark);
 }
 
 /* --- Buttons --- */
 .button {
-    padding: 0.8em 1.8em;
-    border-radius: var(--border-radius-md); 
-    font-weight: 600; /* Montserrat bold */
+    padding: var(--spacing-sm) var(--spacing-md); /* px-4 py-2 */
+    border-radius: var(--border-radius-sm); /* rounded-lg */
+    font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    text-decoration: none; 
-    display: inline-block; 
-    white-space: nowrap; 
-    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    text-align: center;
     cursor: pointer;
-    font-family: var(--font-primary); 
+    font-family: var(--font-primary);
+    box-shadow: 0 2px 4px var(--shadow-light); /* subtle shadow for buttons */
+    outline: none; /* Remove default outline */
 }
+html.dark .button {
+    box-shadow: 0 2px 4px var(--shadow-dark);
+}
+
+.button:focus-visible { /* For keyboard navigation accessibility */
+    box-shadow: 0 0 0 3px var(--focus-ring-light);
+}
+html.dark .button:focus-visible {
+    box-shadow: 0 0 0 3px var(--focus-ring-dark);
+}
+
 
 .primary-button {
-    background-color: var(--accent-light);
-    color: white;
-    border: 2px solid var(--accent-light);
+    background-color: var(--button-bg-light);
+    color: var(--button-text-light);
+    border: 2px solid var(--button-bg-light);
 }
 
-body.dark-theme .primary-button {
-    background-color: var(--accent-dark);
-    border-color: var(--accent-dark);
-    color: white; /* Ensuring text color is white for primary button in dark mode */
+html.dark .primary-button {
+    background-color: var(--button-bg-dark);
+    border-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
 }
 
 .primary-button:hover {
-    background-color: #0056b3; /* Darker tech blue */
-    border-color: #0056b3;
-    transform: translateY(-3px);
+    background-color: var(--button-hover-bg-light);
+    border-color: var(--button-hover-bg-light);
+    transform: translateY(-2px); /* Slightly less aggressive than original */
     box-shadow: 0 6px 12px var(--shadow-light);
 }
-body.dark-theme .primary-button:hover {
-    background-color: #0062CC; /* Slightly darker accent for dark theme */
-    border-color: #0062CC;
+html.dark .primary-button:hover {
+    background-color: var(--button-hover-bg-dark);
+    border-color: var(--button-hover-bg-dark);
     box-shadow: 0 6px 12px var(--shadow-dark);
 }
 
 .secondary-button {
     background-color: transparent;
-    color: var(--accent-light);
-    border: 2px solid var(--accent-light);
+    color: var(--button-bg-light); /* Text color is the button primary color */
+    border: 2px solid var(--button-bg-light);
 }
 
-body.dark-theme .secondary-button {
-    color: var(--accent-dark);
-    border-color: var(--accent-dark);
-    background-color: var(--card-bg-dark); /* Added distinct background for secondary button in dark mode */
+html.dark .secondary-button {
+    color: var(--button-bg-dark);
+    border-color: var(--button-bg-dark);
+    /* In dark mode, you might want a transparent background for secondary as well or a very subtle card-bg-dark */
+    background-color: transparent; /* Keep transparent for secondary button in dark mode */
 }
 
 .secondary-button:hover {
-    background-color: var(--accent-light);
+    background-color: var(--button-bg-light); /* Fills with color on hover */
     color: white;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 6px 12px var(--shadow-light);
 }
-body.dark-theme .secondary-button:hover {
-    background-color: var(--accent-dark); /* On hover, it gets the accent background */
-    color: white; /* Ensure text color changes for contrast */
+html.dark .secondary-button:hover {
+    background-color: var(--button-bg-dark);
+    color: white;
     box-shadow: 0 6px 12px var(--shadow-dark);
 }
 
 /* --- Homepage Hero Section --- */
 .hero-section {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: var(--spacing-xl) var(--spacing-sm);
-    margin-bottom: var(--spacing-lg); 
+    padding: var(--spacing-xxl) var(--spacing-md); /* 2.5rem vertical, 1rem horizontal */
+    margin-bottom: var(--spacing-xxl);
+    background-color: var(--card-bg-light); /* Added card background for hero */
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 10px var(--shadow-light);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+html.dark .hero-section {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 4px 10px var(--shadow-dark);
 }
 
 .hero-text h2 {
-    font-size: 2.2em; /* Adjusted for Inter */
+    font-size: 2.2em; /* Adjusted for impact */
     margin-bottom: 0.5em;
-    color: var(--accent-light); 
+    color: var(--logo-color-light); /* Use logo color as accent */
 }
 
-body.dark-theme .hero-text h2 {
-    color: var(--accent-dark); 
+html.dark .hero-text h2 {
+    color: var(--logo-color-dark);
 }
 
 .hero-text .subheadline {
     font-size: 1.2em;
     margin-bottom: 1.5em;
     opacity: 0.9;
+    color: var(--text-secondary-light);
+}
+html.dark .hero-text .subheadline {
+    color: var(--text-secondary-dark);
 }
 
 .cta-buttons {
     display: flex;
-    gap: var(--spacing-sm); 
+    gap: var(--spacing-md); /* Tailwind gap-6 */
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: var(--spacing-lg); /* Add margin for separation */
 }
 
 .hero-image-container {
     margin-top: var(--spacing-lg);
     position: relative;
-    width: 200px; 
+    width: 200px;
     height: 200px;
-    border-radius: 50%; 
+    border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 4px 10px var(--shadow-light);
     transition: box-shadow 0.3s;
 }
 
-body.dark-theme .hero-image-container {
+html.dark .hero-image-container {
     box-shadow: 0 4px 10px var(--shadow-dark);
 }
 
 .hero-photo {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
-    opacity: 0; 
-    transform: translateY(20px); 
-    animation: fadeInSlideUp 1s ease-out forwards 0.5s; 
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 1s ease-out forwards 0.5s;
 }
 
 @keyframes fadeInSlideUp {
@@ -420,7 +473,7 @@ body.dark-theme .hero-image-container {
 
 /* --- Intro Section (for homepage and about page) --- */
 .intro-section {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--spacing-lg); /* Tailwind p-6 */
     text-align: center;
 }
 
@@ -429,64 +482,78 @@ body.dark-theme .hero-image-container {
     max-width: 700px;
     margin: 0 auto;
     opacity: 0.9;
+    color: var(--text-secondary-light);
+}
+html.dark .value-prop {
+    color: var(--text-secondary-dark);
 }
 
 /* --- Featured Projects (Homepage) --- */
 .featured-projects {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--spacing-lg); /* Tailwind p-6 */
     text-align: center;
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr; 
-    gap: var(--spacing-md);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg); /* Tailwind gap-6 */
     margin-bottom: var(--spacing-lg);
 }
 
 .project-card {
-    background-color: var(--card-bg-light); 
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius-md);
+    background-color: var(--card-bg-light);
+    padding: var(--spacing-lg); /* Tailwind p-6 */
+    border-radius: var(--border-radius-md); /* Tailwind rounded-2xl */
     box-shadow: 0 2px 5px var(--shadow-light);
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-    border: 1px solid var(--border-light);
-    display: flex; 
+    border-top: 4px solid var(--border-light); /* Default card border */
+    display: flex;
     flex-direction: column;
-    height: 100%; 
+    height: 100%;
 }
-body.dark-theme .project-card {
-    background-color: var(--card-bg-dark); 
+html.dark .project-card {
+    background-color: var(--card-bg-dark);
     box-shadow: 0 2px 5px var(--shadow-dark);
-    border-color: var(--border-dark);
+    border-top-color: var(--border-dark);
 }
+
+/* Card accent border colors for specific projects (you'll need to add these classes in HTML) */
+.project-alpha { border-top-color: var(--project-alpha-accent); }
+.project-beta { border-top-color: var(--project-beta-accent); }
+.project-gamma { border-top-color: var(--project-gamma-accent); }
+html.dark .project-alpha { border-top-color: var(--project-alpha-accent); }
+html.dark .project-beta { border-top-color: var(--project-beta-accent); }
+html.dark .project-gamma { border-top-color: var(--project-gamma-accent); }
+
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px var(--shadow-light);
 }
-body.dark-theme .project-card:hover {
+html.dark .project-card:hover {
     box-shadow: 0 8px 16px var(--shadow-dark);
 }
 
 .project-card img {
     width: 100%;
-    height: 180px; 
+    height: 180px;
     object-fit: cover;
-    border-radius: var(--border-radius-sm);
-    margin-bottom: var(--spacing-sm);
+    border-radius: var(--border-radius-sm); /* rounded-lg for image */
+    margin-bottom: var(--spacing-md);
     display: block;
 }
 
 .project-card h3 {
-    font-size: 1.25em; /* Adjusted for Inter */
+    font-size: 1.125rem; /* From brief */
+    font-weight: 500;
     margin-top: 0;
     margin-bottom: 0.5em;
-    color: var(--accent-light);
+    color: var(--text-primary-light); /* Changed to primary text color */
 }
-body.dark-theme .project-card h3 {
-    color: var(--accent-dark);
+html.dark .project-card h3 {
+    color: var(--text-primary-dark);
 }
 
 .project-tags {
@@ -495,39 +562,39 @@ body.dark-theme .project-card h3 {
 
 .project-tags span {
     display: inline-block;
-    background-color: var(--accent-light);
+    background-color: var(--button-bg-light); /* Using button color for tags */
     color: white;
     font-size: 0.75em;
     padding: 0.3em 0.7em;
     border-radius: var(--border-radius-sm);
     margin-right: 0.5em;
-    margin-bottom: 0.5em; 
+    margin-bottom: 0.5em;
     opacity: 0.9;
 }
-body.dark-theme .project-tags span {
-    background-color: var(--accent-dark);
+html.dark .project-tags span {
+    background-color: var(--button-bg-dark);
 }
 
 .project-card p {
     font-size: 0.9em;
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-light);
-    flex-grow: 1; 
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary-light); /* Changed to secondary text */
+    flex-grow: 1;
 }
-body.dark-theme .project-card p {
-    color: var(--text-dark);
+html.dark .project-card p {
+    color: var(--text-secondary-dark);
 }
 
 .read-more-link {
     display: inline-block;
-    font-weight: 600; /* Montserrat bold */
-    color: var(--accent-light);
-    margin-top: auto; 
+    font-weight: 600;
+    color: var(--logo-color-light); /* Using logo color for links */
+    margin-top: auto;
     text-decoration: none;
     transition: color 0.3s;
 }
-body.dark-theme .read-more-link {
-    color: var(--accent-dark);
+html.dark .read-more-link {
+    color: var(--logo-color-dark);
 }
 .read-more-link:hover {
     text-decoration: underline;
@@ -535,49 +602,54 @@ body.dark-theme .read-more-link {
 
 .all-projects-cta {
     text-align: center;
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-xxl);
 }
 
 /* --- About Me Page Specifics --- */
 .about-section {
-    max-width: 900px; 
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .about-section p {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary-light);
+}
+html.dark .about-section p {
+    color: var(--text-primary-dark);
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
+    gap: var(--spacing-lg); /* Tailwind gap-6 */
+    margin-top: var(--spacing-lg);
 }
 
 .skill-area-card {
-    background-color: var(--card-bg-light); 
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius-md);
+    background-color: var(--card-bg-light);
+    padding: var(--spacing-lg); /* Tailwind p-6 */
+    border-radius: var(--border-radius-md); /* Tailwind rounded-2xl */
     box-shadow: 0 2px 5px var(--shadow-light);
     border: 1px solid var(--border-light);
     transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
-body.dark-theme .skill-area-card {
+html.dark .skill-area-card {
     background-color: var(--card-bg-dark);
     box-shadow: 0 2px 5px var(--shadow-dark);
     border-color: var(--border-dark);
 }
 
 .skill-area-card h3 {
-    color: var(--accent-light);
+    color: var(--logo-color-light);
     margin-top: 0;
     margin-bottom: 0.5em;
-    font-size: 1.2em; /* Adjusted for Inter */
+    font-size: 1.125rem; /* From brief */
+    font-weight: 500;
 }
-body.dark-theme .skill-area-card h3 {
-    color: var(--accent-dark);
+html.dark .skill-area-card h3 {
+    color: var(--logo-color-dark);
 }
 
 .tech-list-grid {
@@ -594,16 +666,18 @@ body.dark-theme .skill-area-card h3 {
 }
 
 .tech-list-grid li {
-    background-color: var(--card-bg-light); 
-    padding: 0.8em 1.2em;
-    border-left: 4px solid var(--accent-light);
+    background-color: var(--card-bg-light);
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--button-bg-light); /* Using button color as accent */
     border-radius: var(--border-radius-sm);
     margin-bottom: 0.5em;
     transition: background-color 0.3s, border-color 0.3s;
+    color: var(--text-primary-light);
 }
-body.dark-theme .tech-list-grid li {
+html.dark .tech-list-grid li {
     background-color: var(--card-bg-dark);
-    border-left-color: var(--accent-dark);
+    border-left-color: var(--button-bg-dark);
+    color: var(--text-primary-dark);
 }
 
 .domain-list {
@@ -611,20 +685,22 @@ body.dark-theme .tech-list-grid li {
     padding: 0;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.8em;
+    gap: var(--spacing-md);
     margin-top: var(--spacing-md);
 }
 
 .domain-list li {
-    background-color: var(--card-bg-light); 
-    padding: 0.8em 1.2em;
-    border-left: 4px solid var(--accent-light);
+    background-color: var(--card-bg-light);
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--button-bg-light);
     border-radius: var(--border-radius-sm);
     transition: background-color 0.3s, border-color 0.3s;
+    color: var(--text-primary-light);
 }
-body.dark-theme .domain-list li {
+html.dark .domain-list li {
     background-color: var(--card-bg-dark);
-    border-left-color: var(--accent-dark);
+    border-left-color: var(--button-bg-dark);
+    color: var(--text-primary-dark);
 }
 
 /* --- Portfolio Page Specifics --- */
@@ -634,105 +710,115 @@ body.dark-theme .domain-list li {
 
 .project-grid-full {
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
 }
 
 .project-card-full {
     background-color: var(--card-bg-light);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg); /* Tailwind p-6 */
+    border-radius: var(--border-radius-md); /* Tailwind rounded-2xl */
     box-shadow: 0 4px 10px var(--shadow-light);
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-    border: 1px solid var(--border-light);
-    display: flex; 
+    border-top: 4px solid var(--border-light); /* Default border for full cards */
+    display: flex;
     flex-direction: column;
-    height: 100%; 
+    height: 100%;
 }
-body.dark-theme .project-card-full {
+html.dark .project-card-full {
     background-color: var(--card-bg-dark);
     box-shadow: 0 4px 10px var(--shadow-dark);
-    border-color: var(--border-dark);
+    border-top-color: var(--border-dark);
 }
+
+/* Accent borders for full project cards (same as featured) */
+.project-card-full.project-alpha { border-top-color: var(--project-alpha-accent); }
+.project-card-full.project-beta { border-top-color: var(--project-beta-accent); }
+.project-card-full.project-gamma { border-top-color: var(--project-gamma-accent); }
+html.dark .project-card-full.project-alpha { border-top-color: var(--project-alpha-accent); }
+html.dark .project-card-full.project-beta { border-top-color: var(--project-beta-accent); }
+html.dark .project-card-full.project-gamma { border-top-color: var(--project-gamma-accent); }
+
 
 .project-card-full:hover {
     transform: translateY(-7px);
     box-shadow: 0 12px 20px var(--shadow-light);
 }
-body.dark-theme .project-card-full:hover {
+html.dark .project-card-full:hover {
     box-shadow: 0 12px 20px var(--shadow-dark);
 }
 
 .project-card-full img {
     width: 100%;
-    height: 220px; 
+    height: 220px;
     object-fit: cover;
     border-radius: var(--border-radius-sm);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
     display: block;
 }
 
 .project-card-full h3 {
-    font-size: 1.35em; /* Adjusted for Inter */
+    font-size: 1.125rem; /* From brief */
+    font-weight: 500;
     margin-top: 0;
     margin-bottom: 0.6em;
-    color: var(--accent-light);
+    color: var(--text-primary-light);
 }
-body.dark-theme .project-card-full h3 {
-    color: var(--accent-dark);
+html.dark .project-card-full h3 {
+    color: var(--text-primary-dark);
 }
 
 /* --- Project Case Study Pages --- */
 .project-case-study {
-    max-width: 900px; 
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .project-header {
     text-align: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xxl);
 }
 
 .project-header h2 {
-    font-size: 2.2em; /* Adjusted for Inter */
+    font-size: 2.2em;
     margin-bottom: 0.3em;
-    color: var(--accent-light); 
+    color: var(--logo-color-light);
 }
-body.dark-theme .project-header h2 {
-    color: var(--accent-dark); 
+html.dark .project-header h2 {
+    color: var(--logo-color-dark);
 }
 
 .project-subtitle {
     font-size: 1.2em;
-    color: var(--text-light);
+    color: var(--text-secondary-light);
     opacity: 0.9;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
 }
-body.dark-theme .project-subtitle {
-    color: var(--text-dark);
+html.dark .project-subtitle {
+    color: var(--text-secondary-dark);
 }
 
 .project-details-meta {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
     font-size: 0.9em;
-    color: var(--accent-secondary-light);
+    color: var(--text-secondary-light);
 }
-body.dark-theme .project-details-meta {
-    color: var(--accent-secondary-dark);
+html.dark .project-details-meta {
+    color: var(--text-secondary-dark);
 }
 
 .project-details-meta strong {
-    color: var(--text-light);
+    color: var(--text-primary-light);
 }
-body.dark-theme .project-details-meta strong {
-    color: var(--text-dark);
+html.dark .project-details-meta strong {
+    color: var(--text-primary-dark);
 }
 
 .project-hero-image {
@@ -741,33 +827,42 @@ body.dark-theme .project-details-meta strong {
     object-fit: cover;
     border-radius: var(--border-radius-md);
     box-shadow: 0 5px 15px var(--shadow-light);
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-lg);
 }
-body.dark-theme .project-hero-image {
+html.dark .project-hero-image {
     box-shadow: 0 5px 15px var(--shadow-dark);
 }
 
 .project-section h3 {
-    font-size: 1.6em; /* Adjusted for Inter */
-    color: var(--accent-light);
+    font-size: 1.8rem; /* Adjusted for case study sub-sections */
+    color: var(--logo-color-light); /* Changed to logo color */
     margin-top: var(--spacing-xxl);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
     border-bottom: 2px solid var(--border-light);
     padding-bottom: 0.5em;
+    font-weight: 600; /* Ensure prominence */
 }
-body.dark-theme .project-section h3 {
-    color: var(--accent-dark);
+html.dark .project-section h3 {
+    color: var(--logo-color-dark);
     border-bottom-color: var(--border-dark);
 }
 
 .project-section p {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary-light);
+}
+html.dark .project-section p {
+    color: var(--text-primary-dark);
 }
 
 .project-section ul {
-    list-style: disc; 
-    margin-left: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+    list-style: disc;
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary-light);
+}
+html.dark .project-section ul {
+    color: var(--text-primary-dark);
 }
 
 .project-section li {
@@ -786,13 +881,13 @@ body.dark-theme .project-section h3 {
     padding: 0;
     text-align: center;
     background-color: var(--card-bg-light);
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md);
     border-radius: var(--border-radius-md);
     box-shadow: 0 2px 8px var(--shadow-light);
     border: 1px solid var(--border-light);
     transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
-body.dark-theme .visual-gallery figure {
+html.dark .visual-gallery figure {
     background-color: var(--card-bg-dark);
     box-shadow: 0 2px 8px var(--shadow-dark);
     border-color: var(--border-dark);
@@ -811,16 +906,16 @@ body.dark-theme .visual-gallery figure {
 .visual-gallery figcaption {
     font-style: italic;
     font-size: 0.9em;
-    color: var(--text-light);
+    color: var(--text-secondary-light);
     opacity: 0.8;
 }
-body.dark-theme .visual-gallery figcaption {
-    color: var(--text-dark);
+html.dark .visual-gallery figcaption {
+    color: var(--text-secondary-dark);
 }
 
 .dashboard-embed {
     margin-top: var(--spacing-xxl);
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg); /* Tailwind p-6 */
     background-color: var(--card-bg-light);
     border-radius: var(--border-radius-md);
     box-shadow: 0 2px 8px var(--shadow-light);
@@ -828,7 +923,7 @@ body.dark-theme .visual-gallery figcaption {
     border: 1px solid var(--border-light);
     transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
-body.dark-theme .dashboard-embed {
+html.dark .dashboard-embed {
     background-color: var(--card-bg-dark);
     box-shadow: 0 2px 8px var(--shadow-dark);
     border-color: var(--border-dark);
@@ -836,24 +931,24 @@ body.dark-theme .dashboard-embed {
 
 .dashboard-embed h4 {
     margin-top: 0;
-    color: var(--accent-light);
+    color: var(--logo-color-light);
 }
-body.dark-theme .dashboard-embed h4 {
-    color: var(--accent-dark);
+html.dark .dashboard-embed h4 {
+    color: var(--logo-color-dark);
 }
 
 .dashboard-embed .tableauViz {
-    width: 100% !important; 
-    height: 450px !important; 
+    width: 100% !important;
+    height: 450px !important;
 }
 
 .project-links ul {
     list-style: none;
     padding: 0;
-    margin-top: var(--spacing-sm);
+    margin-top: var(--spacing-md);
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
     justify-content: center;
 }
 
@@ -861,25 +956,28 @@ body.dark-theme .dashboard-embed h4 {
     display: flex;
     align-items: center;
     gap: 0.5em;
-    background-color: var(--accent-light);
-    color: white;
-    padding: 0.8em 1.5em;
-    border-radius: var(--border-radius-md);
+    background-color: var(--button-bg-light);
+    color: var(--button-text-light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
+    box-shadow: 0 2px 4px var(--shadow-light);
 }
-body.dark-theme .project-links li a {
-    background-color: var(--accent-dark);
+html.dark .project-links li a {
+    background-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
+    box-shadow: 0 2px 4px var(--shadow-dark);
 }
 
 .project-links li a:hover {
-    background-color: #0056b3; /* Darker tech blue */
-    transform: translateY(-3px);
+    background-color: var(--button-hover-bg-light);
+    transform: translateY(-2px);
     box-shadow: 0 4px 8px var(--shadow-light);
     text-decoration: none;
 }
-body.dark-theme .project-links li a:hover {
-    background-color: #0062CC; /* Darker accent for dark theme */
+html.dark .project-links li a:hover {
+    background-color: var(--button-hover-bg-dark);
     box-shadow: 0 4px 8px var(--shadow-dark);
 }
 
@@ -890,8 +988,8 @@ body.dark-theme .project-links li a:hover {
 
 .back-to-portfolio {
     text-align: center;
-    margin-top: var(--spacing-xl);
-    margin-bottom: var(--spacing-lg); 
+    margin-top: var(--spacing-xxl);
+    margin-bottom: var(--spacing-lg);
 }
 
 /* --- Resume Page Specifics --- */
@@ -899,22 +997,23 @@ body.dark-theme .project-links li a:hover {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    text-align: left; 
+    text-align: left;
 }
 
 .resume-page .resume-section h2 {
-    text-align: left; 
+    text-align: left;
 }
 
 .resume-page .resume-section h3 {
-    color: var(--accent-light);
+    color: var(--logo-color-light);
     margin-top: var(--spacing-md);
     margin-bottom: 0.8em;
     border-bottom: 1px solid var(--border-light);
     padding-bottom: 0.3em;
+    font-weight: 500; /* From brief */
 }
-body.dark-theme .resume-page .resume-section h3 {
-    color: var(--accent-dark);
+html.dark .resume-page .resume-section h3 {
+    color: var(--logo-color-dark);
     border-bottom-color: var(--border-dark);
 }
 
@@ -924,13 +1023,13 @@ body.dark-theme .resume-page .resume-section h3 {
 }
 
 .skills-category h4 {
-    margin-top: 1.2em;
-    margin-bottom: 0.8em;
-    font-size: 1.1em; 
-    color: var(--text-light);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1em;
+    color: var(--text-primary-light);
 }
-body.dark-theme .skills-category h4 {
-    color: var(--text-dark);
+html.dark .skills-category h4 {
+    color: var(--text-primary-dark);
 }
 
 .skill-list-inline {
@@ -939,36 +1038,38 @@ body.dark-theme .skills-category h4 {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8em;
+    gap: var(--spacing-sm);
 }
 
 .skill-list-inline li {
     background-color: var(--card-bg-light);
     padding: 0.5em 1em;
-    border-radius: 5px; 
+    border-radius: var(--border-radius-sm);
     border: 1px solid var(--border-light);
     font-size: 0.9em;
     transition: background-color 0.3s, border-color 0.3s;
+    color: var(--text-primary-light);
 }
-body.dark-theme .skill-list-inline li {
+html.dark .skill-list-inline li {
     background-color: var(--card-bg-dark);
     border-color: var(--border-dark);
+    color: var(--text-primary-dark);
 }
 
 .certification-item,
 .job-item,
 .education-item {
     background-color: var(--card-bg-light);
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg); /* Tailwind p-6 */
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius-md); /* Tailwind rounded-2xl */
     box-shadow: 0 1px 4px var(--shadow-light);
     border: 1px solid var(--border-light);
     transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
-body.dark-theme .certification-item,
-body.dark-theme .job-item,
-body.dark-theme .education-item {
+html.dark .certification-item,
+html.dark .job-item,
+html.dark .education-item {
     background-color: var(--card-bg-dark);
     box-shadow: 0 1px 4px var(--shadow-dark);
     border-color: var(--border-dark);
@@ -979,41 +1080,45 @@ body.dark-theme .education-item {
 .education-item h4 {
     margin-top: 0;
     margin-bottom: 0.3em;
-    color: var(--accent-light);
-    font-size: 1.15em; /* Adjusted for Inter */
+    color: var(--logo-color-light);
+    font-size: 1.15em;
 }
-body.dark-theme .certification-item h4,
-body.dark-theme .job-item h4,
-body.dark-theme .education-item h4 {
-    color: var(--accent-dark);
+html.dark .certification-item h4,
+html.dark .job-item h4,
+html.dark .education-item h4 {
+    color: var(--logo-color-dark);
 }
 
 .job-company {
-    font-weight: 400; /* Montserrat regular */
-    color: var(--text-light);
+    font-weight: 400;
+    color: var(--text-secondary-light);
     opacity: 0.9;
     font-size: 0.9em;
     margin-left: 0.5em;
 }
-body.dark-theme .job-company {
-    color: var(--text-dark);
+html.dark .job-company {
+    color: var(--text-secondary-dark);
 }
 
 .job-dates {
     font-style: italic;
     font-size: 0.9em;
-    color: var(--accent-secondary-light);
+    color: var(--text-secondary-light);
     margin-bottom: 0.8em;
     display: block;
 }
-body.dark-theme .job-dates {
-    color: var(--accent-secondary-dark);
+html.dark .job-dates {
+    color: var(--text-secondary-dark);
 }
 
 .job-item ul {
     list-style: disc;
     margin-left: var(--spacing-md);
     margin-top: 0.5em;
+    color: var(--text-primary-light);
+}
+html.dark .job-item ul {
+    color: var(--text-primary-dark);
 }
 
 .job-item li {
@@ -1023,7 +1128,7 @@ body.dark-theme .job-dates {
 
 /* --- Contact Page Specifics --- */
 .contact-page .contact-section {
-    max-width: 700px; 
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1031,18 +1136,18 @@ body.dark-theme .job-dates {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
+    gap: var(--spacing-md); /* Tailwind gap-6 */
+    margin-top: var(--spacing-lg);
 }
 
 .form-group label {
     display: block;
     margin-bottom: 0.5em;
-    font-weight: 600; /* Montserrat bold */
-    color: var(--text-light);
+    font-weight: 600;
+    color: var(--text-primary-light);
 }
-body.dark-theme .form-group label {
-    color: var(--text-dark);
+html.dark .form-group label {
+    color: var(--text-primary-dark);
 }
 
 .form-group input[type="text"],
@@ -1051,43 +1156,43 @@ body.dark-theme .form-group label {
     width: 100%;
     padding: 0.8em;
     border: 1px solid var(--border-light);
-    border-radius: 5px; 
+    border-radius: var(--border-radius-sm);
     background-color: var(--card-bg-light);
-    color: var(--text-light);
-    font-family: var(--font-primary); 
+    color: var(--text-primary-light);
+    font-family: var(--font-primary);
     transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
-body.dark-theme .form-group input[type="text"],
-body.dark-theme .form-group input[type="email"], 
-body.dark-theme .form-group textarea { 
+html.dark .form-group input[type="text"],
+html.dark .form-group input[type="email"],
+html.dark .form-group textarea {
     background-color: var(--card-bg-dark);
     border-color: var(--border-dark);
-    color: var(--text-dark);
+    color: var(--text-primary-dark);
 }
 
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
-    border-color: var(--accent-light);
+    border-color: var(--focus-ring-light);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Tech blue focus glow */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25); /* Based on logo color */
 }
-body.dark-theme .form-group input[type="text"]:focus,
-body.dark-theme .form-group input[type="email"]:focus, 
-body.dark-theme .form-group textarea:focus { 
-    border-color: var(--accent-dark);
-    box-shadow: 0 0 0 3px rgba(51, 149, 255, 0.25); /* Adjusted dark theme tech blue glow */
+html.dark .form-group input[type="text"]:focus,
+html.dark .form-group input[type="email"]:focus,
+html.dark .form-group textarea:focus {
+    border-color: var(--focus-ring-dark);
+    box-shadow: 0 0 0 3px rgba(165, 180, 252, 0.25); /* Based on logo color */
 }
 
 .form-notes {
     font-size: 0.85em;
-    color: var(--accent-secondary-light);
-    margin-top: var(--spacing-sm);
+    color: var(--text-secondary-light);
+    margin-top: var(--spacing-md);
     text-align: center;
 }
-body.dark-theme .form-notes {
-    color: var(--accent-secondary-dark);
+html.dark .form-notes {
+    color: var(--text-secondary-dark);
 }
 
 .social-icons {
@@ -1096,86 +1201,90 @@ body.dark-theme .form-notes {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xxl);
 }
 
 .social-icons li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--text-light);
+    color: var(--text-primary-light);
     transition: color 0.3s ease, transform 0.2s ease;
     text-decoration: none;
     font-size: 0.9em;
 }
-body.dark-theme .social-icons li a {
-    color: var(--text-dark);
+html.dark .social-icons li a {
+    color: var(--text-primary-dark);
 }
 
 .social-icons li a:hover {
-    color: var(--accent-light);
+    color: var(--logo-color-light);
     transform: translateY(-5px);
     text-decoration: none;
 }
-body.dark-theme .social-icons li a:hover {
-    color: var(--accent-dark);
+html.dark .social-icons li a:hover {
+    color: var(--logo-color-dark);
 }
 
 .social-icons li a .fa-brands,
 .social-icons li a .fa-solid {
-    font-size: 2.5em; 
+    font-size: 2.5em;
     margin-bottom: 0.2em;
 }
 
 /* --- Footer --- */
 footer {
     text-align: center;
-    padding: var(--spacing-md) var(--spacing-sm);
-    margin-top: var(--spacing-xl); 
+    padding: var(--spacing-lg) var(--spacing-xl);
+    margin-top: var(--spacing-xxl);
     background-color: var(--header-bg-light);
-    color: var(--text-light);
+    color: var(--text-footer-light); /* Dedicated footer text color */
     box-shadow: 0 -2px 5px var(--shadow-light);
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-body.dark-theme footer {
+html.dark footer {
     background-color: var(--header-bg-dark);
-    color: var(--text-dark);
+    color: var(--text-footer-dark);
     box-shadow: 0 -2px 5px var(--shadow-dark);
 }
 
+
 /* --- Responsive Design --- */
-@media (min-width: 600px) {
+@media (min-width: 640px) { /* Changed from 600px to 640px for typical Tailwind 'sm' breakpoint */
+    main {
+        padding: 0 var(--spacing-xl); /* Tailwind p-8 */
+    }
     .main-header {
-        padding: var(--spacing-sm) var(--spacing-lg);
+        padding: var(--spacing-lg) var(--spacing-xl);
     }
     .site-logo {
-        font-size: 2.2em; /* Adjusted for Inter */
+        font-size: 2.2em;
     }
     .tagline {
         font-size: 1.1em;
     }
     .hero-section {
-        flex-direction: row; 
+        flex-direction: row;
         text-align: left;
         padding: var(--spacing-xxl) var(--spacing-xl);
-        justify-content: center; 
+        justify-content: center;
     }
     .hero-text {
         flex: 1;
         padding-right: var(--spacing-lg);
-        max-width: 600px; 
+        max-width: 600px;
     }
     .hero-image-container {
         margin-top: 0;
         margin-left: var(--spacing-lg);
-        width: 250px; 
+        width: 250px;
         height: 250px;
-        flex-shrink: 0; 
+        flex-shrink: 0;
     }
     .hero-text h2 {
-        font-size: 2.8em; /* Adjusted for Inter */
+        font-size: 2.8em;
     }
     .hero-text .subheadline {
         font-size: 1.4em;
@@ -1183,14 +1292,11 @@ body.dark-theme footer {
     .cta-buttons {
         justify-content: flex-start;
     }
-    .intro-section {
-        padding: var(--spacing-xl) var(--spacing-lg);
-    }
-    .featured-projects {
-        padding: var(--spacing-xl) var(--spacing-lg);
+    .intro-section, .featured-projects {
+        padding: var(--spacing-xxl) var(--spacing-xl);
     }
     .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     /* About Page */
@@ -1206,114 +1312,59 @@ body.dark-theme footer {
 
     /* Portfolio Page */
     .project-grid-full {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     /* Project Case Study */
     .visual-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { /* Tailwind 'md' breakpoint */
     /* Further refinements for tablet and larger */
-    h1 { font-size: 2.8rem; } 
-    h2 { font-size: 2.2rem; } 
-    h3 { font-size: 1.8rem; } 
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.8rem; }
 
     .main-nav ul {
-        flex-wrap: nowrap; 
+        flex-wrap: nowrap;
     }
 
     .project-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
-     .project-grid-full {
+    .project-grid-full {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
 
     .dashboard-embed .tableauViz {
-        height: 550px !important; 
+        height: 550px !important;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) { /* Tailwind 'lg' breakpoint, changed from 992px */
     /* Desktop styles */
     .project-grid {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
     }
     .project-grid-full {
-         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     }
     .skills-grid {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
     }
     .tech-list-grid {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
     }
-     .visual-gallery {
+    .visual-gallery {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) { /* Tailwind 'xl' breakpoint, changed from 1200px */
     /* Larger desktop styles */
     main {
-        padding: 0 var(--spacing-md); 
+        padding: 0 var(--spacing-md);
     }
-    .hero-text h2 {
-        font-size: 3.2em; /* Adjusted for Inter */
-    }
-    .hero-text .subheadline {
-        font-size: 1.5em;
-    }
-    .hero-image-container {
-        width: 300px;
-        height: 300px;
-    }
-}
-
-/* AI/ML Specific Theming - Apply to relevant sections or globally if desired */
-/* Example: Apply AI gradient to hero heading */
-.hero-text h2.ai-themed {
-    background: var(--gradient-light-ai);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text; 
-    text-fill-color: transparent; 
-}
-
-body.dark-theme .hero-text h2.ai-themed {
-    background: var(--gradient-dark-ai);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-}
-
-/* Example: Apply glow to AI project cards on hover */
-.project-card.ai-project:hover {
-    box-shadow: 0 0 25px var(--glow-light);
-}
-body.dark-theme .project-card.ai-project:hover {
-    box-shadow: 0 0 25px var(--glow-dark);
-}
-
-/* Example: AI themed button */
-.button.ai-button {
-    background-image: var(--gradient-light-ai);
-    color: white;
-    border: none;
-    box-shadow: 0 2px 10px var(--glow-light);
-}
-body.dark-theme .button.ai-button {
-    background-image: var(--gradient-dark-ai);
-    box-shadow: 0 2px 10px var(--glow-dark);
-}
-.button.ai-button:hover {
-    opacity: 0.9;
-    box-shadow: 0 4px 15px var(--glow-light);
-}
-body.dark-theme .button.ai-button:hover {
-    box-shadow: 0 4px 15px var(--glow-dark);
 }
