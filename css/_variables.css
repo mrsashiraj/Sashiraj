@@ -9,61 +9,39 @@
 */
 
 :root {
-    /* --- Fonts --- */
-    --font-logo: 'Poppins', sans-serif; /* Changed to Poppins to match HTML links */
-    --font-primary: 'Open Sans', sans-serif; /* Changed to Open Sans for body and paragraphs */
-    --font-heading: 'Poppins', sans-serif; /* Changed to Poppins for headings */
+    /* --- Fonts (from new template) --- */
+    --font-primary: 'Montserrat', sans-serif; /* Main font for body, headings, and general text */
 
     /* --- Base Font Size and Line Height --- */
-    --font-size-base: 1rem; /* Base font size set to 16px (1rem) for accessibility and scaling */
-    --line-height-base: 1.7; /* Enhanced line height for better readability of text blocks */
+    --font-size-base: 1rem; /* Standard base font size */
+    --line-height-base: 1.6; /* Line height for readability */
 
-    /* --- Colors: Light Mode Palette --- */
-    --background-light: #f5f5f5; /* Overall background color in light mode */
-    --header-bg-light: #eeeeee; /* Background for the header and navigation in light mode */
-    --card-bg-light: #ffffff; /* Background for cards and content sections in light mode */
-    --text-primary-light: #111111; /* Main text color for high contrast content */
-    --text-secondary-light: #444444; /* Secondary text color for descriptions, sub-headings, etc. */
-    --text-footer-light: #666666; /* Text color specifically for the footer */
-    --logo-color-light: #4f46e5; /* Accent color for the logo and primary links (Indigo-600) */
-    --button-bg-light: #5c5470; /* Default background for buttons (muted purple) */
-    --button-hover-bg-light: #7a6f9b; /* Hover state background for buttons */
-    --button-text-light: #ffffff; /* Text color for buttons */
-    --focus-ring-light: #bcb2e5; /* Outline color for focus states (accessibility) */
-    --border-light: #e0e0e0; /* General border color for elements in light mode */
-    --shadow-light: rgba(17, 17, 17, 0.1); /* Subtle shadow color based on primary text */
+    /* --- Colors: Dark Mode Palette (from new template's default) --- */
+    --bg-color-dark: #0e0e0e; /* Overall background color in dark mode */
+    --text-color-dark: #fff; /* Primary text color in dark mode */
+    --accent-color-dark: #00f5d4; /* Accent color for highlights, links, etc. */
+    --card-bg-dark: #1a1a1a; /* Background for cards and sections */
+    --header-gradient-dark: linear-gradient(to right, var(--bg-color-dark), #101820); /* Specific gradient for header */
+    --shadow-color-dark: rgba(0, 255, 213, 0.1); /* Subtle shadow for cards and hero image */
 
-    /* --- Colors: Dark Mode Palette --- */
-    --background-dark: #0f0f0f; /* Overall background color in dark mode */
-    --header-bg-dark: #161616; /* Background for the header and navigation in dark mode */
-    --card-bg-dark: #1a1a1a; /* Background for cards and content sections in dark mode */
-    --text-primary-dark: #e6e6e6; /* Main text color for high contrast content in dark mode */
-    --text-secondary-dark: #999999; /* Secondary text color for descriptions, sub-headings, etc. in dark mode */
-    --text-footer-dark: #999999; /* Text color specifically for the footer in dark mode */
-    --logo-color-dark: #a5b4fc; /* Accent color for the logo and primary links in dark mode (Indigo-400) */
-    --button-bg-dark: #5c5470; /* Default background for buttons (same as light for consistency) */
-    --button-hover-bg-dark: #7a6f9b; /* Hover state background for buttons (same as light) */
-    --button-text-dark: #ffffff; /* Text color for buttons (same as light) */
-    --focus-ring-dark: #a5b4fc; /* Outline color for focus states in dark mode */
-    --border-dark: #333333; /* General border color for elements in dark mode */
-    --shadow-dark: rgba(230, 230, 230, 0.08); /* Subtle shadow color based on primary text in dark mode */
+    /* --- Colors: Light Mode Palette (from new template's data-theme="light") --- */
+    --bg-color-light: #ffffff; /* Overall background color in light mode */
+    --text-color-light: #111; /* Primary text color in light mode */
+    --accent-color-light: #008c72; /* Accent color for highlights, links, etc. */
+    --card-bg-light: #f3f3f3; /* Background for cards and sections */
+    --header-gradient-light: linear-gradient(to right, var(--bg-color-light), #f0f8f8); /* Specific gradient for header */
+    --shadow-color-light: rgba(0, 140, 114, 0.1); /* Subtle shadow for cards and hero image in light mode */
 
-    /* --- Card Accent Border Colors (for thematic differentiation of projects) --- */
-    --project-alpha-accent: #bcb2e5; /* Light purple accent */
-    --project-beta-accent: #e6a8d7; /* Pinkish purple accent */
-    --project-gamma-accent: #a8d0da; /* Light blue accent */
 
-    /* --- Spacing Scale (based on Tailwind CSS conventions) --- */
+    /* --- Spacing Scale (based on template's padding/gap values) --- */
     --spacing-xs: 0.25rem; /* 4px */
     --spacing-sm: 0.5rem;  /* 8px */
     --spacing-md: 1rem;    /* 16px */
-    --spacing-lg: 1.5rem;  /* 24px */
-    --spacing-xl: 2rem;    /* 32px */
-    --spacing-xxl: 2.5rem; /* 40px */
+    --spacing-lg: 2rem;    /* 32px (used for padding in header/cards) */
+    --spacing-xl: 4rem;    /* 64px (used for padding in hero/portfolio) */
 
-    /* --- Border Radius Variables --- */
-    --border-radius-sm: 0.5rem; /* For smaller elements like tags or input fields */
-    --border-radius-md: 1rem;    /* For larger elements like cards/sections */
-    --border-radius-lg: 1rem; /* Keeping consistent for now, but can be larger for specific elements */
-    --border-radius-btn: 9999px; /* A very large value to create pill-shaped buttons */
+    /* --- Border Radius Variables (from template) --- */
+    --border-radius-sm: 8px; /* For header, nav, minor elements */
+    --border-radius-md: 16px; /* For portfolio items/cards */
+    --border-radius-full: 50%; /* For circular elements like profile image */
 }
