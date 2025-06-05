@@ -1,25 +1,25 @@
 /* css/_utilities.css */
 
 /*
-   Utility Classes
+   Utility Classes and Animations
 
-   This file contains single-purpose, highly reusable classes that can be
-   applied to various elements to achieve specific visual effects or
-   layout adjustments. They are often independent of component structure.
+   This file contains single-purpose, highly reusable classes and
+   CSS animations, adapted from the new template.
 */
 
-/* Section Description Text */
-/* Styles a descriptive text block typically found at the beginning of a section. */
-.section-description {
-    text-align: center; /* Centers the text */
-    max-width: 800px; /* Limits the width for better readability */
-    margin: var(--spacing-md) auto var(--spacing-xxl) auto; /* Centers horizontally and applies vertical margins */
-    font-size: clamp(1.125rem, 2vw + 0.5rem, 1.25rem); /* Fluid font size for responsiveness */
-    opacity: 0.9; /* Slightly faded text */
-    color: var(--text-secondary-light); /* Uses secondary text color for less prominence */
+/* --- Animations (from template) --- */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Section Description Text in Dark Mode */
-html.dark .section-description {
-    color: var(--text-secondary-dark); /* Adjusts color for dark theme */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
+
+/* Note: The template's "fadeIn" is used for .hero and .portfolio.
+   The "fadeInUp" is used for .testimonial-section.
+   No other utility classes from your previous setup are directly mapped
+   from this minimalistic template.
+*/
