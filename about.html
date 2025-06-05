@@ -1,18 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sashiraj - About Me</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- Google Fonts: Poppins and Open Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Link to your main stylesheet -->
     <link rel="stylesheet" href="styles.css">
@@ -21,114 +13,79 @@
     <script src="script.js"></script>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Learn more about Sashiraj, a Business & Data Analyst, his background, expertise, tools, and business domains.">
+    <meta name="description" content="Learn more about Sashiraj, a Business & Data Analyst, his expertise, passion, and approach to data-driven problem-solving.">
     <meta property="og:title" content="About Sashiraj - Business & Data Analyst">
-    <meta property="og:description" content="Discover Sashiraj's journey, skills in SQL, Tableau, Python, and experience in various business domains.">
-    <meta property="og:image" content="https://www.yourwebsite.com/images/og-image.jpg">
+    <meta property="og:description" content="Discover Sashiraj's professional background, skills in SQL, Tableau, Python, and commitment to impactful data insights.">
+    <meta property="og:image" content="https://www.yourwebsite.com/images/og-about.jpg">
     <meta property="og:url" content="https://www.yourwebsite.com/about.html">
     <meta property="og:type" content="profile">
 </head>
 <body>
-    <main>
-        <section id="about-intro" class="about-section">
-            <h2>Who I Am</h2>
-            <p>
-                Hello! I'm Sashiraj, a dedicated and curious Business & Data Analyst driven by the desire to transform complex data into clear, actionable insights. With a solid foundation in both business principles and analytical methodologies, I specialize in identifying key trends, optimizing processes, and empowering stakeholders with the information they need to make strategic decisions. I believe in the power of collaboration and innovative thinking to tackle challenges and unlock new opportunities.
-            </p>
-            <p>
-                My journey into data analysis began with a fascination for uncovering patterns and stories hidden within numbers. This curiosity quickly evolved into a passion for leveraging technology and analytical techniques to solve real-world business problems and drive tangible results.
-            </p>
-        </section>
 
-        <section id="what-i-do" class="about-section">
-            <h2>What I Do</h2>
-            <div class="skills-grid">
-                <div class="skill-area-card">
-                    <h3>Data Analysis & Visualization</h3>
-                    <p>Transforming raw data into meaningful insights through comprehensive analysis and compelling visualizations. Creating interactive dashboards that empower users to explore data.</p>
-                </div>
-                <div class="skill-area-card">
-                    <h3>Business Intelligence</h3>
-                    <p>Building robust BI solutions that provide clear visibility into performance metrics, enabling proactive decision-making and performance monitoring.</p>
-                </div>
-                <div class="skill-area-card">
-                    <h3>Process Optimization</h3>
-                    <p>Utilizing data to identify inefficiencies, streamline workflows, and recommend data-backed strategies to improve operational effectiveness.</p>
-                </div>
-                <div class="skill-area-card">
-                    <h3>Strategic Consulting</h3>
-                    <p>Partnering with businesses to understand their challenges and provide data-driven recommendations that align with their long-term strategic goals.</p>
-                </div>
+    <!-- Header and Navigation will be loaded here by script.js from header.html -->
+
+    <section class="hero section-container" id="about-me">
+        <div class="hero-text">
+            <h1>About Me</h1>
+            <p>Bridging the gap between data and decisive action.</p>
+        </div>
+        <div class="hero-image">
+             <img src="https://images.unsplash.com/photo-1549682522-83b6928e461a?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Me Illustration" loading="lazy">
+        </div>
+    </section>
+
+    <section class="section-container">
+        <h2>My Journey</h2>
+        <p>
+            With a background in Computer Science and Information Technology, I embarked on a journey to unravel the stories hidden within data. My passion lies in transforming complex datasets into clear, actionable insights that drive business growth and strategic decisions. I thrive on connecting the dots between raw information and tangible outcomes.
+        </p>
+        <p>
+            Over the past 3+ years, I've honed my skills in various analytical tools and techniques, including SQL for robust data extraction, Tableau and Power BI for intuitive visualization, and Python for advanced statistical analysis and machine learning. I believe that data is not just numbers; it's a powerful narrative waiting to be told, and I strive to tell it effectively to stakeholders.
+        </p>
+        <p>
+            Beyond the technical aspects, I am a firm believer in continuous learning and adapting to new challenges. My goal is to leverage data to solve impactful business problems, foster data-driven cultures, and contribute to innovative projects that make a real difference.
+        </p>
+    </section>
+
+    <section class="section-container">
+        <h2>Skills & Expertise</h2>
+        <div class="portfolio-grid-wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+            <div class="portfolio-item">
+                <h3>Data Analysis & BI</h3>
+                <ul>
+                    <li>SQL (PostgreSQL, MySQL)</li>
+                    <li>Tableau</li>
+                    <li>Power BI</li>
+                    <li>Microsoft Excel</li>
+                    <li>Google Analytics</li>
+                </ul>
             </div>
-        </section>
-
-        <section id="tools-technologies" class="about-section">
-            <h2>Tools & Technologies</h2>
-            <div class="tech-list-grid">
-                <div>
-                    <h3>Databases & Warehousing</h3>
-                    <ul>
-                        <li>SQL (PostgreSQL, MySQL, SQL Server)</li>
-                        <li>NoSQL (MongoDB - basic)</li>
-                        <li>Data Warehousing Concepts</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Programming & Scripting</h3>
-                    <ul>
-                        <li>Python (Pandas, NumPy, Scikit-learn)</li>
-                        <li>R (basic)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Data Visualization & BI</h3>
-                    <ul>
-                        <li>Tableau</li>
-                        <li>Power BI</li>
-                        <li>Matplotlib, Seaborn (Python)</li>
-                        <li>Google Data Studio</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Spreadsheets & Other</h3>
-                    <ul>
-                        <li>Microsoft Excel (Advanced)</li>
-                        <li>Google Sheets</li>
-                        <li>Jupyter Notebooks</li>
-                        <li>Git & GitHub</li>
-                    </ul>
-                </div>
+            <div class="portfolio-item">
+                <h3>Programming & ML</h3>
+                <ul>
+                    <li>Python (Pandas, NumPy)</li>
+                    <li>Scikit-learn</li>
+                    <li>Machine Learning</li>
+                    <li>Statistical Modeling</li>
+                    <li>Jupyter Notebooks</li>
+                </ul>
             </div>
-        </section>
+            <div class="portfolio-item">
+                <h3>Business Acumen</h3>
+                <ul>
+                    <li>KPI Development</li>
+                    <li>Requirements Gathering</li>
+                    <li>Market Research</li>
+                    <li>Data Storytelling</li>
+                    <li>A/B Testing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-        <section id="business-domains" class="about-section">
-            <h2>Business Domains Familiar With</h2>
-            <ul class="domain-list">
-                <li>Retail & E-commerce</li>
-                <li>Marketing & Sales Analytics</li>
-                <li>Supply Chain & Logistics</li>
-                <li>Customer Analytics & Insights</li>
-                <li>Financial Services (basic)</li>
-                <li>Digital Product Management</li>
-            </ul>
-        </section>
-
-        <section id="fun-facts" class="about-section">
-            <h2>A Little More About Me</h2>
-            <p>
-                Outside of data, I'm an avid reader of science fiction, always exploring new ideas and concepts. I also enjoy hiking and photography, finding new perspectives both in nature and in data.
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; <span id="current-year-about"></span> Sashiraj</p>
+    <footer class="footer">
+        <p>&copy; <span id="current-year-footer"></span> Sashiraj Portfolio. All rights reserved.</p>
     </footer>
-
-    <script>
-        // JavaScript to automatically update the copyright year for this page
-        document.getElementById('current-year-about').textContent = new Date().getFullYear();
-    </script>
 
 </body>
 </html>
