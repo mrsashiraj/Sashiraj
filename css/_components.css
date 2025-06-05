@@ -4,502 +4,75 @@
    Component Styles
 
    This file defines the styling for reusable UI components that can be
-   composed together to build various sections of the website.
-   Examples include buttons, cards, and specialized lists.
+   composed together to build various sections of the website,
+   adapted from the new template.
 */
 
-/* --- Buttons --- */
-/* Base styling for all button-like elements (e.g., primary, secondary). */
-.button {
-    padding: var(--spacing-sm) var(--spacing-md); /* Vertical and horizontal padding */
-    border-radius: var(--border-radius-sm); /* Rounded corners */
-    font-weight: 600;
-    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.05rem); /* Fluid font size */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions for interaction */
-    text-decoration: none; /* Removes underline for anchor-buttons */
-    display: inline-block; /* Allows padding/margin and prevents full-width */
-    white-space: nowrap; /* Prevents text wrapping inside button */
-    text-align: center;
+/* --- Theme Toggle Switch (from template) --- */
+.theme-toggle {
     cursor: pointer;
-    font-family: var(--font-primary); /* Uses primary font for button text */
-    box-shadow: 0 2px 4px var(--shadow-light); /* Subtle shadow */
-    outline: none; /* Removes default browser outline (will be replaced by focus-visible) */
-}
-
-/* Button Shadow in Dark Mode */
-html.dark .button {
-    box-shadow: 0 2px 4px var(--shadow-dark);
-}
-
-/* Button Focus (Accessibility) */
-/* Ensures a clear visual indicator for keyboard navigation. */
-.button:focus-visible {
-    box-shadow: 0 0 0 3px var(--focus-ring-light); /* Prominent outline for focus */
-}
-html.dark .button:focus-visible {
-    box-shadow: 0 0 0 3px var(--focus-ring-dark);
-}
-
-
-/* Primary Button Styling */
-/* Defines the main call-to-action button style. */
-.primary-button {
-    background-color: var(--button-bg-light);
-    color: var(--button-text-light);
-    border: 2px solid var(--button-bg-light); /* Border matches background */
-}
-
-/* Primary Button in Dark Mode */
-html.dark .primary-button {
-    background-color: var(--button-bg-dark);
-    border-color: var(--button-bg-dark);
-    color: var(--button-text-dark);
-}
-
-/* Primary Button Hover Effect */
-.primary-button:hover {
-    background-color: var(--button-hover-bg-light);
-    border-color: var(--button-hover-bg-light);
-    transform: translateY(-2px); /* Slight lift */
-    box-shadow: 0 6px 12px var(--shadow-light); /* More pronounced shadow on hover */
-}
-html.dark .primary-button:hover {
-    background-color: var(--button-hover-bg-dark);
-    border-color: var(--button-hover-bg-dark);
-    box-shadow: 0 6px 12px var(--shadow-dark);
-}
-
-/* Secondary Button Styling */
-/* Defines a less prominent button style, often an outline button. */
-.secondary-button {
-    background-color: transparent; /* Transparent background */
-    color: var(--button-bg-light); /* Text color uses primary button color */
-    border: 2px solid var(--button-bg-light); /* Outline border */
-}
-
-/* Secondary Button in Dark Mode */
-html.dark .secondary-button {
-    color: var(--button-bg-dark);
-    border-color: var(--button-bg-dark);
-    background-color: transparent; /* Remains transparent in dark mode */
-}
-
-/* Secondary Button Hover Effect */
-.secondary-button:hover {
-    background-color: var(--button-bg-light); /* Fills with color on hover */
-    color: white; /* Text becomes white on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px var(--shadow-light);
-}
-html.dark .secondary-button:hover {
-    background-color: var(--button-bg-dark);
-    color: white;
-    box-shadow: 0 6px 12px var(--shadow-dark);
-}
-
-/* --- Project Cards (Used on Homepage and Portfolio Page) --- */
-/* Base styling for both featured (`.project-card`) and full (`.project-card-full`) project displays. */
-.project-card, .project-card-full {
-    background-color: var(--card-bg-light);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-md);
-    box-shadow: 0 2px 5px var(--shadow-light);
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-    /* Changed from border-top to full border for better card definition */
-    border: 1px solid var(--border-light); 
-    display: flex; /* Uses flexbox to ensure consistent height for content */
-    flex-direction: column; /* Stacks content vertically */
-    height: 100%; /* Ensures all cards in a grid have equal height */
-}
-
-/* Project Card Base in Dark Mode */
-html.dark .project-card, html.dark .project-card-full {
-    background-color: var(--card-bg-dark);
-    box-shadow: 0 2px 5px var(--shadow-dark);
-    border-color: var(--border-dark); /* Apply border color for dark theme */
-}
-
-/* Card accent border colors for specific projects */
-/* These will now override the main 'border' property if applied */
-.project-alpha { border-top-color: var(--project-alpha-accent); }
-.project-beta { border-top-color: var(--project-beta-accent); }
-.project-gamma { border-top-color: var(--project-gamma-accent); }
-html.dark .project-alpha { border-top-color: var(--project-alpha-accent); } /* Maintain in dark mode */
-html.dark .project-beta { border-top-color: var(--project-beta-accent); }
-html.dark .project-gamma { border-top-color: var(--project-gamma-accent); }
-
-
-/* Project Card Hover Effect (common for both types) */
-.project-card:hover {
-    transform: translateY(-5px); /* Moderate lift effect */
-    box-shadow: 0 8px 16px var(--shadow-light); /* More pronounced shadow on hover */
-}
-html.dark .project-card:hover {
-    box-shadow: 0 8px 16px var(--shadow-dark);
-}
-/* Specific hover for full project cards (slightly more dramatic lift) */
-.project-card-full:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 12px 20px var(--shadow-light);
-}
-html.dark .project-card-full:hover {
-    box-shadow: 0 12px 20px var(--shadow-dark);
-}
-
-
-/* Project Card Image Styling */
-.project-card img, .project-card-full img {
-    width: 100%;
-    object-fit: cover; /* Ensures images fill their container without distortion */
-    border-radius: var(--border-radius-sm);
-    margin-bottom: var(--spacing-md);
-    display: block; /* Removes extra space below image */
-}
-/* Specific heights for different card types */
-.project-card img { height: 200px; }
-.project-card-full img { height: 250px; }
-
-
-/* Project Card Heading */
-.project-card h3, .project-card-full h3 {
-    font-size: clamp(1.25rem, 3vw + 0.5rem, 1.5rem); /* Fluid font size */
-    font-weight: 600;
-    margin-top: 0; /* Removes default top margin */
-    margin-bottom: 0.5em;
-    color: var(--text-primary-light); /* Primary text color for heading */
-}
-html.dark .project-card h3, html.dark .project-card-full h3 {
-    color: var(--text-primary-dark);
-}
-
-/* Project Tags */
-.project-tags {
-    margin-bottom: 0.8em;
-    display: flex; /* Use flexbox for horizontal layout */
-    flex-wrap: wrap; /* Allow tags to wrap */
-    gap: var(--spacing-xs); /* Small gap between tags */
-}
-
-.project-tags span {
-    display: inline-block; /* Allows padding and margin */
-    background-color: var(--button-bg-light); /* Using button color for tags */
-    color: white;
-    font-size: 0.875rem;
-    padding: 0.3em 0.7em;
-    border-radius: var(--border-radius-sm);
-    opacity: 0.9;
-}
-html.dark .project-tags span {
-    background-color: var(--button-bg-dark);
-}
-
-/* Project Card Paragraph Text */
-.project-card p, .project-card-full p {
-    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1rem); /* Fluid font size */
-    margin-bottom: var(--spacing-md);
-    color: var(--text-secondary-light); /* Secondary text color for description */
-    flex-grow: 1; /* Allows text to take up available vertical space, ensuring consistent footer alignment */
-}
-html.dark .project-card p, html.dark .project-card-full p {
-    color: var(--text-secondary-dark);
-}
-
-/* Read More Link within Project Cards */
-.read-more-link {
-    display: inline-block;
-    font-weight: 600;
-    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1.05rem); /* Fluid font size */
-    color: var(--logo-color-light); /* Uses accent color for links */
-    margin-top: auto; /* Pushes the link to the bottom of the card */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-html.dark .read-more-link {
-    color: var(--logo-color-dark);
-}
-.read-more-link:hover {
-    text-decoration: underline;
-}
-
-/* --- Skill Area Cards (Used on About Page) --- */
-/* Styles for individual skill category cards (e.g., "Frontend Dev", "Data Analysis"). */
-.skill-area-card {
-    background-color: var(--card-bg-light);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-md);
-    box-shadow: 0 2px 5px var(--shadow-light);
-    border: 1px solid var(--border-light);
-    transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
-}
-html.dark .skill-area-card {
-    background-color: var(--card-bg-dark);
-    box-shadow: 0 2px 5px var(--shadow-dark);
-    border-color: var(--border-dark);
-}
-
-/* Skill Area Card Heading */
-.skill-area-card h3 {
-    color: var(--logo-color-light);
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    font-size: clamp(1.5rem, 4vw + 0.5rem, 1.75rem); /* Fluid font size */
-    font-weight: 600;
-}
-html.dark .skill-area-card h3 {
-    color: var(--logo-color-dark);
-}
-
-/* Technology List Grid (inside Skill Area Cards) */
-/* Layout for lists of technologies (e.g., JavaScript, React). */
-.tech-list-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column by default, can be adjusted with media queries */
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
-}
-
-.tech-list-grid ul {
-    list-style: none; /* Removes bullet points */
-    padding: 0;
-    margin: 0;
-}
-
-.tech-list-grid li {
-    background-color: var(--card-bg-light);
-    padding: var(--spacing-md);
-    border-left: 4px solid var(--button-bg-light); /* Accent border on the left */
-    border-radius: var(--border-radius-sm);
-    margin-bottom: 0.5em;
-    transition: background-color 0.3s, border-color 0.3s;
-    color: var(--text-primary-light);
-    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
-}
-html.dark .tech-list-grid li {
-    background-color: var(--card-bg-dark);
-    border-left-color: var(--button-bg-dark);
-    color: var(--text-primary-dark);
-}
-
-/* Domain List (similar to Tech List Grid, but for domains/industries) */
-.domain-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr; /* Single column by default */
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
-}
-
-.domain-list li {
-    background-color: var(--card-bg-light);
-    padding: var(--spacing-md);
-    border-left: 4px solid var(--button-bg-light);
-    border-radius: var(--border-radius-sm);
-    transition: background-color 0.3s, border-color 0.3s;
-    color: var(--text-primary-light);
-    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
-}
-html.dark .domain-list li {
-    background-color: var(--card-bg-dark);
-    border-left-color: var(--button-bg-dark);
-    color: var(--text-primary-dark);
-}
-
-/* --- Project Links (Used on Project Case Study Pages) --- */
-/* Styles for links to live demos, repositories, etc., related to a project. */
-.project-links ul {
-    list-style: none;
-    padding: 0;
-    margin-top: var(--spacing-md);
-    display: flex; /* Flexbox for horizontal layout */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    gap: var(--spacing-md); /* Space between links */
-    justify-content: center; /* Centers the links */
-}
-
-.project-links li a {
-    display: flex; /* Flexbox for icon and text alignment */
-    align-items: center; /* Vertically aligns icon and text */
-    gap: 0.5em; /* Space between icon and text */
-    background-color: var(--button-bg-light);
-    color: var(--button-text-light);
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: var(--border-radius-sm);
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    text-decoration: none;
-    box-shadow: 0 2px 4px var(--shadow-light);
-    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1.05rem); /* Fluid font size */
-}
-html.dark .project-links li a {
-    background-color: var(--button-bg-dark);
-    color: var(--button-text-dark);
-    box-shadow: 0 2px 4px var(--shadow-dark);
-}
-
-/* Project Links Hover Effect */
-.project-links li a:hover {
-    background-color: var(--button-hover-bg-light);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-light);
-    text-decoration: none;
-}
-html.dark .project-links li a:hover {
-    background-color: var(--button-hover-bg-dark);
-    box-shadow: 0 4px 8px var(--shadow-dark);
-}
-
-/* Project Link Icons (Font Awesome, etc.) */
-.project-links li a .fa-brands,
-.project-links li a .fa-solid {
-    font-size: 1.3em; /* Slightly increased icon size */
-}
-
-/* --- Inline Skill List (Used on Resume Page) --- */
-/* Styles for a horizontal, comma-separated or spaced list of skills. */
-.skills-category h4 {
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
-    font-size: clamp(1.125rem, 2vw + 0.5rem, 1.25rem); /* Fluid font size */
-    color: var(--text-primary-light);
-}
-html.dark .skills-category h4 {
-    color: var(--text-primary-dark);
-}
-
-.skill-list-inline {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Flexbox for horizontal layout */
-    flex-wrap: wrap; /* Allows skills to wrap to next line */
-    gap: var(--spacing-sm); /* Space between individual skill tags */
-}
-
-.skill-list-inline li {
-    background-color: var(--card-bg-light);
-    padding: 0.5em 1em;
-    border-radius: var(--border-radius-sm);
-    border: 1px solid var(--border-light);
-    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1rem); /* Fluid font size */
-    transition: background-color 0.3s, border-color 0.3s;
-    color: var(--text-primary-light);
-}
-html.dark .skill-list-inline li {
-    background-color: var(--card-bg-dark);
-    border-color: var(--border-dark);
-    color: var(--text-primary-dark);
-}
-
-
-/* --- Contact Form Styling --- */
-/* Overall styling for the contact form container */
-.contact-form {
-    background-color: var(--card-bg-light);
-    padding: var(--spacing-lg) var(--spacing-xl); /* More generous padding */
-    border-radius: var(--border-radius-md);
-    box-shadow: 0 4px 10px var(--shadow-light);
-    margin-top: var(--spacing-lg); /* Space from section heading */
-    max-width: 700px; /* Limit form width for better readability */
-    margin-left: auto;
-    margin-right: auto; /* Center the form */
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    gap: var(--spacing-md); /* Space between form groups */
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-html.dark .contact-form {
-    background-color: var(--card-bg-dark);
-    box-shadow: 0 4px 10px var(--shadow-dark);
-}
-
-/* Styling for each form group (label + input/textarea) */
-.form-group {
-    display: flex;
-    flex-direction: column; /* Stack label above input */
-    gap: var(--spacing-xs); /* Small gap between label and input */
-    margin-bottom: var(--spacing-sm); /* Space between form groups */
-}
-
-/* Styling for form labels */
-.contact-form label {
-    font-weight: 600;
-    color: var(--text-primary-light);
-    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.125rem); /* Fluid label font size */
-}
-html.dark .contact-form label {
-    color: var(--text-primary-dark);
-}
-
-/* Styling for text input and email input fields */
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%; /* Full width within its container */
-    padding: var(--spacing-sm); /* Comfortable padding */
-    border: 1px solid var(--border-light); /* Subtle border */
-    border-radius: var(--border-radius-sm); /* Rounded corners */
-    font-size: var(--font-size-base);
-    font-family: var(--font-primary);
-    background-color: var(--background-light); /* Light background for fields */
-    color: var(--text-primary-light);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: var(--accent-color-dark); /* Accent color for toggle track */
+    border: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    position: relative;
     outline: none; /* Remove default focus outline */
+    transition: background 0.3s ease;
 }
 
-html.dark .contact-form input[type="text"],
-html.dark .contact-form input[type="email"],
-html.dark .contact-form textarea {
-    background-color: var(--background-dark); /* Dark background for fields */
-    border-color: var(--border-dark);
-    color: var(--text-primary-dark);
+html[data-theme="light"] .theme-toggle {
+    background: var(--accent-color-light);
 }
 
-/* Styling for textarea specifically */
-.contact-form textarea {
-    resize: vertical; /* Allow vertical resizing only */
-    min-height: 120px; /* Minimum height for message area */
+/* Theme Toggle Thumb/Circle */
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff; /* White thumb in dark mode */
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Focus styles for input and textarea */
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-    border-color: var(--logo-color-light); /* Accent color on focus */
-    box-shadow: 0 0 0 3px var(--focus-ring-light); /* Clear focus ring */
-}
-html.dark .contact-form input[type="text"]:focus,
-html.dark .contact-form input[type="email"]:focus,
-html.dark .contact-form textarea:focus {
-    border-color: var(--logo-color-dark);
-    box-shadow: 0 0 0 3px var(--focus-ring-dark);
+html[data-theme="light"] .theme-toggle::before {
+    transform: translateX(30px); /* Move thumb to right in light mode */
+    background-color: #111; /* Dark thumb in light mode */
 }
 
-/* Placeholder text styling */
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: var(--text-secondary-light);
-    opacity: 0.7;
+/* Focus style for accessibility */
+.theme-toggle:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); /* Simple white outline for focus */
 }
-html.dark .contact-form input::placeholder,
-html.contact-form textarea::placeholder {
-    color: var(--text-secondary-dark);
+html[data-theme="light"] .theme-toggle:focus-visible {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5); /* Simple dark outline for focus */
 }
 
-/* Styling for the form submission button */
-.contact-form .button[type="submit"] {
-    margin-top: var(--spacing-md); /* Space above the submit button */
-    align-self: center; /* Center the button if form is flex column */
+
+/* --- Portfolio Item Card (from template) --- */
+.portfolio-item {
+    background-color: var(--card-bg-dark); /* Card background from variables */
+    padding: var(--spacing-lg); /* 2rem */
+    border-radius: var(--border-radius-md); /* 16px */
+    width: 280px; /* Fixed width from template */
+    box-shadow: 0 8px 24px var(--shadow-color-dark); /* Shadow from variables */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
 }
 
-/* Styling for the form notes/disclaimer */
-.form-notes {
-    font-size: 0.85rem;
-    color: var(--text-secondary-light);
-    text-align: center;
-    margin-top: var(--spacing-md);
+html[data-theme="light"] .portfolio-item {
+    background-color: var(--card-bg-light);
+    box-shadow: 0 8px 24px var(--shadow-color-light);
 }
-html.dark .form-notes {
-    color: var(--text-secondary-dark);
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px var(--shadow-color-dark); /* More intense shadow on hover */
 }
+html[data-theme="light"] .portfolio-item:hover {
+    box-shadow: 0 12px 24px var(--shadow-color-light);
+}
+
+/* Portfolio item heading and paragraph styles are in _typography.css */
