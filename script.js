@@ -93,4 +93,34 @@ document.addEventListener("DOMContentLoaded", function () {
     if (copyrightSpans.length > 0) {
         copyrightSpans[0].textContent = new Date().getFullYear();
     }
+
+    // --- New: Section Fade-In on Scroll ---
+    // Select all sections that should have the fade-in effect
+    const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+    // Options for the Intersection Observer
+    const observerOptions = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px', // No margin around the root
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    };
+
+    // Callback function to execute when observed elements intersect
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // If the element is intersecting (visible), add the 'is-visible' class
+                entry.target.classList.add('is-visible');
+            } else {
+                // If the element is not intersecting (scrolled out of view), remove the 'is-visible' class
+                // This allows the animation to re-play if scrolled back up
+                entry.target.classList.remove('is-visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observe each section
+    fadeInSections.forEach(section => {
+        sectionObserver.observe(section);
+    });
 });
