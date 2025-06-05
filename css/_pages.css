@@ -31,7 +31,7 @@ html.dark .hero-section {
 .hero-text h2 {
     font-size: clamp(2.5rem, 7vw + 1rem, 3.5rem); /* Fluid font size for strong impact */
     margin-bottom: 0.5em;
-    color: var(--logo-color-light); /* Accent color for hero heading */
+    color: var(--logo-color-light);
     font-weight: 700;
 }
 
@@ -124,10 +124,10 @@ html.dark .value-prop {
 
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column layout for mobile */
+    /* Uses auto-fit and minmax to create a responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
-    /* TODO: Add media queries here for 2 or 3 column layout on larger screens */
 }
 
 /* Call-to-Action for All Projects */
@@ -170,10 +170,10 @@ html.dark .about-section p {
 /* Grid for All Project Cards on Portfolio Page */
 .project-grid-full {
     display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
+    /* Uses auto-fit and minmax for a responsive grid on portfolio page */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
-    /* TODO: Add media queries here for 2 or 3 column layout on larger screens */
 }
 
 
