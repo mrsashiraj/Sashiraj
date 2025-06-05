@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark"> <!-- Ensure data-theme is set -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sashiraj - Project: Tarkari Mart</title>
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Link to your main stylesheet from the root -->
     <link rel="stylesheet" href="../styles.css">
-    <script defer src="../script.js"></script>
+    
+    <!-- Defer loading of JavaScript to ensure HTML is parsed first -->
+    <script src="../script.js"></script>
+    
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Detailed case study of the Tarkari Mart project by Sashiraj, focusing on supply chain optimization using SQL and Tableau.">
     <meta property="og:title" content="Tarkari Mart Project Case Study by Sashiraj">
     <meta property="og:description" content="Explore how data analysis optimized supply chain efficiency for a local produce delivery service.">
@@ -19,24 +22,31 @@
 </head>
 <body>
 
-    <main class="project-case-study">
-        <section class="project-header">
-            <h2>Tarkari Mart: Farm to Taste</h2>
-            <p class="project-subtitle">Optimizing Local Produce Supply Chain</p>
-            <div class="project-details-meta">
-                <span class="meta-item"><strong>Category:</strong> Supply Chain Analytics</span>
-                <span class="meta-item"><strong>Tools:</strong> SQL, Tableau, Excel</span>
-                <span class="meta-item"><strong>Date:</strong> October 2023</span>
+    <!-- Header and Navigation will be loaded here by script.js from ../header.html -->
+
+    <main>
+        <section class="hero project-header section-container"> <!-- Added hero class, kept project-header -->
+            <div class="hero-text"> <!-- Added wrapper for text -->
+                <h2>Tarkari Mart: Farm to Taste</h2>
+                <p class="project-subtitle">Optimizing Local Produce Supply Chain</p>
+                <div class="project-details-meta">
+                    <span class="meta-item"><strong>Category:</strong> Supply Chain Analytics</span>
+                    <span class="meta-item"><strong>Tools:</strong> SQL, Tableau, Excel</span>
+                    <span class="meta-item"><strong>Date:</strong> October 2023</span>
+                </div>
             </div>
-            <img src="../images/project1-hero.jpg" alt="Tarkari Mart Project Hero Image" class="project-hero-image" loading="lazy">
+            <div class="hero-image"> <!-- Added wrapper for image -->
+                <!-- Using a relevant Unsplash image as a placeholder for project hero -->
+                <img src="https://images.unsplash.com/photo-1542838183-f3a3f5a28795?q=80&w=2800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tarkari Mart Project Hero Image" class="project-hero-image" loading="lazy">
+            </div>
         </section>
 
-        <section class="project-section">
+        <section class="project-section section-container">
             <h3>1. Project Background & Business Problem</h3>
             <p>Tarkari Mart, a local produce delivery service, faced challenges with inefficient supply chain operations. This led to delays in delivery, increased waste of perishable goods, and fluctuating customer satisfaction. The primary business problem was to identify bottlenecks in the supply chain and propose data-driven solutions to enhance efficiency and reduce operational costs.</p>
         </section>
 
-        <section class="project-section">
+        <section class="project-section section-container">
             <h3>2. Approach & Tools Used</h3>
             <p>My approach involved a multi-faceted analysis:</p>
             <ul>
@@ -49,20 +59,21 @@
             <p><strong>Tools Used:</strong> SQL (PostgreSQL), Tableau Desktop, Microsoft Excel.</p>
         </section>
 
-        <section class="project-section">
+        <section class="project-section section-container">
             <h3>3. Visualizations & Dashboards</h3>
             <p>Below are screenshots of key dashboards and visualizations created during the project. These visuals were instrumental in communicating insights to stakeholders and driving action.</p>
-            <div class="visual-gallery">
-                <figure>
-                    <img src="../images/tarkari_mart_dashboard1.jpg" alt="Tableau Dashboard: Delivery Performance" loading="lazy">
+            <div class="visual-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg);">
+                <figure class="portfolio-item"> <!-- Added portfolio-item class for styling -->
+                    <!-- Using relevant Unsplash images as placeholders for visualizations -->
+                    <img src="https://images.unsplash.com/photo-1621217030800-47b1c3127845?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tableau Dashboard: Delivery Performance" loading="lazy">
                     <figcaption>Figure 1: Delivery Performance Dashboard (Tableau)</figcaption>
                 </figure>
-                <figure>
-                    <img src="../images/tarkari_mart_dashboard2.jpg" alt="Tableau Dashboard: Inventory & Waste Analysis" loading="lazy">
+                <figure class="portfolio-item"> <!-- Added portfolio-item class for styling -->
+                    <img src="https://images.unsplash.com/photo-1614761453297-ef3d71971759?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tableau Dashboard: Inventory & Waste Analysis" loading="lazy">
                     <figcaption>Figure 2: Inventory and Waste Analysis (Tableau)</figcaption>
                 </figure>
-                </div>
-            <div class="dashboard-embed">
+            </div>
+            <div class="dashboard-embed section-container"> <!-- Added section-container for consistency -->
                 <h4>Interactive Dashboard:</h4>
                 <p>Explore the live dashboard on Tableau Public:</p>
                 <div class='tableauPlaceholder' id='viz1701198642738' style='position: relative'>
@@ -88,9 +99,19 @@
                     </object>
                 </div>
                 <script type='text/javascript'>
+                    // Tableau Public embed script - adapted for responsive behavior
                     var divElement = document.getElementById('viz1701198642738');
                     var vizElement = divElement.getElementsByTagName('object')[0];
-                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}
+                    function resizeViz() {
+                        var width = divElement.offsetWidth;
+                        // Adjust height based on aspect ratio or a minimum
+                        var height = (width * 0.75 > 727) ? (width * 0.75) : 727; // Keep a minimum height
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = height + 'px';
+                    }
+                    resizeViz(); // Call on load
+                    window.addEventListener('resize', resizeViz); // Call on resize
+                    
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -98,7 +119,7 @@
             </div>
         </section>
 
-        <section class="project-section">
+        <section class="project-section section-container">
             <h3>4. Insights Generated & Business Impact</h3>
             <p>Through this analysis, several key insights were uncovered:</p>
             <ul>
@@ -114,24 +135,24 @@
             </ul>
         </section>
 
-        <section class="project-links">
+        <section class="project-links section-container">
             <h3>Project Resources</h3>
             <ul>
                 <li><a href="https://github.com/Sashiraj" target="_blank">GitHub Repository <i class="fa-brands fa-github"></i></a></li>
                 <li><a href="../assets/Tarkari_Mart_Report.pdf" download>Download PDF Report <i class="fa-solid fa-file-pdf"></i></a></li>
-                </ul>
+            </ul>
         </section>
 
-        <section class="back-to-portfolio">
+        <section class="back-to-portfolio section-container">
             <a href="../portfolio.html" class="button primary-button">&larr; Back to Portfolio</a>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> Sashiraj</p>
-    </footer>
+    <button class="fab" id="scroll-to-top-btn">↑</button> <!-- Added id -->
 
-    <script src="https://kit.fontawesome.com/4a03c373b5.js" crossorigin="anonymous"></script>
+    <footer class="footer">
+        <p>&copy; <span id="current-year-footer"></span> Sashiraj</p> <!-- Updated id -->
+    </footer>
 
 </body>
 </html>
