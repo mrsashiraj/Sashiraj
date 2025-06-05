@@ -1,0 +1,25 @@
+/* css/_utilities.css */
+
+/*
+   Utility Classes
+
+   This file contains single-purpose, highly reusable classes that can be
+   applied to various elements to achieve specific visual effects or
+   layout adjustments. They are often independent of component structure.
+*/
+
+/* Section Description Text */
+/* Styles a descriptive text block typically found at the beginning of a section. */
+.section-description {
+    text-align: center; /* Centers the text */
+    max-width: 800px; /* Limits the width for better readability */
+    margin: var(--spacing-md) auto var(--spacing-xxl) auto; /* Centers horizontally and applies vertical margins */
+    font-size: clamp(1.125rem, 2vw + 0.5rem, 1.25rem); /* Fluid font size for responsiveness */
+    opacity: 0.9; /* Slightly faded text */
+    color: var(--text-secondary-light); /* Uses secondary text color for less prominence */
+}
+
+/* Section Description Text in Dark Mode */
+html.dark .section-description {
+    color: var(--text-secondary-dark); /* Adjusts color for dark theme */
+}
