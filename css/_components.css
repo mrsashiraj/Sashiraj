@@ -106,7 +106,8 @@ html.dark .secondary-button:hover {
     box-shadow: 0 2px 5px var(--shadow-light);
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-    border-top: 4px solid var(--border-light); /* Default top border (can be overridden by accent colors) */
+    /* Changed from border-top to full border for better card definition */
+    border: 1px solid var(--border-light); 
     display: flex; /* Uses flexbox to ensure consistent height for content */
     flex-direction: column; /* Stacks content vertically */
     height: 100%; /* Ensures all cards in a grid have equal height */
@@ -116,11 +117,11 @@ html.dark .secondary-button:hover {
 html.dark .project-card, html.dark .project-card-full {
     background-color: var(--card-bg-dark);
     box-shadow: 0 2px 5px var(--shadow-dark);
-    border-top-color: var(--border-dark);
+    border-color: var(--border-dark); /* Apply border color for dark theme */
 }
 
 /* Card accent border colors for specific projects */
-/* Apply these classes (`.project-alpha`, etc.) directly to your HTML project cards. */
+/* These will now override the main 'border' property if applied */
 .project-alpha { border-top-color: var(--project-alpha-accent); }
 .project-beta { border-top-color: var(--project-beta-accent); }
 .project-gamma { border-top-color: var(--project-gamma-accent); }
@@ -482,7 +483,7 @@ html.dark .contact-form textarea:focus {
     opacity: 0.7;
 }
 html.dark .contact-form input::placeholder,
-html.dark .contact-form textarea::placeholder {
+html.contact-form textarea::placeholder {
     color: var(--text-secondary-dark);
 }
 
