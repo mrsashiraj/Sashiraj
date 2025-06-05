@@ -1,0 +1,68 @@
+/* css/_variables.css */
+
+/*
+   CSS Variables (Custom Properties) for Theming and Design System
+
+   This file defines all the core design tokens for the portfolio website.
+   Using variables ensures consistency across the site and allows for easy
+   theme switching (e.g., light/dark mode) by updating a few key values.
+*/
+
+:root {
+    /* --- Fonts --- */
+    --font-logo: 'Montserrat', sans-serif; /* Used for the main site logo for a distinct look */
+    --font-primary: 'Libre Baskerville', serif; /* Primary font for body text, paragraphs, and general content */
+    --font-heading: 'Libre Baskerville', serif; /* Font specifically for all heading elements (h1-h6) */
+
+    /* --- Base Font Size and Line Height --- */
+    --font-size-base: 1rem; /* Base font size set to 16px (1rem) for accessibility and scaling */
+    --line-height-base: 1.7; /* Enhanced line height for better readability of text blocks */
+
+    /* --- Colors: Light Mode Palette --- */
+    --background-light: #f5f5f5; /* Overall background color in light mode */
+    --header-bg-light: #eeeeee; /* Background for the header and navigation in light mode */
+    --card-bg-light: #ffffff; /* Background for cards and content sections in light mode */
+    --text-primary-light: #111111; /* Main text color for high contrast content */
+    --text-secondary-light: #444444; /* Secondary text color for descriptions, sub-headings, etc. */
+    --text-footer-light: #666666; /* Text color specifically for the footer */
+    --logo-color-light: #4f46e5; /* Accent color for the logo and primary links (Indigo-600) */
+    --button-bg-light: #5c5470; /* Default background for buttons (muted purple) */
+    --button-hover-bg-light: #7a6f9b; /* Hover state background for buttons */
+    --button-text-light: #ffffff; /* Text color for buttons */
+    --focus-ring-light: #bcb2e5; /* Outline color for focus states (accessibility) */
+    --border-light: #e0e0e0; /* General border color for elements in light mode */
+    --shadow-light: rgba(17, 17, 17, 0.1); /* Subtle shadow color based on primary text */
+
+    /* --- Colors: Dark Mode Palette --- */
+    --background-dark: #0f0f0f; /* Overall background color in dark mode */
+    --header-bg-dark: #161616; /* Background for the header and navigation in dark mode */
+    --card-bg-dark: #1a1a1a; /* Background for cards and content sections in dark mode */
+    --text-primary-dark: #e6e6e6; /* Main text color for high contrast content in dark mode */
+    --text-secondary-dark: #999999; /* Secondary text color for descriptions, sub-headings, etc. in dark mode */
+    --text-footer-dark: #999999; /* Text color specifically for the footer in dark mode */
+    --logo-color-dark: #a5b4fc; /* Accent color for the logo and primary links in dark mode (Indigo-400) */
+    --button-bg-dark: #5c5470; /* Default background for buttons (same as light for consistency) */
+    --button-hover-bg-dark: #7a6f9b; /* Hover state background for buttons (same as light) */
+    --button-text-dark: #ffffff; /* Text color for buttons (same as light) */
+    --focus-ring-dark: #a5b4fc; /* Outline color for focus states in dark mode */
+    --border-dark: #333333; /* General border color for elements in dark mode */
+    --shadow-dark: rgba(230, 230, 230, 0.08); /* Subtle shadow color based on primary text in dark mode */
+
+    /* --- Card Accent Border Colors (for thematic differentiation of projects) --- */
+    --project-alpha-accent: #bcb2e5; /* Light purple accent */
+    --project-beta-accent: #e6a8d7; /* Pinkish purple accent */
+    --project-gamma-accent: #a8d0da; /* Light blue accent */
+
+    /* --- Spacing Scale (based on Tailwind CSS conventions) --- */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem;  /* 8px */
+    --spacing-md: 1rem;    /* 16px */
+    --spacing-lg: 1.5rem;  /* 24px */
+    --spacing-xl: 2rem;    /* 32px */
+    --spacing-xxl: 2.5rem; /* 40px */
+
+    /* --- Border Radius Variables --- */
+    --border-radius-sm: 0.5rem; /* For smaller elements like buttons */
+    --border-radius-md: 1rem;    /* For larger elements like cards/sections */
+    --border-radius-lg: 1rem; /* Keeping consistent for now, but can be larger for specific elements */
+}
