@@ -1,29 +1,25 @@
 <!-- header.html -->
-<!-- This file contains the common header and navigation for your website. -->
+<!-- This file contains the common header and navigation for your website, adapted from the new template. -->
 
-<header class="main-header">
-    <div class="header-content">
-        <h1 class="site-logo">SASHIRAJ</h1>
-        <p class="tagline">AI Enthusiast & Data Analyst</p>
+<!-- Google Fonts: Montserrat -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<header>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
     </div>
-    <!-- Theme Toggle Switch (Visually, this will be an iPhone-style switch) -->
-    <label class="theme-switch">
-        <input type="checkbox" id="theme-toggle" aria-label="Toggle dark and light theme">
-        <span class="slider round"></span>
-    </label>
+    <nav id="nav">
+        <!-- Updated hrefs to match existing page names and new section IDs -->
+        <a href="index.html#home">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()"></button>
 </header>
-
-<nav class="main-nav">
-    <ul>
-        <!-- 
-            The 'nav-button-active' class will be dynamically set by JavaScript in script.js
-            based on the current page's URL, so we don't need to hardcode it here.
-            The 'button secondary-button' classes have been removed for a minimalistic look.
-        -->
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
