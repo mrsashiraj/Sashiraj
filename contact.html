@@ -5,22 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sashiraj - Contact Me</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Google Fonts: Poppins and Open Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Link to your main stylesheet -->
     <link rel="stylesheet" href="styles.css">
     
     <!-- Defer loading of JavaScript to ensure HTML is parsed first -->
     <script src="script.js"></script>
-    
-    <!-- Important: Replace 'your-font-awesome-kit-code.js' with your actual Font Awesome Kit code if you use one -->
-    <!-- <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script> -->
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Contact Sashiraj for data analysis, business intelligence, or AI-related inquiries. Connect via email, LinkedIn, or GitHub.">
@@ -31,21 +21,22 @@
     <meta property="og:type" content="website">
 </head>
 <body>
+    <!-- Header and Navigation will be loaded here by script.js from header.html -->
 
     <main class="contact-page">
-        <section id="contact-intro" class="contact-section intro-section">
+        <section id="contact-intro" class="contact-section intro-section fade-in-section">
             <h2>Let's Connect</h2>
             <p>
                 Whether you have a project in mind, a question about data analytics, or just want to say hello, feel free to reach out! I'm always open to new opportunities and collaborations.
             </p>
         </section>
 
-        <section id="contact-form-section" class="contact-section">
+        <section id="contact-form-section" class="contact-section fade-in-section">
             <h3>Send Me a Message</h3>
             <form id="contactForm" class="contact-form" action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                    <input type="text" id="name" name="name" required placeholder="Your Full Name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -53,7 +44,7 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="6" required placeholder="Your message here..."></textarea>
+                    <textarea id="message" name="message" rows="6" required placeholder="Type your message here..."></textarea>
                 </div>
                 <button type="submit" class="button primary-button">Send Message</button>
             </form>
@@ -62,7 +53,7 @@
             </p>
         </section>
 
-        <section id="social-links" class="contact-section">
+        <section id="social-links" class="contact-section fade-in-section">
             <h3>Find Me Online</h3>
             <ul class="social-icons">
                 <li>
@@ -92,7 +83,7 @@
             </ul>
         </section>
 
-        <section id="calendly-booking" class="contact-section">
+        <section id="calendly-booking" class="contact-section fade-in-section">
             <h3>Schedule a Chat</h3>
             <p>Prefer to schedule a direct conversation? Book a time that works for you:</p>
             <a href="https://calendly.com/your-calendly-username/30min" target="_blank" class="button secondary-button">Book a Meeting <i class="fa-solid fa-calendar-alt"></i></a>
