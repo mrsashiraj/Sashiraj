@@ -101,7 +101,7 @@ html.dark .secondary-button:hover {
 /* Base styling for both featured (`.project-card`) and full (`.project-card-full`) project displays. */
 .project-card, .project-card-full {
     background-color: var(--card-bg-light);
-    padding: var(--spacing-lg); /* Default padding for all cards */
+    padding: var(--spacing-lg);
     border-radius: var(--border-radius-md);
     box-shadow: 0 2px 5px var(--shadow-light);
     text-align: left;
@@ -153,11 +153,11 @@ html.dark .project-card-full:hover {
     object-fit: cover; /* Ensures images fill their container without distortion */
     border-radius: var(--border-radius-sm);
     margin-bottom: var(--spacing-md);
-    display: block;
+    display: block; /* Removes extra space below image */
 }
 /* Specific heights for different card types */
-.project-card img { height: 180px; } /* Reduced height for featured project thumbnails */
-.project-card-full img { height: 250px; } /* Height for full portfolio thumbnails remains same */
+.project-card img { height: 200px; }
+.project-card-full img { height: 250px; }
 
 
 /* Project Card Heading */
@@ -175,17 +175,18 @@ html.dark .project-card h3, html.dark .project-card-full h3 {
 /* Project Tags */
 .project-tags {
     margin-bottom: 0.8em;
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allow tags to wrap */
+    gap: var(--spacing-xs); /* Small gap between tags */
 }
 
 .project-tags span {
     display: inline-block; /* Allows padding and margin */
-    background-color: var(--button-bg-light); /* Uses button color for tags */
+    background-color: var(--button-bg-light); /* Using button color for tags */
     color: white;
     font-size: 0.875rem;
     padding: 0.3em 0.7em;
     border-radius: var(--border-radius-sm);
-    margin-right: 0.5em;
-    margin-bottom: 0.5em;
     opacity: 0.9;
 }
 html.dark .project-tags span {
@@ -387,4 +388,117 @@ html.dark .skill-list-inline li {
     background-color: var(--card-bg-dark);
     border-color: var(--border-dark);
     color: var(--text-primary-dark);
+}
+
+
+/* --- Contact Form Styling --- */
+/* Overall styling for the contact form container */
+.contact-form {
+    background-color: var(--card-bg-light);
+    padding: var(--spacing-lg) var(--spacing-xl); /* More generous padding */
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 10px var(--shadow-light);
+    margin-top: var(--spacing-lg); /* Space from section heading */
+    max-width: 700px; /* Limit form width for better readability */
+    margin-left: auto;
+    margin-right: auto; /* Center the form */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: var(--spacing-md); /* Space between form groups */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+html.dark .contact-form {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 4px 10px var(--shadow-dark);
+}
+
+/* Styling for each form group (label + input/textarea) */
+.form-group {
+    display: flex;
+    flex-direction: column; /* Stack label above input */
+    gap: var(--spacing-xs); /* Small gap between label and input */
+    margin-bottom: var(--spacing-sm); /* Space between form groups */
+}
+
+/* Styling for form labels */
+.contact-form label {
+    font-weight: 600;
+    color: var(--text-primary-light);
+    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.125rem); /* Fluid label font size */
+}
+html.dark .contact-form label {
+    color: var(--text-primary-dark);
+}
+
+/* Styling for text input and email input fields */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; /* Full width within its container */
+    padding: var(--spacing-sm); /* Comfortable padding */
+    border: 1px solid var(--border-light); /* Subtle border */
+    border-radius: var(--border-radius-sm); /* Rounded corners */
+    font-size: var(--font-size-base);
+    font-family: var(--font-primary);
+    background-color: var(--background-light); /* Light background for fields */
+    color: var(--text-primary-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none; /* Remove default focus outline */
+}
+
+html.dark .contact-form input[type="text"],
+html.dark .contact-form input[type="email"],
+html.dark .contact-form textarea {
+    background-color: var(--background-dark); /* Dark background for fields */
+    border-color: var(--border-dark);
+    color: var(--text-primary-dark);
+}
+
+/* Styling for textarea specifically */
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px; /* Minimum height for message area */
+}
+
+/* Focus styles for input and textarea */
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--logo-color-light); /* Accent color on focus */
+    box-shadow: 0 0 0 3px var(--focus-ring-light); /* Clear focus ring */
+}
+html.dark .contact-form input[type="text"]:focus,
+html.dark .contact-form input[type="email"]:focus,
+html.dark .contact-form textarea:focus {
+    border-color: var(--logo-color-dark);
+    box-shadow: 0 0 0 3px var(--focus-ring-dark);
+}
+
+/* Placeholder text styling */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-secondary-light);
+    opacity: 0.7;
+}
+html.dark .contact-form input::placeholder,
+html.dark .contact-form textarea::placeholder {
+    color: var(--text-secondary-dark);
+}
+
+/* Styling for the form submission button */
+.contact-form .button[type="submit"] {
+    margin-top: var(--spacing-md); /* Space above the submit button */
+    align-self: center; /* Center the button if form is flex column */
+}
+
+/* Styling for the form notes/disclaimer */
+.form-notes {
+    font-size: 0.85rem;
+    color: var(--text-secondary-light);
+    text-align: center;
+    margin-top: var(--spacing-md);
+}
+html.dark .form-notes {
+    color: var(--text-secondary-dark);
 }
