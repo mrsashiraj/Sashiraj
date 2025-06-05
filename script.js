@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         portfolioGridWrapper.scrollLeft = 0; // Reset scroll position instantly after removal
                     }, 600); // Adjust this timeout if scroll animation duration changes
                 }
-            }, 3000); // Adjust interval as needed (e.g., 5000-10000ms for production)
+            }, 15000); // Increased interval to 15 seconds for slower, more user-friendly scrolling
         }
     }
 
