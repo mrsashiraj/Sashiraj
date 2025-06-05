@@ -1,0 +1,390 @@
+/* css/_components.css */
+
+/*
+   Component Styles
+
+   This file defines the styling for reusable UI components that can be
+   composed together to build various sections of the website.
+   Examples include buttons, cards, and specialized lists.
+*/
+
+/* --- Buttons --- */
+/* Base styling for all button-like elements (e.g., primary, secondary). */
+.button {
+    padding: var(--spacing-sm) var(--spacing-md); /* Vertical and horizontal padding */
+    border-radius: var(--border-radius-sm); /* Rounded corners */
+    font-weight: 600;
+    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.05rem); /* Fluid font size */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions for interaction */
+    text-decoration: none; /* Removes underline for anchor-buttons */
+    display: inline-block; /* Allows padding/margin and prevents full-width */
+    white-space: nowrap; /* Prevents text wrapping inside button */
+    text-align: center;
+    cursor: pointer;
+    font-family: var(--font-primary); /* Uses primary font for button text */
+    box-shadow: 0 2px 4px var(--shadow-light); /* Subtle shadow */
+    outline: none; /* Removes default browser outline (will be replaced by focus-visible) */
+}
+
+/* Button Shadow in Dark Mode */
+html.dark .button {
+    box-shadow: 0 2px 4px var(--shadow-dark);
+}
+
+/* Button Focus (Accessibility) */
+/* Ensures a clear visual indicator for keyboard navigation. */
+.button:focus-visible {
+    box-shadow: 0 0 0 3px var(--focus-ring-light); /* Prominent outline for focus */
+}
+html.dark .button:focus-visible {
+    box-shadow: 0 0 0 3px var(--focus-ring-dark);
+}
+
+
+/* Primary Button Styling */
+/* Defines the main call-to-action button style. */
+.primary-button {
+    background-color: var(--button-bg-light);
+    color: var(--button-text-light);
+    border: 2px solid var(--button-bg-light); /* Border matches background */
+}
+
+/* Primary Button in Dark Mode */
+html.dark .primary-button {
+    background-color: var(--button-bg-dark);
+    border-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
+}
+
+/* Primary Button Hover Effect */
+.primary-button:hover {
+    background-color: var(--button-hover-bg-light);
+    border-color: var(--button-hover-bg-light);
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 6px 12px var(--shadow-light); /* More pronounced shadow on hover */
+}
+html.dark .primary-button:hover {
+    background-color: var(--button-hover-bg-dark);
+    border-color: var(--button-hover-bg-dark);
+    box-shadow: 0 6px 12px var(--shadow-dark);
+}
+
+/* Secondary Button Styling */
+/* Defines a less prominent button style, often an outline button. */
+.secondary-button {
+    background-color: transparent; /* Transparent background */
+    color: var(--button-bg-light); /* Text color uses primary button color */
+    border: 2px solid var(--button-bg-light); /* Outline border */
+}
+
+/* Secondary Button in Dark Mode */
+html.dark .secondary-button {
+    color: var(--button-bg-dark);
+    border-color: var(--button-bg-dark);
+    background-color: transparent; /* Remains transparent in dark mode */
+}
+
+/* Secondary Button Hover Effect */
+.secondary-button:hover {
+    background-color: var(--button-bg-light); /* Fills with color on hover */
+    color: white; /* Text becomes white on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-light);
+}
+html.dark .secondary-button:hover {
+    background-color: var(--button-bg-dark);
+    color: white;
+    box-shadow: 0 6px 12px var(--shadow-dark);
+}
+
+/* --- Project Cards (Used on Homepage and Portfolio Page) --- */
+/* Base styling for both featured (`.project-card`) and full (`.project-card-full`) project displays. */
+.project-card, .project-card-full {
+    background-color: var(--card-bg-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 5px var(--shadow-light);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+    border-top: 4px solid var(--border-light); /* Default top border (can be overridden by accent colors) */
+    display: flex; /* Uses flexbox to ensure consistent height for content */
+    flex-direction: column; /* Stacks content vertically */
+    height: 100%; /* Ensures all cards in a grid have equal height */
+}
+
+/* Project Card Base in Dark Mode */
+html.dark .project-card, html.dark .project-card-full {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 2px 5px var(--shadow-dark);
+    border-top-color: var(--border-dark);
+}
+
+/* Card accent border colors for specific projects */
+/* Apply these classes (`.project-alpha`, etc.) directly to your HTML project cards. */
+.project-alpha { border-top-color: var(--project-alpha-accent); }
+.project-beta { border-top-color: var(--project-beta-accent); }
+.project-gamma { border-top-color: var(--project-gamma-accent); }
+html.dark .project-alpha { border-top-color: var(--project-alpha-accent); } /* Maintain in dark mode */
+html.dark .project-beta { border-top-color: var(--project-beta-accent); }
+html.dark .project-gamma { border-top-color: var(--project-gamma-accent); }
+
+
+/* Project Card Hover Effect (common for both types) */
+.project-card:hover {
+    transform: translateY(-5px); /* Moderate lift effect */
+    box-shadow: 0 8px 16px var(--shadow-light); /* More pronounced shadow on hover */
+}
+html.dark .project-card:hover {
+    box-shadow: 0 8px 16px var(--shadow-dark);
+}
+/* Specific hover for full project cards (slightly more dramatic lift) */
+.project-card-full:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 20px var(--shadow-light);
+}
+html.dark .project-card-full:hover {
+    box-shadow: 0 12px 20px var(--shadow-dark);
+}
+
+
+/* Project Card Image Styling */
+.project-card img, .project-card-full img {
+    width: 100%;
+    object-fit: cover; /* Ensures images fill their container without distortion */
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--spacing-md);
+    display: block;
+}
+/* Specific heights for different card types */
+.project-card img { height: 200px; }
+.project-card-full img { height: 250px; }
+
+
+/* Project Card Heading */
+.project-card h3, .project-card-full h3 {
+    font-size: clamp(1.25rem, 3vw + 0.5rem, 1.5rem); /* Fluid font size */
+    font-weight: 600;
+    margin-top: 0; /* Removes default top margin */
+    margin-bottom: 0.5em;
+    color: var(--text-primary-light); /* Primary text color for heading */
+}
+html.dark .project-card h3, html.dark .project-card-full h3 {
+    color: var(--text-primary-dark);
+}
+
+/* Project Tags */
+.project-tags {
+    margin-bottom: 0.8em;
+}
+
+.project-tags span {
+    display: inline-block; /* Allows padding and margin */
+    background-color: var(--button-bg-light); /* Uses button color for tags */
+    color: white;
+    font-size: 0.875rem;
+    padding: 0.3em 0.7em;
+    border-radius: var(--border-radius-sm);
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    opacity: 0.9;
+}
+html.dark .project-tags span {
+    background-color: var(--button-bg-dark);
+}
+
+/* Project Card Paragraph Text */
+.project-card p, .project-card-full p {
+    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1rem); /* Fluid font size */
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary-light); /* Secondary text color for description */
+    flex-grow: 1; /* Allows text to take up available vertical space, ensuring consistent footer alignment */
+}
+html.dark .project-card p, html.dark .project-card-full p {
+    color: var(--text-secondary-dark);
+}
+
+/* Read More Link within Project Cards */
+.read-more-link {
+    display: inline-block;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1.05rem); /* Fluid font size */
+    color: var(--logo-color-light); /* Uses accent color for links */
+    margin-top: auto; /* Pushes the link to the bottom of the card */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+html.dark .read-more-link {
+    color: var(--logo-color-dark);
+}
+.read-more-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Skill Area Cards (Used on About Page) --- */
+/* Styles for individual skill category cards (e.g., "Frontend Dev", "Data Analysis"). */
+.skill-area-card {
+    background-color: var(--card-bg-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 5px var(--shadow-light);
+    border: 1px solid var(--border-light);
+    transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+html.dark .skill-area-card {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 2px 5px var(--shadow-dark);
+    border-color: var(--border-dark);
+}
+
+/* Skill Area Card Heading */
+.skill-area-card h3 {
+    color: var(--logo-color-light);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: clamp(1.5rem, 4vw + 0.5rem, 1.75rem); /* Fluid font size */
+    font-weight: 600;
+}
+html.dark .skill-area-card h3 {
+    color: var(--logo-color-dark);
+}
+
+/* Technology List Grid (inside Skill Area Cards) */
+/* Layout for lists of technologies (e.g., JavaScript, React). */
+.tech-list-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default, can be adjusted with media queries */
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.tech-list-grid ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.tech-list-grid li {
+    background-color: var(--card-bg-light);
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--button-bg-light); /* Accent border on the left */
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 0.5em;
+    transition: background-color 0.3s, border-color 0.3s;
+    color: var(--text-primary-light);
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
+}
+html.dark .tech-list-grid li {
+    background-color: var(--card-bg-dark);
+    border-left-color: var(--button-bg-dark);
+    color: var(--text-primary-dark);
+}
+
+/* Domain List (similar to Tech List Grid, but for domains/industries) */
+.domain-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.domain-list li {
+    background-color: var(--card-bg-light);
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--button-bg-light);
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.3s, border-color 0.3s;
+    color: var(--text-primary-light);
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
+}
+html.dark .domain-list li {
+    background-color: var(--card-bg-dark);
+    border-left-color: var(--button-bg-dark);
+    color: var(--text-primary-dark);
+}
+
+/* --- Project Links (Used on Project Case Study Pages) --- */
+/* Styles for links to live demos, repositories, etc., related to a project. */
+.project-links ul {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-md);
+    display: flex; /* Flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: var(--spacing-md); /* Space between links */
+    justify-content: center; /* Centers the links */
+}
+
+.project-links li a {
+    display: flex; /* Flexbox for icon and text alignment */
+    align-items: center; /* Vertically aligns icon and text */
+    gap: 0.5em; /* Space between icon and text */
+    background-color: var(--button-bg-light);
+    color: var(--button-text-light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 4px var(--shadow-light);
+    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1.05rem); /* Fluid font size */
+}
+html.dark .project-links li a {
+    background-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
+    box-shadow: 0 2px 4px var(--shadow-dark);
+}
+
+/* Project Links Hover Effect */
+.project-links li a:hover {
+    background-color: var(--button-hover-bg-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-light);
+    text-decoration: none;
+}
+html.dark .project-links li a:hover {
+    background-color: var(--button-hover-bg-dark);
+    box-shadow: 0 4px 8px var(--shadow-dark);
+}
+
+/* Project Link Icons (Font Awesome, etc.) */
+.project-links li a .fa-brands,
+.project-links li a .fa-solid {
+    font-size: 1.3em; /* Slightly increased icon size */
+}
+
+/* --- Inline Skill List (Used on Resume Page) --- */
+/* Styles for a horizontal, comma-separated or spaced list of skills. */
+.skills-category h4 {
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    font-size: clamp(1.125rem, 2vw + 0.5rem, 1.25rem); /* Fluid font size */
+    color: var(--text-primary-light);
+}
+html.dark .skills-category h4 {
+    color: var(--text-primary-dark);
+}
+
+.skill-list-inline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allows skills to wrap to next line */
+    gap: var(--spacing-sm); /* Space between individual skill tags */
+}
+
+.skill-list-inline li {
+    background-color: var(--card-bg-light);
+    padding: 0.5em 1em;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-light);
+    font-size: clamp(0.9rem, 1.5vw + 0.2rem, 1rem); /* Fluid font size */
+    transition: background-color 0.3s, border-color 0.3s;
+    color: var(--text-primary-light);
+}
+html.dark .skill-list-inline li {
+    background-color: var(--card-bg-dark);
+    border-color: var(--border-dark);
+    color: var(--text-primary-dark);
+}
