@@ -51,9 +51,9 @@ html.dark .site-logo {
 
 /* Tagline below the Logo */
 .tagline {
-    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.125rem); /* Fluid tagline */
+    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
     margin-top: 0.2em;
-    opacity: 0.8;
+    opacity: 0.8; /* Slightly faded */
     color: var(--text-secondary-light); /* Secondary text color */
 }
 
@@ -62,43 +62,77 @@ html.dark .tagline {
     color: var(--text-secondary-dark);
 }
 
-/* Theme Toggle Button */
-#theme-toggle {
-    background-color: var(--button-bg-light); /* Button background color */
-    color: var(--button-text-light); /* Button text color */
-    border: none;
-    padding: var(--spacing-sm) var(--spacing-md); /* Padding for button */
-    border-radius: var(--border-radius-sm); /* Rounded corners */
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions for interaction */
-    flex-shrink: 0; /* Prevents button from shrinking on small screens */
+/* --- Theme Toggle Switch Styling (iPhone-style) --- */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px; /* Width of the entire switch */
+    height: 26px; /* Height of the entire switch */
+    flex-shrink: 0; /* Prevent it from shrinking on small screens */
     margin-left: var(--spacing-md); /* Space from logo */
-    outline: none; /* Removes default browser outline (will be replaced by focus-visible) */
 }
 
-/* Theme Toggle in Dark Mode */
-html.dark #theme-toggle {
-    background-color: var(--button-bg-dark);
-    color: var(--button-text-dark);
+/* Hide default HTML checkbox */
+.theme-switch input {
+    opacity: 0; /* Make it invisible */
+    width: 0;
+    height: 0;
 }
 
-/* Theme Toggle Hover Effect */
-#theme-toggle:hover {
-    background-color: var(--button-hover-bg-light); /* Darker background on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 4px 8px var(--shadow-light); /* Enhanced shadow on hover */
-}
-html.dark #theme-toggle:hover {
-    background-color: var(--button-hover-bg-dark);
-    box-shadow: 0 44px 8px var(--shadow-dark);
+/* The slider (the track) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border-dark); /* Color when OFF (dark gray/border color) */
+    transition: background-color 0.4s ease; /* Smooth transition for background color */
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.2); /* Inner shadow for depth */
 }
 
-/* Theme Toggle Focus (Accessibility) */
-#theme-toggle:focus-visible {
-    box-shadow: 0 0 0 3px var(--focus-ring-light); /* Prominent outline for keyboard focus */
+/* The slider thumb (the circle inside) */
+.slider:before {
+    content: '';
+    position: absolute;
+    height: 22px; /* Height of the thumb */
+    width: 22px; /* Width of the thumb */
+    left: 2px; /* Initial position from the left */
+    bottom: 2px; /* Initial position from the bottom */
+    background-color: white; /* Color of the thumb */
+    transition: transform 0.4s ease; /* Smooth transition for thumb movement */
+    border-radius: 50%; /* Makes the thumb circular */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Shadow for the thumb */
 }
-html.dark #theme-toggle:focus-visible {
+
+/* Rounded sliders (pill shape) */
+.slider.round {
+    border-radius: 26px; /* Half of height to make it fully rounded */
+}
+
+.slider.round:before {
+    border-radius: 50%; /* Ensures thumb is always circular */
+}
+
+/* When the checkbox is checked (ON state) */
+.theme-switch input:checked + .slider {
+    background-color: var(--logo-color-light); /* Accent color when ON (light mode) */
+}
+html.dark .theme-switch input:checked + .slider {
+    background-color: var(--logo-color-dark); /* Accent color when ON (dark mode) */
+}
+
+/* Move the thumb when checked */
+.theme-switch input:checked + .slider:before {
+    transform: translateX(24px); /* Moves thumb to the right */
+}
+
+/* Focus style for accessibility */
+.theme-switch input:focus-visible + .slider {
+    box-shadow: 0 0 0 3px var(--focus-ring-light); /* Outline for keyboard focus */
+}
+html.dark .theme-switch input:focus-visible + .slider {
     box-shadow: 0 0 0 3px var(--focus-ring-dark);
 }
 
@@ -125,7 +159,7 @@ html.dark .main-nav {
     font-family: var(--font-primary); /* Use primary font or a distinct one */
     font-size: clamp(0.9rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
     color: var(--text-secondary-light);
-    opacity: 0.9;
+    opacity: 0.9; /* Slightly faded */
     margin-bottom: var(--spacing-sm); /* Small space below it */
     text-align: center; /* Ensure text is centered */
     font-weight: 600; /* Slightly bolder for prominence */
@@ -145,36 +179,41 @@ html.dark .nav-brand-description {
     display: flex; /* Uses flexbox for horizontal layout */
     justify-content: center; /* Centers navigation items */
     flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: var(--spacing-xs); /* Reduced gap between buttons */
 }
 
-/* Navigation List Item Links */
+/* Navigation List Item Links - now handled by .button classes */
 .main-nav li a {
-    display: block; /* Makes the entire list item clickable */
-    padding: 1em 1.5em; /* Padding for click area */
-    color: var(--text-primary-light); /* Link text color */
-    font-weight: 700; /* Bold for prominence */
-    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover/active */
+    /* These styles are now primarily handled by the .button and .secondary-button classes */
+    /* Keeping for minimal default but expecting override */
+    padding: 1em 1.5em; /* Default padding, will be overridden by .button */
+    color: var(--text-primary-light);
+    font-weight: 700;
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Navigation Links in Dark Mode */
-html.dark .main-nav li a {
-    color: var(--text-primary-dark);
+/* Active navigation button styling */
+.nav-button-active {
+    background-color: var(--button-bg-light); /* Background color for active button */
+    color: var(--button-text-light); /* Text color for active button */
+    border-color: var(--button-bg-light); /* Border color for active button */
 }
 
-/* Navigation Links Hover and Active States */
-.main-nav li a:hover,
-.main-nav li a.active {
-    background-color: var(--button-hover-bg-light); /* Changes background on hover/active */
-    color: white; /* Ensures good text contrast on hover */
-    text-decoration: none;
+html.dark .nav-button-active {
+    background-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
+    border-color: var(--button-bg-dark);
 }
 
-/* Navigation Links Hover and Active States in Dark Mode */
-html.dark .main-nav li a:hover,
-html.dark .main-nav li a.active {
+/* Ensure hover styles still work for active button */
+.nav-button-active:hover {
+    background-color: var(--button-hover-bg-light);
+    border-color: var(--button-hover-bg-light);
+}
+html.dark .nav-button-active:hover {
     background-color: var(--button-hover-bg-dark);
-    color: white;
+    border-color: var(--button-hover-bg-dark);
 }
 
 /* --- Main Content Area --- */
@@ -224,13 +263,19 @@ html.dark section h2 {
 /* --- Footer --- */
 /* Basic styling for the site footer. */
 footer {
-    text-align: center;
+    text-align: center; /* Keep this for fallback, but flexbox is primary */
     padding: var(--spacing-lg);
     margin-top: var(--spacing-xxl); /* Provide generous space above footer */
     background-color: var(--header-bg-light); /* Match header background */
     color: var(--text-footer-light);
     box-shadow: 0 -2px 5px var(--shadow-light); /* Subtle shadow above footer */
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+
+    /* New Flexbox centering for robust alignment */
+    display: flex;
+    flex-direction: column; /* Ensures content stacks if multiple elements */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically (if height allows) */
 }
 
 html.dark footer {
@@ -242,5 +287,5 @@ html.dark footer {
 footer p {
     margin: 0; /* Remove default paragraph margins in footer */
     font-size: 0.9rem;
-    text-align: center; /* Explicitly center the text within the paragraph */
+    /* text-align: center; Removed from here as flexbox on parent handles it more effectively */
 }
