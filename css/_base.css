@@ -5,68 +5,39 @@
 
    This file sets up fundamental styles for the entire HTML document,
    including universal box-sizing, default theme application, and
-   basic styling for links and the body element.
+   basic styling for links and the body element, adapted from the new template.
 */
 
-/* Universal Box-Sizing Reset */
-/* Applies border-box to all elements, simplifying layout calculations. */
-*, *::before, *::after {
+/* Universal Box-Sizing Reset (from template) */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/* Default Theme Activation (Light Mode) */
-/*
-   Applies light theme variables by default to the root HTML element.
-   Transitions ensure smooth visual changes when switching themes.
-*/
-html {
-    background-color: var(--background-light);
-    color: var(--text-primary-light);
-    font-family: var(--font-primary);
-    font-size: var(--font-size-base); /* Base font size set from variables */
-    line-height: var(--line-height-base); /* Base line height set from variables */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
-}
-
-/* Dark Theme Activation */
-/*
-   When the 'dark' class is applied to the HTML element,
-   these styles override the light mode variables, activating the dark theme.
-*/
-html.dark {
-    background-color: var(--background-dark);
-    color: var(--text-primary-dark);
-}
-
-/* Body Styles */
-/*
-   Ensures the body takes up minimum 100% viewport height and removes
-   default browser margins/padding.
-*/
+/* Body and HTML Global Styles (adapted from template) */
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* Ensures body expands to fill at least the full viewport height */
+    font-family: var(--font-primary); /* Uses Montserrat from variables */
+    background-color: var(--bg-color-dark); /* Default to dark theme as per template JS */
+    color: var(--text-color-dark); /* Default text color from dark theme */
+    line-height: var(--line-height-base); /* Line height from variables */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
 }
 
-/* Global Link Styling */
-/*
-   Applies consistent styling to all anchor tags (links) throughout the site.
-   Uses logo color as the primary link color.
-*/
+/* Theme Switching for HTML element (adapted from template's data-theme) */
+html[data-theme="light"] body { /* Target body when html has data-theme="light" */
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+/* General Link Styling (adapted from template) */
 a {
-    color: var(--logo-color-light); /* Default link color in light mode */
-    text-decoration: none; /* Removes default underline */
-    transition: color 0.3s ease, opacity 0.3s ease; /* Smooth transitions for hover effects */
+    color: var(--text-color-dark); /* Default link color (from template's text color) */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition for links */
 }
 
-/* Link Styling in Dark Mode */
-html.dark a {
-    color: var(--logo-color-dark); /* Link color in dark mode */
-}
-
-/* Link Hover Effect */
-a:hover {
-    opacity: 0.8; /* Slightly reduce opacity on hover */
-    text-decoration: underline; /* Add underline on hover for better affordance */
+html[data-theme="light"] a {
+    color: var(--text-color-light); /* Link color in light mode */
 }
