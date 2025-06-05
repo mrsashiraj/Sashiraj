@@ -101,7 +101,7 @@ html.dark .secondary-button:hover {
 /* Base styling for both featured (`.project-card`) and full (`.project-card-full`) project displays. */
 .project-card, .project-card-full {
     background-color: var(--card-bg-light);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-lg); /* Default padding for all cards */
     border-radius: var(--border-radius-md);
     box-shadow: 0 2px 5px var(--shadow-light);
     text-align: left;
@@ -156,8 +156,8 @@ html.dark .project-card-full:hover {
     display: block;
 }
 /* Specific heights for different card types */
-.project-card img { height: 200px; }
-.project-card-full img { height: 250px; }
+.project-card img { height: 180px; } /* Reduced height for featured project thumbnails */
+.project-card-full img { height: 250px; } /* Height for full portfolio thumbnails remains same */
 
 
 /* Project Card Heading */
