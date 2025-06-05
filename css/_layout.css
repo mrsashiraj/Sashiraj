@@ -179,41 +179,45 @@ html.dark .nav-brand-description {
     display: flex; /* Uses flexbox for horizontal layout */
     justify-content: center; /* Centers navigation items */
     flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    gap: var(--spacing-xs); /* Reduced gap between buttons */
+    gap: var(--spacing-xs); /* Reduced gap between items */
 }
 
-/* Navigation List Item Links - now handled by .button classes */
+/* Navigation List Item Links - Minimalistic style */
 .main-nav li a {
-    /* These styles are now primarily handled by the .button and .secondary-button classes */
-    /* Keeping for minimal default but expecting override */
-    padding: 1em 1.5em; /* Default padding, will be overridden by .button */
-    color: var(--text-primary-light);
-    font-weight: 700;
+    display: block; 
+    padding: 1em 1.5em; /* Keep existing padding for clickable area */
+    color: var(--text-primary-light); /* Default text color */
+    font-weight: 700; 
     font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem);
-    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none; /* Ensure no default underline */
+    transition: color 0.3s ease; /* Smooth transition for text color */
 }
 
-/* Active navigation button styling */
+/* Navigation Links in Dark Mode */
+html.dark .main-nav li a {
+    color: var(--text-primary-dark);
+}
+
+/* Minimalistic Hover and Active States */
+.main-nav li a:hover {
+    color: var(--logo-color-light); /* Change text color on hover */
+    text-decoration: underline; /* Add underline on hover */
+    background-color: transparent; /* Ensure no background change on hover */
+}
+html.dark .main-nav li a:hover {
+    color: var(--logo-color-dark);
+    background-color: transparent;
+}
+
+/* Active navigation button styling (now more minimalistic) */
 .nav-button-active {
-    background-color: var(--button-bg-light); /* Background color for active button */
-    color: var(--button-text-light); /* Text color for active button */
-    border-color: var(--button-bg-light); /* Border color for active button */
+    color: var(--logo-color-light); /* Accent color for active link */
+    text-decoration: underline; /* Underline for active link */
+    background-color: transparent; /* Ensure no background fill */
 }
-
 html.dark .nav-button-active {
-    background-color: var(--button-bg-dark);
-    color: var(--button-text-dark);
-    border-color: var(--button-bg-dark);
-}
-
-/* Ensure hover styles still work for active button */
-.nav-button-active:hover {
-    background-color: var(--button-hover-bg-light);
-    border-color: var(--button-hover-bg-light);
-}
-html.dark .nav-button-active:hover {
-    background-color: var(--button-hover-bg-dark);
-    border-color: var(--button-hover-bg-dark);
+    color: var(--logo-color-dark);
+    background-color: transparent;
 }
 
 /* --- Main Content Area --- */
