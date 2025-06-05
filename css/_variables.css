@@ -10,9 +10,9 @@
 
 :root {
     /* --- Fonts --- */
-    --font-logo: 'Montserrat', sans-serif; /* Used for the main site logo for a distinct look */
-    --font-primary: 'Libre Baskerville', serif; /* Primary font for body text, paragraphs, and general content */
-    --font-heading: 'Libre Baskerville', serif; /* Font specifically for all heading elements (h1-h6) */
+    --font-logo: 'Poppins', sans-serif; /* Changed to Poppins to match HTML links */
+    --font-primary: 'Open Sans', sans-serif; /* Changed to Open Sans for body and paragraphs */
+    --font-heading: 'Poppins', sans-serif; /* Changed to Poppins for headings */
 
     /* --- Base Font Size and Line Height --- */
     --font-size-base: 1rem; /* Base font size set to 16px (1rem) for accessibility and scaling */
@@ -62,7 +62,8 @@
     --spacing-xxl: 2.5rem; /* 40px */
 
     /* --- Border Radius Variables --- */
-    --border-radius-sm: 0.5rem; /* For smaller elements like buttons */
+    --border-radius-sm: 0.5rem; /* For smaller elements like tags or input fields */
     --border-radius-md: 1rem;    /* For larger elements like cards/sections */
     --border-radius-lg: 1rem; /* Keeping consistent for now, but can be larger for specific elements */
+    --border-radius-btn: 9999px; /* A very large value to create pill-shaped buttons */
 }
