@@ -2,7 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- Load Common Header ---
     // Fetches the content of header.html and inserts it into the body.
     fetch('header.html')
-        .then(response => response.text()) // Get the response as plain text
+        .then(response => {
+            if (!response.ok) {
+                // If the response is not OK (e.g., 404), throw an error
+                throw new Error(`HTTP error! status: ${response.status} - Could not load header.html`);
+            }
+            return response.text(); // Get the response as plain text
+        })
         .then(html => {
             // Create a temporary div to parse the HTML string
             const tempDiv = document.createElement('div');
@@ -72,6 +78,13 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => {
             console.error('Error loading header.html:', error);
+            // Provide a visual fallback or error message to the user if header fails to load
+            const errorDiv = document.createElement('div');
+            errorDiv.style.color = 'red';
+            errorDiv.style.textAlign = 'center';
+            errorDiv.style.padding = '20px';
+            errorDiv.textContent = 'Failed to load site header. Please check your internet connection or try again later.';
+            document.body.prepend(errorDiv);
         });
 
     // --- Copyright Year Auto-Update (remains in original DOMContentLoaded listener) ---
