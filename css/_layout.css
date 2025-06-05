@@ -1,0 +1,246 @@
+/* css/_layout.css */
+
+/*
+   Layout Styles
+
+   This file defines the structural elements of the website, such as
+   the main header, navigation, and generic main content sections.
+   It focuses on arrangement and spacing of these primary containers.
+*/
+
+/* --- Main Header --- */
+/* Styles the top-level header of the website, containing the logo and theme toggle. */
+.main-header {
+    background-color: var(--header-bg-light); /* Background color for light mode */
+    padding: var(--spacing-lg); /* Consistent padding */
+    box-shadow: 0 2px 5px var(--shadow-light); /* Subtle shadow for depth */
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for theme changes */
+    display: flex; /* Uses flexbox for alignment of logo and toggle */
+    justify-content: space-between; /* Pushes logo to left, toggle to right */
+    align-items: center; /* Vertically aligns items */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+/* Main Header in Dark Mode */
+html.dark .main-header {
+    background-color: var(--header-bg-dark);
+    box-shadow: 0 2px 5px var(--shadow-dark);
+}
+
+/* Site Logo Styling */
+.site-logo {
+    margin: 0;
+    font-family: var(--font-logo); /* Unique font for the logo */
+    font-size: clamp(1.8rem, 5vw + 1rem, 2.5rem); /* Fluid font size for responsiveness */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em; /* Spaced out letters */
+    color: var(--logo-color-light); /* Accent color for the logo */
+    user-select: none; /* Prevents text selection on the logo */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    transition: color 0.3s ease; /* Smooth color transition for theme changes */
+}
+
+/* Site Logo in Dark Mode */
+html.dark .site-logo {
+    color: var(--logo-color-dark);
+}
+
+/* Tagline below the Logo */
+.tagline {
+    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.125rem); /* Fluid tagline */
+    margin-top: 0.2em;
+    opacity: 0.8;
+    color: var(--text-secondary-light); /* Secondary text color */
+}
+
+/* Tagline in Dark Mode */
+html.dark .tagline {
+    color: var(--text-secondary-dark);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background-color: var(--button-bg-light); /* Button background color */
+    color: var(--button-text-light); /* Button text color */
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md); /* Padding for button */
+    border-radius: var(--border-radius-sm); /* Rounded corners */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions for interaction */
+    flex-shrink: 0; /* Prevents button from shrinking on small screens */
+    margin-left: var(--spacing-md); /* Space from logo */
+    outline: none; /* Removes default browser outline (will be replaced by focus-visible) */
+}
+
+/* Theme Toggle in Dark Mode */
+html.dark #theme-toggle {
+    background-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
+}
+
+/* Theme Toggle Hover Effect */
+#theme-toggle:hover {
+    background-color: var(--button-hover-bg-light); /* Darker background on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px var(--shadow-light); /* Enhanced shadow on hover */
+}
+html.dark #theme-toggle:hover {
+    background-color: var(--button-hover-bg-dark);
+    box-shadow: 0 44px 8px var(--shadow-dark);
+}
+
+/* Theme Toggle Focus (Accessibility) */
+#theme-toggle:focus-visible {
+    box-shadow: 0 0 0 3px var(--focus-ring-light); /* Prominent outline for keyboard focus */
+}
+html.dark #theme-toggle:focus-visible {
+    box-shadow: 0 0 0 3px var(--focus-ring-dark);
+}
+
+
+/* --- Main Navigation --- */
+/* Styles the navigation bar below the header. */
+.main-nav {
+    background-color: var(--header-bg-light); /* Consistent background with header */
+    box-shadow: 0 1px 3px var(--shadow-light); /* Subtle shadow */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex; /* Make main-nav a flex container */
+    justify-content: center; /* Center items horizontally */
+    padding: 0; /* Remove padding if added for tagline, as it's now handled by list items */
+}
+
+/* Main Navigation in Dark Mode */
+html.dark .main-nav {
+    background-color: var(--header-bg-dark);
+    box-shadow: 0 1px 3px var(--shadow-dark);
+}
+
+/* Style for the tagline within the navigation (removed from HTML, but keeping CSS for reference) */
+.nav-brand-description {
+    font-family: var(--font-primary); /* Use primary font or a distinct one */
+    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
+    color: var(--text-secondary-light);
+    opacity: 0.9;
+    margin-bottom: var(--spacing-sm); /* Small space below it */
+    text-align: center; /* Ensure text is centered */
+    font-weight: 600; /* Slightly bolder for prominence */
+    display: none; /* Hide if this class is no longer used in HTML */
+}
+
+html.dark .nav-brand-description {
+    color: var(--text-secondary-dark);
+}
+
+
+/* Navigation List */
+.main-nav ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Uses flexbox for horizontal layout */
+    justify-content: center; /* Centers navigation items */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+/* Navigation List Item Links */
+.main-nav li a {
+    display: block; /* Makes the entire list item clickable */
+    padding: 1em 1.5em; /* Padding for click area */
+    color: var(--text-primary-light); /* Link text color */
+    font-weight: 700; /* Bold for prominence */
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover/active */
+}
+
+/* Navigation Links in Dark Mode */
+html.dark .main-nav li a {
+    color: var(--text-primary-dark);
+}
+
+/* Navigation Links Hover and Active States */
+.main-nav li a:hover,
+.main-nav li a.active {
+    background-color: var(--button-hover-bg-light); /* Changes background on hover/active */
+    color: white; /* Ensures good text contrast on hover */
+    text-decoration: none;
+}
+
+/* Navigation Links Hover and Active States in Dark Mode */
+html.dark .main-nav li a:hover,
+html.dark .main-nav li a.active {
+    background-color: var(--button-hover-bg-dark);
+    color: white;
+}
+
+/* --- Main Content Area --- */
+/* Defines the maximum width and horizontal centering for the main content sections. */
+main {
+    max-width: 1200px; /* Limits content width for readability on large screens */
+    margin: var(--spacing-xl) auto; /* Centers horizontally, provides top/bottom margin */
+    padding: 0 var(--spacing-xl); /* Horizontal padding to prevent content from touching edges */
+}
+
+/* Generic Section Styling */
+/*
+   Applies consistent styling to all `section` elements,
+   acting as a card-like container for content.
+*/
+section {
+    padding: var(--spacing-lg); /* Inner padding */
+    margin-bottom: var(--spacing-xxl); /* Space between sections */
+    background-color: var(--card-bg-light); /* Card background color in light mode */
+    border-radius: var(--border-radius-md); /* Rounded corners */
+    box-shadow: 0 4px 10px var(--shadow-light); /* Subtle shadow */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for theme changes */
+    border-top: 4px solid transparent; /* Placeholder for thematic accent border (e.g., project colors) */
+}
+
+/* Generic Section Styling in Dark Mode */
+html.dark section {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 4px 10px var(--shadow-dark);
+}
+
+/* Section Heading (Common to all sections) */
+/* Styles the main heading within each section. */
+section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: clamp(1.8rem, 5vw + 1rem, 2.25rem); /* Fluid font size */
+    font-weight: 700;
+    color: var(--logo-color-light); /* Uses accent color for section titles */
+}
+
+/* Section Heading in Dark Mode */
+html.dark section h2 {
+    color: var(--logo-color-dark);
+}
+
+/* --- Footer --- */
+/* Basic styling for the site footer. */
+footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-xxl); /* Provide generous space above footer */
+    background-color: var(--header-bg-light); /* Match header background */
+    color: var(--text-footer-light);
+    box-shadow: 0 -2px 5px var(--shadow-light); /* Subtle shadow above footer */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+html.dark footer {
+    background-color: var(--header-bg-dark);
+    color: var(--text-footer-dark);
+    box-shadow: 0 -2px 5px var(--shadow-dark);
+}
+
+footer p {
+    margin: 0; /* Remove default paragraph margins in footer */
+    font-size: 0.9rem;
+    text-align: center; /* Explicitly center the text within the paragraph */
+}
