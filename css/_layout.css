@@ -4,292 +4,182 @@
    Layout Styles
 
    This file defines the structural elements of the website, such as
-   the main header, navigation, and generic main content sections.
-   It focuses on arrangement and spacing of these primary containers.
+   the main header, navigation, and generic main content sections,
+   adapted from the new template.
 */
 
-/* --- Main Header --- */
-/* Styles the top-level header of the website, containing the logo and theme toggle. */
-.main-header {
-    background-color: var(--header-bg-light); /* Background color for light mode */
-    padding: var(--spacing-lg); /* Consistent padding */
-    box-shadow: 0 2px 5px var(--shadow-light); /* Subtle shadow for depth */
-    position: relative;
-    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for theme changes */
-    display: flex; /* Uses flexbox for alignment of logo and toggle */
-    justify-content: space-between; /* Pushes logo to left, toggle to right */
-    align-items: center; /* Vertically aligns items */
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-}
-
-/* Main Header in Dark Mode */
-html.dark .main-header {
-    background-color: var(--header-bg-dark);
-    box-shadow: 0 2px 5px var(--shadow-dark);
-}
-
-/* Site Logo Styling */
-.site-logo {
-    margin: 0;
-    font-family: var(--font-logo); /* Unique font for the logo */
-    font-size: clamp(1.8rem, 5vw + 1rem, 2.5rem); /* Fluid font size for responsiveness */
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em; /* Spaced out letters */
-    color: var(--logo-color-light); /* Accent color for the logo */
-    user-select: none; /* Prevents text selection on the logo */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    transition: color 0.3s ease; /* Smooth color transition for theme changes */
-}
-
-/* Site Logo in Dark Mode */
-html.dark .site-logo {
-    color: var(--logo-color-dark);
-}
-
-/* Tagline below the Logo */
-.tagline {
-    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
-    margin-top: 0.2em;
-    opacity: 0.8; /* Slightly faded */
-    color: var(--text-secondary-light); /* Secondary text color */
-}
-
-/* Tagline in Dark Mode */
-html.dark .tagline {
-    color: var(--text-secondary-dark);
-}
-
-/* --- Theme Toggle Switch Styling (iPhone-style) --- */
-.theme-switch {
-    position: relative;
-    display: inline-block;
-    width: 50px; /* Width of the entire switch */
-    height: 26px; /* Height of the entire switch */
-    flex-shrink: 0; /* Prevent it from shrinking on small screens */
-    margin-left: var(--spacing-md); /* Space from logo */
-}
-
-/* Hide default HTML checkbox */
-.theme-switch input {
-    opacity: 0; /* Make it invisible */
-    width: 0;
-    height: 0;
-}
-
-/* The slider (the track) */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--border-dark); /* Color when OFF (dark gray/border color) */
-    transition: background-color 0.4s ease; /* Smooth transition for background color */
-    box-shadow: inset 0 0 4px rgba(0,0,0,0.2); /* Inner shadow for depth */
-}
-
-/* The slider thumb (the circle inside) */
-.slider:before {
-    content: '';
-    position: absolute;
-    height: 22px; /* Height of the thumb */
-    width: 22px; /* Width of the thumb */
-    left: 2px; /* Initial position from the left */
-    bottom: 2px; /* Initial position from the bottom */
-    background-color: white; /* Color of the thumb */
-    transition: transform 0.4s ease; /* Smooth transition for thumb movement */
-    border-radius: 50%; /* Makes the thumb circular */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Shadow for the thumb */
-}
-
-/* Rounded sliders (pill shape) */
-.slider.round {
-    border-radius: 26px; /* Half of height to make it fully rounded */
-}
-
-.slider.round:before {
-    border-radius: 50%; /* Ensures thumb is always circular */
-}
-
-/* When the checkbox is checked (ON state) */
-.theme-switch input:checked + .slider {
-    background-color: var(--logo-color-light); /* Accent color when ON (light mode) */
-}
-html.dark .theme-switch input:checked + .slider {
-    background-color: var(--logo-color-dark); /* Accent color when ON (dark mode) */
-}
-
-/* Move the thumb when checked */
-.theme-switch input:checked + .slider:before {
-    transform: translateX(24px); /* Moves thumb to the right */
-}
-
-/* Focus style for accessibility */
-.theme-switch input:focus-visible + .slider {
-    box-shadow: 0 0 0 3px var(--focus-ring-light); /* Outline for keyboard focus */
-}
-html.dark .theme-switch input:focus-visible + .slider {
-    box-shadow: 0 0 0 3px var(--focus-ring-dark);
-}
-
-
-/* --- Main Navigation --- */
-/* Styles the navigation bar below the header. */
-.main-nav {
-    background-color: var(--header-bg-light); /* Consistent background with header */
-    box-shadow: 0 1px 3px var(--shadow-light); /* Subtle shadow */
-    transition: background-color 0.3s, box-shadow 0.3s;
-    display: flex; /* Make main-nav a flex container */
-    justify-content: center; /* Center items horizontally */
-    padding: 0; /* Remove padding if added for tagline, as it's now handled by list items */
-}
-
-/* Main Navigation in Dark Mode */
-html.dark .main-nav {
-    background-color: var(--header-bg-dark);
-    box-shadow: 0 1px 3px var(--shadow-dark);
-}
-
-/* Style for the tagline within the navigation (removed from HTML, but keeping CSS for reference) */
-.nav-brand-description {
-    font-family: var(--font-primary); /* Use primary font or a distinct one */
-    font-size: clamp(0.9rem, 2vw + 0.5rem, 1.125rem); /* Fluid font size */
-    color: var(--text-secondary-light);
-    opacity: 0.9; /* Slightly faded */
-    margin-bottom: var(--spacing-sm); /* Small space below it */
-    text-align: center; /* Ensure text is centered */
-    font-weight: 600; /* Slightly bolder for prominence */
-    display: none; /* Hide if this class is no longer used in HTML */
-}
-
-html.dark .nav-brand-description {
-    color: var(--text-secondary-dark);
-}
-
-
-/* Navigation List */
-.main-nav ul {
-    list-style: none; /* Removes bullet points */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Uses flexbox for horizontal layout */
-    justify-content: center; /* Centers navigation items */
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    gap: var(--spacing-xs); /* Reduced gap between items */
-}
-
-/* Navigation List Item Links - Minimalistic style */
-.main-nav li a {
-    display: block; 
-    padding: 1em 1.5em; /* Keep existing padding for clickable area */
-    color: var(--text-primary-light); /* Default text color */
-    font-weight: 700; 
-    font-size: clamp(1rem, 2vw + 0.5rem, 1.125rem);
-    text-decoration: none; /* Ensure no default underline */
-    transition: color 0.3s ease; /* Smooth transition for text color */
-}
-
-/* Navigation Links in Dark Mode */
-html.dark .main-nav li a {
-    color: var(--text-primary-dark);
-}
-
-/* Minimalistic Hover and Active States */
-.main-nav li a:hover {
-    color: var(--logo-color-light); /* Change text color on hover */
-    text-decoration: underline; /* Add underline on hover */
-    background-color: transparent; /* Ensure no background change on hover */
-}
-html.dark .main-nav li a:hover {
-    color: var(--logo-color-dark);
-    background-color: transparent;
-}
-
-/* Active navigation button styling (now more minimalistic) */
-.nav-button-active {
-    color: var(--logo-color-light); /* Accent color for active link */
-    text-decoration: underline; /* Underline for active link */
-    background-color: transparent; /* Ensure no background fill */
-}
-html.dark .nav-button-active {
-    color: var(--logo-color-dark);
-    background-color: transparent;
-}
-
-/* --- Main Content Area --- */
-/* Defines the maximum width and horizontal centering for the main content sections. */
-main {
-    max-width: 1200px; /* Limits content width for readability on large screens */
-    margin: var(--spacing-xl) auto; /* Centers horizontally, provides top/bottom margin */
-    padding: 0 var(--spacing-xl); /* Horizontal padding to prevent content from touching edges */
-}
-
-/* Generic Section Styling */
-/*
-   Applies consistent styling to all `section` elements,
-   acting as a card-like container for content.
-*/
-section {
-    padding: var(--spacing-lg); /* Inner padding */
-    margin-bottom: var(--spacing-xxl); /* Space between sections */
-    background-color: var(--card-bg-light); /* Card background color in light mode */
-    border-radius: var(--border-radius-md); /* Rounded corners */
-    box-shadow: 0 4px 10px var(--shadow-light); /* Subtle shadow */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for theme changes */
-    border-top: 4px solid transparent; /* Placeholder for thematic accent border (e.g., project colors) */
-}
-
-/* Generic Section Styling in Dark Mode */
-html.dark section {
-    background-color: var(--card-bg-dark);
-    box-shadow: 0 4px 10px var(--shadow-dark);
-}
-
-/* Section Heading (Common to all sections) */
-/* Styles the main heading within each section. */
-section h2 {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-    font-size: clamp(1.8rem, 5vw + 1rem, 2.25rem); /* Fluid font size */
-    font-weight: 700;
-    color: var(--logo-color-light); /* Uses accent color for section titles */
-}
-
-/* Section Heading in Dark Mode */
-html.dark section h2 {
-    color: var(--logo-color-dark);
-}
-
-/* --- Footer --- */
-/* Basic styling for the site footer. */
-footer {
-    text-align: center; /* Keep this for fallback, but flexbox is primary */
-    padding: var(--spacing-lg);
-    margin-top: var(--spacing-xxl); /* Provide generous space above footer */
-    background-color: var(--header-bg-light); /* Match header background */
-    color: var(--text-footer-light);
-    box-shadow: 0 -2px 5px var(--shadow-light); /* Subtle shadow above footer */
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-
-    /* New Flexbox centering for robust alignment */
+/* --- Header Layout (from template) --- */
+header {
     display: flex;
-    flex-direction: column; /* Ensures content stacks if multiple elements */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically (if height allows) */
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg); /* 2rem */
+    background: var(--header-gradient-dark); /* Gradient for header */
+    position: relative;
+    z-index: 10;
+    transition: background 0.3s ease; /* Smooth transition for header gradient */
 }
 
-html.dark footer {
-    background-color: var(--header-bg-dark);
-    color: var(--text-footer-dark);
-    box-shadow: 0 -2px 5px var(--shadow-dark);
+html[data-theme="light"] header {
+    background: var(--header-gradient-light);
 }
 
-footer p {
-    margin: 0; /* Remove default paragraph margins in footer */
-    font-size: 0.9rem;
-    /* text-align: center; Removed from here as flexbox on parent handles it more effectively */
+/* Mobile Menu Toggle (from template) */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 20; /* Ensure it's above other elements */
+}
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: var(--accent-color-dark);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+html[data-theme="light"] .menu-toggle span {
+    background: var(--accent-color-light);
+}
+
+
+/* Navigation Layout (from template) */
+nav {
+    display: flex; /* Default for desktop */
+    gap: var(--spacing-md); /* 1rem gap */
+}
+nav a {
+    /* Styles for nav links will be in _typography.css */
+}
+
+
+/* --- Hero Section Layout (from template) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-xl) var(--spacing-lg); /* 4rem 2rem */
+    animation: fadeIn 1.5s ease-in-out; /* Uses animation from _utilities.css */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+.hero-text {
+    max-width: 50%; /* Adjust for desktop layout */
+    padding-right: var(--spacing-lg); /* Add some space */
+}
+.hero-image {
+    /* No specific layout for image container, image itself is styled */
+}
+.hero-image img {
+    width: 300px;
+    height: 300px; /* Ensure consistent height for circular image */
+    object-fit: cover; /* Ensures image covers the circle */
+    border-radius: var(--border-radius-full); /* 50% */
+    box-shadow: 0 0 20px rgba(0, 255, 213, 0.5); /* Template's specific shadow */
+    transition: transform 0.3s ease;
+}
+html[data-theme="light"] .hero-image img {
+    box-shadow: 0 0 20px rgba(0, 140, 114, 0.5); /* Light theme shadow */
+}
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Portfolio Section Layout (from template) --- */
+.portfolio {
+    padding: var(--spacing-xl) var(--spacing-lg); /* 4rem 2rem */
+    display: flex; /* Using flex for now as template did */
+    flex-wrap: wrap;
+    gap: var(--spacing-lg); /* 2rem gap */
+    animation: fadeIn 1.2s ease-in; /* Uses animation from _utilities.css */
+    justify-content: center; /* Center items in the grid */
+    max-width: 1200px; /* Limit width to contain portfolio items */
+    margin: 0 auto; /* Center the portfolio section itself */
+}
+
+
+/* --- Testimonial Section Layout (from template) --- */
+.testimonial-section {
+    padding: var(--spacing-xl) var(--spacing-lg); /* 4rem 2rem */
+    background-color: #151515; /* Hardcoded from template */
+    animation: fadeInUp 1.5s ease-in-out; /* Uses animation from _utilities.css */
+}
+
+html[data-theme="light"] .testimonial-section {
+    background-color: #f0f0f0; /* Lighter background for testimonials in light mode */
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* --- Floating Action Button (FAB) Layout (from template) --- */
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent-color-dark);
+    color: var(--bg-color-dark); /* Color of the arrow */
+    border: none;
+    border-radius: var(--border-radius-full); /* 50% */
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 100; /* Ensure it's always on top */
+}
+
+html[data-theme="light"] .fab {
+    background: var(--accent-color-light);
+    color: var(--bg-color-light);
+}
+
+/* --- Footer Layout (from template) --- */
+.footer {
+    padding: var(--spacing-lg); /* 2rem */
+    text-align: center;
+    background-color: var(--bg-color-dark); /* Should match body bg in dark mode */
+    color: #777; /* Specific color from template */
+    transition: background-color 0.3s ease;
+}
+
+html[data-theme="light"] .footer {
+    background-color: var(--bg-color-light);
+}
+
+
+/* --- Responsive Adjustments (from template's media query) --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text, .hero-image {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+    .hero-image {
+        margin-top: var(--spacing-lg); /* Add space above image on mobile */
+    }
+
+    /* Mobile Navigation */
+    nav {
+        display: none; /* Hidden by default on mobile when menu is closed */
+        flex-direction: column;
+        background-color: #111; /* Hardcoded from template */
+        padding: 1rem;
+        position: absolute;
+        top: 80px; /* Position below header */
+        right: 20px;
+        border-radius: 8px;
+        align-items: flex-end; /* Align links to the right */
+    }
+    nav.active {
+        display: flex; /* Show when active */
+    }
+    .menu-toggle {
+        display: flex; /* Show hamburger menu on mobile */
+    }
 }
