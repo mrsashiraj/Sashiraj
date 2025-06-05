@@ -1,0 +1,72 @@
+/* css/_base.css */
+
+/*
+   Base Styles and Global Resets
+
+   This file sets up fundamental styles for the entire HTML document,
+   including universal box-sizing, default theme application, and
+   basic styling for links and the body element.
+*/
+
+/* Universal Box-Sizing Reset */
+/* Applies border-box to all elements, simplifying layout calculations. */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Default Theme Activation (Light Mode) */
+/*
+   Applies light theme variables by default to the root HTML element.
+   Transitions ensure smooth visual changes when switching themes.
+*/
+html {
+    background-color: var(--background-light);
+    color: var(--text-primary-light);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base); /* Base font size set from variables */
+    line-height: var(--line-height-base); /* Base line height set from variables */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
+}
+
+/* Dark Theme Activation */
+/*
+   When the 'dark' class is applied to the HTML element,
+   these styles override the light mode variables, activating the dark theme.
+*/
+html.dark {
+    background-color: var(--background-dark);
+    color: var(--text-primary-dark);
+}
+
+/* Body Styles */
+/*
+   Ensures the body takes up minimum 100% viewport height and removes
+   default browser margins/padding.
+*/
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensures body expands to fill at least the full viewport height */
+}
+
+/* Global Link Styling */
+/*
+   Applies consistent styling to all anchor tags (links) throughout the site.
+   Uses logo color as the primary link color.
+*/
+a {
+    color: var(--logo-color-light); /* Default link color in light mode */
+    text-decoration: none; /* Removes default underline */
+    transition: color 0.3s ease, opacity 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+/* Link Styling in Dark Mode */
+html.dark a {
+    color: var(--logo-color-dark); /* Link color in dark mode */
+}
+
+/* Link Hover Effect */
+a:hover {
+    opacity: 0.8; /* Slightly reduce opacity on hover */
+    text-decoration: underline; /* Add underline on hover for better affordance */
+}
