@@ -1,27 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sashiraj - Resume</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Google Fonts: Poppins and Open Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Link to your main stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    
     <!-- Defer loading of JavaScript to ensure HTML is parsed first -->
     <script src="script.js"></script>
     
-    <!-- Important: Replace 'your-font-awesome-kit-code.js' with your actual Font Awesome Kit code if you use one -->
-    <!-- If you're using a Font Awesome Kit, uncomment the line below and replace 'your-font-awesome-kit-code.js' -->
-    <!-- <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script> -->
-
     <!-- SEO Meta Tags -->
     <meta name="description" content="View Sashiraj's professional resume online, detailing skills, experience, education, and certifications in data analysis and business intelligence.">
     <meta property="og:title" content="Sashiraj's Professional Resume - Data Analyst">
@@ -32,119 +22,112 @@
 </head>
 <body>
 
-    <main class="resume-page">
-        <section id="resume-download" class="resume-section download-section">
-            <h2>My Resume</h2>
-            <p>A comprehensive overview of my professional journey, skills, and accomplishments.</p>
+    <!-- Header and Navigation will be loaded here by script.js from header.html -->
+
+    <section class="hero section-container" id="resume-header">
+        <div class="hero-text">
+            <h1>My Resume</h1>
+            <p>A detailed look into my professional journey and expertise.</p>
+        </div>
+        <div class="hero-image">
+             <img src="https://images.unsplash.com/photo-1550570220-41a45749457a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Resume Illustration" loading="lazy">
+        </div>
+    </section>
+
+    <section class="section-container">
+        <h2>Summary</h2>
+        <p>
+            Highly analytical and results-driven Business & Data Analyst with 3+ years of experience transforming complex datasets into actionable insights. Proficient in SQL, Tableau, Power BI, and Python for data manipulation, analysis, and visualization. Proven ability to bridge the gap between business needs and data solutions, driving strategic decisions and process improvements across various domains. Seeking to leverage analytical expertise to contribute to innovative projects and foster data-driven cultures.
+        </p>
+         <div style="text-align: center; margin-top: var(--spacing-lg);">
             <a href="assets/Sashiraj_Resume.pdf" download class="button primary-button">Download PDF Resume <i class="fa-solid fa-download"></i></a>
-        </section>
+        </div>
+    </section>
 
-        <section id="resume-summary" class="resume-section">
-            <h3>Summary</h3>
-            <p>
-                Highly analytical and results-driven Business & Data Analyst with 3+ years of experience transforming complex datasets into actionable insights. Proficient in SQL, Tableau, Power BI, and Python for data manipulation, analysis, and visualization. Proven ability to bridge the gap between business needs and data solutions, driving strategic decisions and process improvements across various domains. Seeking to leverage analytical expertise to contribute to innovative projects and foster data-driven cultures.
-            </p>
-        </section>
-
-        <section id="resume-skills" class="resume-section">
-            <h3>Skills</h3>
-            <div class="skills-category">
-                <h4>Tools & Platforms</h4>
-                <ul class="skill-list-inline">
+    <section class="section-container">
+        <h2>Skills & Tools</h2>
+        <div class="portfolio-grid-wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+            <div class="portfolio-item">
+                <h3>Data & BI Tools</h3>
+                <ul>
                     <li>Tableau</li>
                     <li>Power BI</li>
                     <li>Microsoft Excel (Advanced)</li>
-                    <li>Jupyter Notebooks</li>
                     <li>Google Data Studio</li>
                     <li>Google Analytics</li>
-                    <li>Git & GitHub</li>
                 </ul>
             </div>
-            <div class="skills-category">
-                <h4>Languages & Databases</h4>
-                <ul class="skill-list-inline">
+            <div class="portfolio-item">
+                <h3>Languages & Databases</h3>
+                <ul>
                     <li>SQL (PostgreSQL, MySQL, MS SQL Server)</li>
-                    <li>Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)</li>
+                    <li>Python (Pandas, NumPy, Scikit-learn)</li>
                     <li>R (basic)</li>
                     <li>NoSQL (MongoDB - basic)</li>
                 </ul>
             </div>
-            <div class="skills-category">
-                <h4>Business & Analytics Skills</h4>
-                <ul class="skill-list-inline">
+            <div class="portfolio-item">
+                <h3>Analytical Expertise</h3>
+                <ul>
                     <li>Data Modeling</li>
                     <li>ETL Processes</li>
                     <li>Exploratory Data Analysis (EDA)</li>
                     <li>Statistical Analysis</li>
                     <li>Predictive Modeling</li>
-                    <li>A/B Testing</li>
-                    <li>Requirements Gathering</li>
-                    <li>Report Writing & Presentation</li>
-                    <li>KPI Development</li>
+                    <li>Data Storytelling</li>
                 </ul>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="resume-certifications" class="resume-section">
-            <h3>Certifications</h3>
-            <div class="certification-item">
-                <h4>Google Data Analytics Professional Certificate</h4>
-                <p>Google | Issued: January 2023</p>
-                <p>Covers data cleaning, analysis, visualization, and storytelling with R, SQL, and Tableau.</p>
-            </div>
-            <div class="certification-item">
-                <h4>IBM Data Analyst Professional Certificate</h4>
-                <p>IBM | Issued: March 2023</p>
-                <p>Focuses on Python, SQL, Excel, and data visualization tools for practical data analysis.</p>
-            </div>
-            <div class="certification-item">
-                <h4>Tableau Desktop Specialist</h4>
-                <p>Tableau | Issued: May 2023</p>
-            </div>
-        </section>
+    <section class="section-container">
+        <h2>Experience</h2>
+        <div class="job-item">
+            <h3>Junior Data Analyst <span class="job-company">ABC Innovations</span></h3>
+            <p class="job-dates">June 2022 – Present</p>
+            <ul>
+                <li>Designed and implemented SQL queries to extract, transform, and load (ETL) data from various databases, supporting reporting for marketing and sales teams.</li>
+                <li>Developed interactive Tableau dashboards to visualize key performance indicators (KPIs), leading to a 15% improvement in campaign effectiveness tracking.</li>
+                <li>Performed in-depth exploratory data analysis using Python (Pandas) to identify customer segmentation opportunities, informing targeted product development.</li>
+                <li>Collaborated with cross-functional teams to gather business requirements and translate them into technical specifications for data projects.</li>
+            </ul>
+        </div>
+        <div class="job-item">
+            <h3>Business Intern <span class="job-company">XYZ Solutions</span></h3>
+            <p class="job-dates">January 2022 – May 2022</p>
+            <ul>
+                <li>Assisted in market research and competitive analysis, collecting and analyzing industry data to identify emerging trends.</li>
+                <li>Prepared reports and presentations on business performance metrics using Excel, contributing to strategic planning meetings.</li>
+                <li>Gained foundational knowledge in data collection methods and business operations.</li>
+            </ul>
+        </div>
+    </section>
 
-        <section id="resume-experience" class="resume-section">
-            <h3>Work Experience</h3>
-            <div class="job-item">
-                <h4>Junior Data Analyst <span class="job-company">ABC Innovations</span></h4>
-                <p class="job-dates">June 2022 – Present</p>
-                <ul>
-                    <li>Designed and implemented SQL queries to extract, transform, and load (ETL) data from various databases, supporting reporting for marketing and sales teams.</li>
-                    <li>Developed interactive Tableau dashboards to visualize key performance indicators (KPIs), leading to a 15% improvement in campaign effectiveness tracking.</li>
-                    <li>Performed in-depth exploratory data analysis using Python (Pandas) to identify customer segmentation opportunities, informing targeted product development.</li>
-                    <li>Collaborated with cross-functional teams to gather business requirements and translate them into technical specifications for data projects.</li>
-                </ul>
-            </div>
-            <div class="job-item">
-                <h4>Business Intern <span class="job-company">XYZ Solutions</span></h4>
-                <p class="job-dates">January 2022 – May 2022</p>
-                <ul>
-                    <li>Assisted in market research and competitive analysis, collecting and analyzing industry data to identify emerging trends.</li>
-                    <li>Prepared reports and presentations on business performance metrics using Excel, contributing to strategic planning meetings.</li>
-                    <li>Gained foundational knowledge in data collection methods and business operations.</li>
-                </ul>
-            </div>
-        </section>
+    <section class="section-container">
+        <h2>Education & Certifications</h2>
+        <div class="education-item">
+            <h3>Bachelor in Science in Computer Science & Information Technology</h3>
+            <p>Tribhuwan University | Kathmandu, Nepal</p>
+            <p>Graduated: 2021</p>
+            <p>Relevant Coursework: Data Structures, Algorithms, Database Management Systems, Statistics, Artificial Intelligence</p>
+        </div>
+        <div class="certification-item" style="margin-top: var(--spacing-md);">
+            <h3>Google Data Analytics Professional Certificate</h3>
+            <p>Google | Issued: January 2023</p>
+        </div>
+        <div class="certification-item">
+            <h3>IBM Data Analyst Professional Certificate</h3>
+            <p>IBM | Issued: March 2023</p>
+        </div>
+        <div class="certification-item">
+            <h3>Tableau Desktop Specialist</h3>
+            <p>Tableau | Issued: May 2023</p>
+        </div>
+    </section>
 
-        <section id="resume-education" class="resume-section">
-            <h3>Education</h3>
-            <div class="education-item">
-                <h4>Bachelor in Science in Computer Science & Information Technology</h4>
-                <p>Tribhuwan University | Kathmandu, Nepal</p>
-                <p>Graduated: 2021</p>
-                <p>Relevant Coursework: Data Structures, Algorithms, Database Management Systems, Statistics, Artificial Intelligence</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; <span id="current-year-resume"></span> Sashiraj</p>
+    <footer class="footer">
+        <p>&copy; <span id="current-year-footer"></span> Sashiraj Portfolio. All rights reserved.</p>
     </footer>
-
-    <script>
-        // JavaScript to automatically update the copyright year for this page
-        document.getElementById('current-year-resume').textContent = new Date().getFullYear();
-    </script>
 
 </body>
 </html>
