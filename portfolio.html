@@ -1,17 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sashiraj - Portfolio</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Google Fonts: Poppins and Open Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Link to your main stylesheet -->
     <link rel="stylesheet" href="styles.css">
@@ -19,9 +12,6 @@
     <!-- Defer loading of JavaScript to ensure HTML is parsed first -->
     <script src="script.js"></script>
     
-    <!-- Important: Replace 'your-font-awesome-kit-code.js' with your actual Font Awesome Kit code if you use one -->
-    <!-- <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script> -->
-
     <!-- SEO Meta Tags -->
     <meta name="description" content="Explore Sashiraj's data analysis and business intelligence projects, including case studies in SQL, Tableau, Python, and more.">
     <meta property="og:title" content="Sashiraj's Portfolio - Data Analysis & BI Projects">
@@ -32,87 +22,66 @@
 </head>
 <body>
 
-    <main>
-        <section id="portfolio-intro" class="portfolio-section">
-            <h2>My Work</h2>
-            <p class="section-description">
-                Here's a collection of my projects showcasing how I apply data analysis, business intelligence, and machine learning to solve real-world problems and drive impact. Each project includes a detailed case study of the business problem, my approach, tools used, and the insights generated.
-            </p>
-        </section>
+    <!-- Header and Navigation will be loaded here by script.js from header.html -->
 
-        <section id="project-listings" class="portfolio-section">
-            <div class="project-grid-full">
-                <div class="project-card-full">
-                    <img src="images/tarkari_mart_thumbnail.jpg" alt="Tarkari Mart Project Thumbnail" loading="lazy">
-                    <h3>Tarkari Mart: Farm to Taste</h3>
-                    <div class="project-tags">
-                        <span>SQL</span>
-                        <span>Tableau</span>
-                        <span>Supply Chain Analytics</span>
-                    </div>
-                    <p>Optimized supply chain efficiency and improved customer satisfaction for a local produce delivery service.</p>
-                    <a href="projects/tarkari-mart.html" class="read-more-link">View Case Study &rarr;</a>
-                </div>
+    <section class="hero section-container" id="portfolio-header">
+        <div class="hero-text">
+            <h1>My Portfolio</h1>
+            <p>A collection of my work demonstrating data-driven problem-solving.</p>
+        </div>
+        <div class="hero-image">
+             <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio Illustration" loading="lazy">
+        </div>
+    </section>
 
-                <div class="project-card-full">
-                    <img src="images/munal_thumbnail.jpg" alt="MUNAL Project Thumbnail" loading="lazy">
-                    <h3>MUNAL: My Ultimate Next-gen Auto Lifestyle</h3>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Machine Learning</span>
-                        <span>Customer Segmentation</span>
-                    </div>
-                    <p>Developed a predictive model for customer lifetime value in the automotive sector, enhancing marketing strategies.</p>
-                    <a href="projects/munal.html" class="read-more-link">View Case Study &rarr;</a>
-                </div>
-
-                <div class="project-card-full">
-                    <img src="images/ai_news_analyzer_thumbnail.jpg" alt="AI News Analyzer Project Thumbnail" loading="lazy">
-                    <h3>AI News Analyzer</h3>
-                    <div class="project-tags">
-                        <span>Natural Language Processing</span>
-                        <span>API Integration</span>
-                        <span>Data Visualization</span>
-                    </div>
-                    <p>Built a system to aggregate and analyze the latest trends in AI research and news, providing summarized insights.</p>
-                    <a href="projects/ai-news-analyzer.html" class="read-more-link">View Case Study &rarr;</a>
-                </div>
-
-                <div class="project-card-full">
-                    <img src="images/ecommerce_dashboard_thumbnail.jpg" alt="E-commerce Sales Dashboard Thumbnail" loading="lazy">
-                    <h3>E-commerce Sales Dashboard</h3>
-                    <div class="project-tags">
-                        <span>Power BI</span>
-                        <span>DAX</span>
-                        <span>Sales Performance</span>
-                    </div>
-                    <p>Created an interactive Power BI dashboard to track and visualize key e-commerce sales metrics and trends.</p>
-                    <a href="projects/ecommerce-dashboard.html" class="read-more-link">View Case Study &rarr;</a>
-                </div>
-
-                <div class="project-card-full">
-                    <img src="images/customer_churn_thumbnail.jpg" alt="Customer Churn Prediction Thumbnail" loading="lazy">
-                    <h3>Customer Churn Prediction</h3>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Scikit-learn</span>
-                        <span>Predictive Analytics</span>
-                    </div>
-                    <p>Developed and deployed a machine learning model to predict customer churn for a telecom company.</p>
-                    <a href="projects/churn-prediction.html" class="read-more-link">View Case Study &rarr;</a>
-                </div>
+    <section class="project-grid-full section-container">
+        <h2 style="text-align: center; color: var(--accent-color-dark);">All Projects</h2>
+        <div class="portfolio-grid-wrapper" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg);">
+            <div class="portfolio-item">
+                <h3>Tarkari Mart: Farm to Taste</h3>
+                <p>Optimized supply chain efficiency and improved customer satisfaction for a local produce delivery service.</p>
+                <a href="projects/tarkari-mart.html" class="portfolio-link">View Case Study &rarr;</a>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <p>&copy; <span id="current-year-portfolio"></span> Sashiraj</p>
+            <div class="portfolio-item">
+                <h3>MUNAL: My Ultimate Next-gen Auto Lifestyle</h3>
+                <p>Developed a predictive model for customer lifetime value in the automotive sector, enhancing marketing strategies.</p>
+                <a href="projects/munal.html" class="portfolio-link">View Case Study &rarr;</a>
+            </div>
+
+            <div class="portfolio-item">
+                <h3>AI News Analyzer</h3>
+                <p>Built a system to aggregate and analyze the latest trends in AI research and news, providing summarized insights.</p>
+                <a href="projects/ai-news-analyzer.html" class="portfolio-link">View Case Study &rarr;</a>
+            </div>
+
+            <div class="portfolio-item">
+                <h3>E-commerce Sales Dashboard</h3>
+                <p>Created an interactive Power BI dashboard to track and visualize key e-commerce sales metrics and trends.</p>
+                <a href="projects/ecommerce-dashboard.html" class="portfolio-link">View Case Study &rarr;</a>
+            </div>
+
+            <div class="portfolio-item">
+                <h3>Customer Churn Prediction</h3>
+                <p>Developed and deployed a machine learning model to predict customer churn for a telecom company.</p>
+                <a href="projects/churn-prediction.html" class="portfolio-link">View Case Study &rarr;</a>
+            </div>
+             <div class="portfolio-item">
+                <h3>Financial Fraud Detection</h3>
+                <p>Implemented a machine learning model to detect fraudulent transactions in a financial dataset, improving security.</p>
+                <a href="#" class="portfolio-link">View Case Study &rarr;</a> <!-- Placeholder for new project -->
+            </div>
+             <div class="portfolio-item">
+                <h3>HR Analytics Dashboard</h3>
+                <p>Designed a comprehensive HR dashboard to analyze employee attrition and performance metrics, aiding strategic HR decisions.</p>
+                <a href="#" class="portfolio-link">View Case Study &rarr;</a> <!-- Placeholder for new project -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; <span id="current-year-footer"></span> Sashiraj Portfolio. All rights reserved.</p>
     </footer>
-
-    <script>
-        // JavaScript to automatically update the copyright year for this page
-        document.getElementById('current-year-portfolio').textContent = new Date().getFullYear();
-    </script>
 
 </body>
 </html>
