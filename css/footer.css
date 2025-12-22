@@ -1,23 +1,39 @@
-.footer-v2 { background: var(--subtle); padding: 120px 0 60px; }
-.contact-wrapper { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; }
+.footer-minimal { padding: 120px 0 40px; background: #fff; border-top: 2px solid #000; }
+.contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; margin-bottom: 80px; }
 
-.method-card {
-    display: flex;
-    padding: 24px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    transition: 0.3s transform ease;
-}
+.cta-title { font-size: 4rem; font-weight: 900; line-height: 0.9; letter-spacing: -0.04em; }
+.purple-text { color: var(--accent-purple); }
 
-.method-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-
-.download-btn-v2 {
+.hire-btn {
     display: inline-flex;
-    padding: 18px 32px;
-    background: var(--text);
-    color: white;
-    border-radius: 100px;
-    font-weight: 700;
-    margin-top: 2rem;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 40px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-top: 2.5rem;
 }
+
+.connect-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1.5px solid #000;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: #000;
+    transition: 0.4s;
+}
+
+.connect-card:hover {
+    border-color: var(--accent-purple);
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px var(--hover-glow);
+}
+
+.connect-card i { margin-right: 20px; color: #000; transition: 0.3s; }
+.connect-card:hover i { color: var(--accent-purple); }
