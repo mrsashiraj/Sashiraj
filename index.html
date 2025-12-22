@@ -2,130 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sashiraj Subedi | Strategy & Ops</title>
-    
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/nav-hero.css">
-    <link rel="stylesheet" href="css/lab.css">
-    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body data-theme="light">
+<body>
 
-    <nav class="navbar">
-        <div class="nav-content">
-            <span class="logo">S. SUBEDI</span>
-            <div class="nav-links desktop-only">
-                <a href="#lab">Lab</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="nav-actions">
-                <button id="theme-toggle" class="icon-btn"><i data-lucide="moon" id="theme-icon"></i></button>
-                <button id="menu-open" class="icon-btn mobile-only"><i data-lucide="menu"></i></button>
-            </div>
-        </div>
-    </nav>
-
-    <div id="mobile-menu" class="mobile-menu-overlay">
-        <button id="menu-close" class="icon-btn close-btn"><i data-lucide="x"></i></button>
-        <div class="mobile-links">
-            <a href="#lab">Lab</a>
+<nav class="navbar">
+    <div class="container nav-content">
+        <a href="#" class="logo">SASHIRAJ.</a>
+        <div class="nav-links">
             <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#lab">Lab</a>
+            <a href="#contact">Hire Me</a>
         </div>
     </div>
+</nav>
 
-    <main>
-        <header class="hero">
-            <div class="hero-container">
-                <div class="hero-tag"><div class="line"></div><span>OPERATIONS & DATA STRATEGY</span></div>
-                <h1 class="hero-title">QUALITY <br><span class="italic-light">THROUGH</span> DATA.</h1>
-            </div>
-        </header>
+<header class="hero container">
+    <span class="hero-tagline">Available for Strategy & Ops</span>
+    <h1>Sashiraj<br>Subedi.</h1>
+    <p class="hero-desc">
+        Detail-oriented professional specializing in project execution and data-driven planning. 
+        Bridging <strong>Python/SQL</strong> analysis with <strong>ISO 9001/22000</strong> compliance.
+    </p>
+</header>
 
-        <section id="lab" class="lab-section">
-            <div class="container">
-                <div class="lab-header">
-                    <div class="header-text">
-                        <h2 class="lab-title">Systems Lab.</h2>
-                        <p class="lab-subtitle">SCIENTIFIC MANAGEMENT • ANALYTICS</p>
-                    </div>
-                    <div class="tab-controls">
-                        <button class="tab-btn active" onclick="switchLab('bi')">Business Intelligence</button>
-                        <button class="tab-btn" onclick="switchLab('qc')">Quality Control</button>
-                    </div>
-                </div>
-                <div id="lab-content" class="bento-grid">
-                    </div>
-            </div>
-        </section>
+<section id="experience" class="container" style="padding: 100px 0;">
+    <h2 class="section-label">Selected Experience</h2>
+    
+    <div class="card">
+        <span class="card-meta">2024 — Present • Kathmandu</span>
+        <h3 class="card-title">QC/QA Executive</h3>
+        <p style="font-weight: 700; opacity: 0.6;">SUJAL DAIRY</p>
+        <p style="margin-top: 1rem;">Managing QMS and FSMS documentation and executing rigorous quality protocols for industrial production.</p>
+    </div>
 
-        <section id="projects" class="section-padding">
-            <div class="container">
-                <h2 class="section-label">Strategic Projects</h2>
-                <div id="project-list" class="flexible-grid">
-                    <div class="skeleton-card">
-                        <div class="skeleton-image pulse"></div>
-                        <div class="skeleton-text short pulse"></div>
-                        <div class="skeleton-text long pulse"></div>
-                    </div>
-                    <div class="skeleton-card desktop-only">
-                        <div class="skeleton-image pulse"></div>
-                        <div class="skeleton-text short pulse"></div>
-                        <div class="skeleton-text long pulse"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <div class="card">
+        <span class="card-meta">2020 — 2024 • Remote</span>
+        <h3 class="card-title">Data Analyst & Project Planner</h3>
+        <p style="font-weight: 700; opacity: 0.6;">FREELANCE STRATEGIC ADVISORY</p>
+        <p style="margin-top: 1rem;">Driving growth through market analysis and Power BI visualization.</p>
+    </div>
+</section>
 
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-cta">
-                    <h2 class="footer-title">READY TO <br> <span class="italic-light">STRATEGIZE?</span></h2>
-                    <div class="contact-card">
-                        <p class="label">Direct Contact</p>
-                        <a href="tel:+9779863037489" class="phone-link">+977 9863037489</a>
-                        <div class="social-pills">
-                            <div class="pill"><i data-lucide="message-square"></i> WhatsApp</div>
-                            <div class="pill"><i data-lucide="phone"></i> Viber</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <p class="footer-desc">Bridging the gap between scientific quality standards and industrial digital execution.</p>
-                    <div class="link-group">
-                        <a href="mailto:mrsashiraj@gmail.com" class="underline-link">Email Me <i data-lucide="mail"></i></a>
-                        <a href="https://linkedin.com/in/sashiraj" class="underline-link">LinkedIn <i data-lucide="linkedin"></i></a>
-                    </div>
-                </div>
+<footer id="contact" class="footer-minimal">
+    <div class="container">
+        <div class="contact-grid">
+            <div>
+                <h2 class="cta-title">Let's <br><span class="purple-text">Connect.</span></h2>
+                <a href="assets/Resume_Sashiraj_Subedi.pdf" download class="hire-btn">
+                    Download CV <i data-lucide="download"></i>
+                </a>
             </div>
-            <div class="footer-bottom">
-                <span>©2025 SASHIRAJ SUBEDI. ALL RIGHTS RESERVED.</span>
-                <div class="location">KTM / NEPAL • DATA & OPS</div>
+            <div class="connect-links">
+                <a href="https://wa.me/9779863037489" class="connect-card">
+                    <i data-lucide="message-circle"></i>
+                    <div><span class="card-meta">WhatsApp</span><p>+977 9863037489</p></div>
+                </a>
+                <a href="viber://chat?number=%2B9779863037489" class="connect-card">
+                    <i data-lucide="phone-call"></i>
+                    <div><span class="card-meta">Viber</span><p>+977 9863037489</p></div>
+                </a>
+                <a href="mailto:mrsashiraj@gmail.com" class="connect-card">
+                    <i data-lucide="mail"></i>
+                    <div><span class="card-meta">Email</span><p>mrsashiraj@gmail.com</p></div>
+                </a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="js/data.js"></script>
-    <script src="js/theme.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/lab.js"></script>
-    <script src="js/main.js"></script>
-    
-    <script>
-        // Ensure Lucide icons render on first load
-        lucide.createIcons();
-    </script>
+<script>lucide.createIcons();</script>
 </body>
 </html>
