@@ -5,14 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S. Subedi | Operations & Data Strategy</title>
     
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav-hero.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/lab.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body data-theme="light">
-    <script src="script.js"></script>
-    <script>lucide.createIcons();</script>
-</body>
-</html>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <span class="logo">S. SUBEDI</span>
+            <div class="nav-links desktop-only">
+                <a href="#lab">Lab</a>
+                <a href="#work">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn"><i data-lucide="moon" id="theme-icon"></i></button>
+                <button id="menu-open" class="icon-btn mobile-only"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-menu-overlay">
+        <button id="menu-close" class="icon-btn close-btn"><i data-lucide="x"></i></button>
+        <div class="mobile-links">
+            <a href="#lab">Lab</a>
+            <a href="#work">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
