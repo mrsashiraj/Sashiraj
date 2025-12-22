@@ -1,0 +1,87 @@
+/* 1. THEME VARIABLES */
+:root {
+    /* Light Mode Palette */
+    --bg: #ffffff;
+    --bg-rgb: 255, 255, 255;
+    --text: #1a1a1a;
+    --accent: #6366f1; /* Modern Indigo */
+    --subtle: #f9f9f9;
+    --border: rgba(0, 0, 0, 0.08);
+    
+    /* Animation Speeds */
+    --transition: 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+    /* Dark Mode Palette */
+    --bg: #0a0a0a;
+    --bg-rgb: 10, 10, 10;
+    --text: #ededed;
+    --subtle: #121212;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+/* 2. GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+/* 3. LAYOUT HELPERS */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+.section-label {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    display: block;
+}
+
+/* 4. LOADING SKELETON & SHIMMER */
+.pulse {
+    background: linear-gradient(
+        90deg,
+        var(--subtle) 25%,
+        var(--border) 50%,
+        var(--subtle) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    from
