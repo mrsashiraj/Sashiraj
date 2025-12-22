@@ -1,30 +1,29 @@
-/* styles.css (located in your project's root directory) */
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --accent: #6366f1;
+    --subtle: #f5f5f5;
+    --border: rgba(0,0,0,0.08);
+    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-/*
-   Main Stylesheet Entry Point
+[data-theme="dark"] {
+    --bg: #0a0a0a;
+    --text: #ededed;
+    --subtle: #151515;
+    --border: rgba(255,255,255,0.08);
+}
 
-   This file serves as the central hub for all other modular CSS files.
-   It uses `@import` rules to bring in styles for variables, base elements,
-   typography, layout, reusable components, and page-specific designs.
-   Only this file needs to be linked in your HTML documents.
-*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Import variables first as they are needed everywhere by other files */
-@import url('./css/_variables.css');
-
-/* Base styles and global resets for foundational elements */
-@import url('./css/_base.css');
-/* Specific typography rules for headings and paragraphs */
-@import url('./css/_typography.css');
-
-/* Layout styles for the overall structure (header, navigation, main content, footer) */
-@import url('./css/_layout.css');
-
-/* Reusable UI components (buttons, cards, lists used across pages) */
-@import url('./css/_components.css');
-
-/* Utility classes for small, single-purpose styles */
-@import url('./css/_utilities.css');
-
-/* Styles unique to specific pages or large distinct sections */
-@import url('./css/_pages.css');
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    transition: background-color var(--transition), color var(--transition);
+    overflow-x: hidden;
+}
