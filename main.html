@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sashiraj Subedi | Strategic Command</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Outfit:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyan: #00f2ff;
+            --purple: #7000ff;
+            --bg: #050505;
+        }
+        body {
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+
+        /* Abstract Bio-Chem Background */
+        .dna-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 242, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(112, 0, 255, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .glass:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--cyan);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+        }
+
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+            position: absolute;
+            top: -2px;
+            animation: scan 4s linear infinite;
+            opacity: 0.3;
+        }
+        @keyframes scan {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
+
+        .venture-node {
+            border-left: 2px solid rgba(255,255,255,0.1);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .venture-node::before {
+            content: '';
+            position: absolute;
+            left: -5px; top: 10px;
+            width: 8px; height: 8px;
+            background: var(--cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--cyan);
+        }
+
+        .metric-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+        }
+    </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-black">
+
+    <div class="dna-bg"></div>
+
+    <nav class="fixed top-0 w-full z-50 p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass px-8 py-4">
+            <div class="text-xl font-bold tracking-widest font-heading">S.SUBEDI <span class="text-cyan-400">01</span></div>
+            <div class="hidden md:flex gap-8 text-xs font-medium uppercase tracking-[0.2em] opacity-60">
+                <a href="#strategy" class="hover:text-cyan-400 transition hover:opacity-100">Strategy</a>
+                <a href="#ventures" class="hover:text-cyan-400 transition hover:opacity-100">Ventures</a>
+                <a href="#research" class="hover:text-cyan-400 transition hover:opacity-100">Research</a>
+            </div>
+            <a href="mailto:mrsashiraj@gmail.com" class="text-xs font-bold border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-black transition uppercase">Direct Access</a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 pt-40 pb-20">
+        
+        <!-- Hero Section: The Architect -->
+        <div class="grid lg:grid-cols-2 gap-20 items-center mb-32">
+            <div>
+                <div class="inline-block px-3 py-1 border border-cyan-500/30 rounded text-[10px] font-bold text-cyan-400 uppercase tracking-widest mb-6">
+                    Operational Intelligence / 2026.SYS
+                </div>
+                <h1 class="text-6xl md:text-8xl font-bold font-heading mb-8 leading-tight">
+                    Science <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 glow-text">Scaled.</span>
+                </h1>
+                <p class="text-lg text-gray-400 max-w-md leading-relaxed mb-10 font-light">
+                    Serial Entrepreneur & ISO Compliance Specialist. I engineer market-ready systems by blending biochemical rigor with predictive data models.
+                </p>
+                <div class="flex gap-4">
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-bold font-heading">4x</span>
+                        <span class="text-[10px] uppercase text-gray-500 tracking-tighter">Published Papers</span>
+                    </div>
+                    <div class="w-px h-12 bg-white/10 mx-4"></div>
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-bold font-heading">15%</span>
+                        <span class="text-[10px] uppercase text-gray-500 tracking-tighter">Chain Efficiency</span>
+                    </div>
+                    <div class="w-px h-12 bg-white/10 mx-4"></div>
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-bold font-heading">ISO</span>
+                        <span class="text-[10px] uppercase text-gray-500 tracking-tighter">9001/22000 Cert</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="glass p-8 aspect-square flex flex-col justify-center overflow-hidden relative">
+                    <div class="scanline"></div>
+                    <div class="space-y-8 relative z-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20">QC</div>
+                            <div>
+                                <h3 class="font-bold text-sm">Sujal Dairy Operations</h3>
+                                <p class="text-xs text-gray-500 uppercase">QMS & FSMS Documentation Lead</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded bg-purple-500/10 flex items-center justify-center text-purple-400 border border-purple-500/20">PM</div>
+                            <div>
+                                <h3 class="font-bold text-sm">Tarkari Mart Hybrid Model</h3>
+                                <p class="text-xs text-gray-500 uppercase">Logistics Optimization Engine</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded bg-green-500/10 flex items-center justify-center text-green-400 border border-green-500/20">DA</div>
+                            <div>
+                                <h3 class="font-bold text-sm">Predictive Analytics</h3>
+                                <p class="text-xs text-gray-500 uppercase">Python / SQL / Scikit-learn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Abstract floating element -->
+                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+
+        <!-- The Venture Command -->
+        <section id="ventures" class="mb-32">
+            <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-gray-500 mb-12">The Venture Portfolio</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="glass p-8 group hover:border-cyan-500/50">
+                    <h3 class="text-2xl font-bold mb-2">DAMAI</h3>
+                    <p class="text-xs text-gray-500 mb-6 uppercase">Textile & E-commerce</p>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">Supply chain integration for sustainable apparel scaling.</p>
+                </div>
+                <div class="glass p-8 group hover:border-purple-500/50">
+                    <h3 class="text-2xl font-bold mb-2">SARKY</h3>
+                    <p class="text-xs text-gray-500 mb-6 uppercase">Footwear Retail</p>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">Modern footwear brand built on localized manufacturing models.</p>
+                </div>
+                <div class="glass p-8 group hover:border-green-500/50">
+                    <h3 class="text-2xl font-bold mb-2">GORETO</h3>
+                    <p class="text-xs text-gray-500 mb-6 uppercase">Travel Tech MVP</p>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">Streamlined itinerary generation via market viability research.</p>
+                </div>
+                <div class="glass p-8 group hover:border-red-500/50">
+                    <h3 class="text-2xl font-bold mb-2">MUNAL</h3>
+                    <p class="text-xs text-gray-500 mb-6 uppercase">Automotive Strategy</p>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">Strategic planning for future-centric mobility solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scientific Discipline & Strategy -->
+        <div class="grid lg:grid-cols-3 gap-8 mb-32">
+            
+            <div id="research" class="lg:col-span-2 glass p-10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10 font-heading text-8xl font-bold">R&D</div>
+                <h2 class="text-2xl font-bold mb-8 font-heading">Research & Academic Assets</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="venture-node">
+                        <h4 class="text-sm font-bold mb-2">Biochemical Rigor</h4>
+                        <p class="text-xs text-gray-500">B.Sc background focusing on the intersection of biological science and industrial efficiency.</p>
+                    </div>
+                    <div class="venture-node">
+                        <h4 class="text-sm font-bold mb-2">Governmental Insights</h4>
+                        <p class="text-xs text-gray-500">Census data analysis and proposed structural solutions for national growth.</p>
+                    </div>
+                    <div class="venture-node">
+                        <h4 class="text-sm font-bold mb-2">Market Viability</h4>
+                        <p class="text-xs text-gray-500">Extensive papers on the sustainability of e-commerce and logistics in developing regions.</p>
+                    </div>
+                    <div class="venture-node">
+                        <h4 class="text-sm font-bold mb-2">Predictive Finance</h4>
+                        <p class="text-xs text-gray-500">Smart Kharcha: A data-driven approach to individual and corporate financial modeling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-10 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 font-heading">Tech Stack</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] px-3 py-1 bg-white/5 border border-white/10 rounded uppercase">Python</span>
+                        <span class="text-[10px] px-3 py-1 bg-white/5 border border-white/10 rounded uppercase">SQL</span>
+                        <span class="text-[10px] px-3 py-1 bg-white/5 border border-white/10 rounded uppercase">Pandas</span>
+                        <span class="text-[10px] px-3 py-1 bg-white/5 border border-white/10 rounded uppercase">Power BI</span>
+                        <span class="text-[10px] px-3 py-1 bg-white/5 border border-white/10 rounded uppercase">Scikit-learn</span>
+                        <span class="text-[10px] px-3 py-1 bg-white/5 border border-white/10 rounded uppercase">Google Analytics</span>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/10">
+                    <p class="text-xs text-gray-500 uppercase mb-4 tracking-widest">System Status</p>
+                    <div class="flex items-center gap-3 text-cyan-400">
+                        <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_#00f2ff]"></div>
+                        <span class="text-xs font-bold uppercase tracking-tighter">Ready for Strategic Recruitment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center opacity-30 text-[10px] uppercase tracking-[0.5em] py-20 border-t border-white/5">
+            SASHIRAJ SUBEDI // GLOBAL STRATEGIC COMMAND // 2026
+        </footer>
+    </main>
+
+    <script>
+        // Subtle Mouse Parallax
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.005;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.005;
+            document.querySelectorAll('.glass').forEach(card => {
+                card.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
