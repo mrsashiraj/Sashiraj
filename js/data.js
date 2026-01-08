@@ -1,46 +1,122 @@
-// Projects
-const projects = [
-    { title: "Tarkari Mart", category: "Operations", description: "Optimized B2B logistics...", tags:["Supply Chain","Data Modeling"], pdf:"pdfs/paper1.pdf" },
-    { title: "Sahayatri", category: "Mobility", description: "Designed a riding companion network...", tags:["Network Design","UX"], pdf:"pdfs/paper2.pdf" },
-    { title: "Smart Kharcha", category: "FinTech", description: "Developed a financial modeling tool...", tags:["Financial Modeling","Analytics"], pdf:"" },
-    { title: "Paisa", category: "Web3", description: "Exploration of cryptocurrency frameworks...", tags:["Blockchain","Economy"], pdf:"" }
-];
+const data = {
+    // -------------------------
+    // SKILLS
+    // -------------------------
+    skills: [
+        {
+            name: "Data & Applied Intelligence",
+            description: "Converting structured complexity into decision-grade insight.",
+            tags: ["Python (Analytical Modeling)", "SQL (Relational Intelligence)", "Power BI & Advanced Excel", "Statistical Interpretation"]
+        },
+        {
+            name: "Quality & Compliance Systems",
+            description: "Engineering reliability aligned with international standards.",
+            tags: ["ISO 9001 — Quality Management", "ISO 22000 — Food Safety Systems", "Audit Design & Inspection Protocols", "Documentation, Validation & Control"]
+        },
+        {
+            name: "Strategy & Execution",
+            description: "Translating conceptual frameworks into operational systems.",
+            tags: ["Project Architecture", "Market & Feasibility Analysis", "Supply Chain Logic", "Process Optimization"]
+        }
+    ],
 
-// Academic Papers
-const papers = [
-    { title: "Physicochemical Analysis of Yogurt", description:"Research on shelf-life and properties...", pdf:"pdfs/paper1.pdf", role:"Primary Investigator" }
-];
+    // -------------------------
+    // PROJECTS
+    // -------------------------
+    projects: [
+        {
+            name: "Smart Kharcha",
+            domain: "Financial Intelligence",
+            status: "Active Development",
+            description: "A predictive financial modeling system delivering real-time budgeting intelligence, automated cash-flow tracking, and forward-looking expense analysis.",
+            tags: ["Financial Modeling", "Analytics"],
+            pdf: "papers/smart-kharcha.pdf" // Optional, leave blank if none
+        },
+        {
+            name: "Tarkari Mart",
+            domain: "Operations & Supply Chain",
+            status: "Implemented / Iterative",
+            description: "A B2B agricultural logistics framework designed to reduce spoilage, improve price transparency, and optimize distribution through data-driven coordination.",
+            tags: ["Supply Chain", "Data Modeling"],
+            pdf: "papers/tarkari-mart.pdf"
+        },
+        {
+            name: "Sahayatri",
+            domain: "Mobility Networks",
+            status: "Concept & Design",
+            description: "A transit intelligence and riding companion framework focused on route efficiency, network participation, and real-time mobility insight.",
+            tags: ["Network Design", "UX"],
+            pdf: "" // No paper yet
+        }
+    ],
 
-// Skills
-const skills = [
-    { title:"Data Analysis & BI", description:"Extracting actionable insights...", tags:["Python","SQL","Power BI","Excel"] },
-    { title:"Quality & Compliance", description:"Ensuring industrial standards...", tags:["ISO 9001","ISO 22000","Inspections"] },
-    { title:"Project Management", description:"Leading initiatives from concept to execution...", tags:["Market Viability","Supply Chain","Problem Solving"] }
-];
+    // -------------------------
+    // VENTURES
+    // -------------------------
+    ventures: [
+        {
+            name: "Munal",
+            domain: "Automotive · Luxury Engineering",
+            description: "A conceptual automotive identity integrating performance engineering with minimalist, high-end design philosophy."
+        },
+        {
+            name: "Damai",
+            domain: "Textile & Retail Systems",
+            description: "A scalable textile and retail framework emphasizing agile manufacturing, streamlined logistics, and modern lifestyle positioning."
+        },
+        {
+            name: "Sarky",
+            domain: "Footwear · Urban Utility",
+            description: "Utility-driven footwear engineered for durability, resilience, and urban adaptability."
+        },
+        {
+            name: "Goreto",
+            domain: "Travel Technology · Intelligence Platforms",
+            description: "An evolving travel intelligence ecosystem combining navigation, community insight, and automated itinerary orchestration."
+        }
+    ],
 
-// Timeline
-const timeline = [
-    { year:"2024 - Now", title:"QC/QA", company:"Sujal Dairy, Nepal", description:"Managed FSMS/QMS documentation and inspections..." },
-    { year:"2021 - 2022", title:"Data Enumerator", company:"Central Bureau of Statistics", description:"Coordinated national census data collection..." },
-    { year:"2020", title:"Assistant Executive", company:"T and B Construction Company", description:"Coordinated project planning and execution..." }
-];
+    // -------------------------
+    // ACADEMIC PAPERS
+    // -------------------------
+    papers: [
+        {
+            title: "Physicochemical Analysis of Yogurt",
+            status: "Completed / Under Review",
+            description: "Laboratory-based research examining shelf-life stability and physicochemical behavior of commercial yogurt products under controlled conditions.",
+            pdf: "papers/yogurt-analysis.pdf"
+        },
+        {
+            title: "Milk Shelf-Life Stability Study",
+            status: "Ongoing Research",
+            description: "Extended analysis of chemical stability, storage behavior, and quality degradation patterns in packaged milk systems.",
+            pdf: ""
+        }
+    ],
 
-// Ventures
-const ventures = [
-    { title:"Munal", category:"Automotive Start-up · Luxury Identity", description:"Engineering raw performance with aerodynamic luxury..." },
-    { title:"Damai", category:"Textile & Retail · Scalable Logistics", description:"Agile manufacturing delivering architectural fashion..." },
-    { title:"Sarky", category:"Footwear · Rugged Urban Utility", description:"Durable, resilient urban footwear..." },
-    { title:"Goreto", category:"Travel Tech · Community & Intelligence", description:"Automated travel companions and intelligent itineraries..." }
-];
-
-// Contacts
-const contacts = [
-    { type: "Email", link: "mailto:mrsashiraj@gmail.com", display: "mrsashiraj@gmail.com" },
-    { type: "Phone", link: "tel:+9779863037489", display: "+977 9863037489" },
-    { type: "Website", link: "http://www.sashiraj.com.np", display: "Official Website" },
-    { type: "LinkedIn", link: "https://linkedin.com/in/sashiraj", display: "LinkedIn" },
-    { type: "GitHub", link: "https://github.com/sashiraj", display: "GitHub" },
-    { type: "X", link: "https://x.com/sashiraj", display: "X" },
-    { type: "Instagram", link: "https://instagram.com/sashiraj", display: "Instagram" },
-    { type: "WhatsApp", link: "https://wa.me/9779863037489", display: "WhatsApp" }
-];
+    // -------------------------
+    // EDUCATION & CERTIFICATIONS
+    // -------------------------
+    education: [
+        {
+            title: "Bachelor of Science — Dairy Technology",
+            institution: "Tribhuvan University",
+            credentials: []
+        },
+        {
+            title: "Google Data Analytics",
+            institution: "Individual Qualification",
+            credentials: []
+        },
+        {
+            title: "Website Development",
+            institution: "Certified Training",
+            credentials: []
+        },
+        {
+            title: "Google Analytics IQ",
+            institution: "Strategic Professional",
+            credentials: []
+        }
+    ]
+};
