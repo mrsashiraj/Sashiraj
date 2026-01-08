@@ -1,81 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth dark">
 <head>
-    <meta charset="UTF-8">
-    <title>Sashiraj Subedi | Strategy & Ops</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/nav-hero.css">
-    <link rel="stylesheet" href="css/cards.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sashiraj Subedi | Strategy & Applied Intelligence</title>
 
-<nav class="navbar">
-    <div class="container nav-content">
-        <a href="#" class="logo">SASHIRAJ.</a>
-        <div class="nav-links">
-            <a href="#experience">Experience</a>
-            <a href="#lab">Lab</a>
-            <a href="#contact">Hire Me</a>
-        </div>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+
+<!-- Tailwind Config -->
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: { sans:['Inter','sans-serif'], serif:['Cormorant Garamond','serif'] },
+      colors: { rich:'#050505', sand:'#D4C9B3', gold:'#B69240', chalk:'#FDFCFB' }
+    }
+  }
+}
+</script>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="noise">
+<div id="progress-bar" style="width:0%"></div>
+
+<!-- FLOATING CONTACT -->
+<a href="#connect" id="ctc" class="floating-ctc group">
+    <div class="bg-gold text-rich p-5 rounded-full shadow-2xl flex items-center gap-3 transition-all group-hover:px-8">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+        <span class="text-[10px] font-bold uppercase tracking-widest hidden group-hover:block whitespace-nowrap">Collaborate</span>
     </div>
+</a>
+
+<!-- NAVIGATION -->
+<nav class="fixed top-0 w-full z-[100] px-8 py-10 flex justify-between items-center mix-blend-difference">
+    <a href="#" class="serif italic text-2xl tracking-tighter text-white">S. Subedi</a>
+    <div class="hidden lg:flex gap-8 text-[8px] font-light uppercase tracking-[0.4em] text-white">
+        <a href="#about" class="btn-luxury">About</a>
+        <a href="#skills" class="btn-luxury">Skills</a>
+        <a href="#projects" class="btn-luxury">Projects</a>
+        <a href="#timeline" class="btn-luxury">Timeline</a>
+        <a href="#journal" class="btn-luxury">Journal</a>
+        <a href="#education" class="btn-luxury">Education</a>
+        <a href="#ventures" class="btn-luxury">Ventures</a>
+        <a href="#connect" class="btn-luxury">Connect</a>
+    </div>
+    <button onclick="toggleTheme()" class="text-white opacity-50 hover:opacity-100 transition-opacity">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+    </button>
 </nav>
 
-<header class="hero container">
-    <span class="hero-tagline">Available for Strategy & Ops</span>
-    <h1>Sashiraj<br>Subedi.</h1>
-    <p class="hero-desc">
-        Detail-oriented professional specializing in project execution and data-driven planning. 
-        Bridging <strong>Python/SQL</strong> analysis with <strong>ISO 9001/22000</strong> compliance.
-    </p>
-</header>
+<main>
+    <!-- ABOUT -->
+    <section id="about" class="h-screen flex flex-col justify-center items-center px-6 relative">
+        <div class="reveal active text-center max-w-5xl">
+            <span class="text-[10px] uppercase tracking-[0.8em] text-gold mb-8 block">Project Execution & Applied Intelligence</span>
+            <h1 class="serif text-[clamp(2.5rem,10vw,7rem)] leading-[0.9] mb-12 font-light">
+                Engineering <span class="italic font-normal text-gold">Prestige</span><br>into Global Systems.
+            </h1>
+            <p class="max-w-2xl mx-auto text-[11px] uppercase tracking-[0.3em] leading-relaxed opacity-60 font-light">
+                Based in Kathmandu. A detail-oriented professional specializing in project execution, data-driven planning, and quality management. Founder of scaling startups and architect of industrial business models.
+            </p>
+        </div>
+    </section>
 
-<section id="experience" class="container" style="padding: 100px 0;">
-    <h2 class="section-label">Selected Experience</h2>
-    
-    <div class="card">
-        <span class="card-meta">2024 — Present • Kathmandu</span>
-        <h3 class="card-title">QC/QA Executive</h3>
-        <p style="font-weight: 700; opacity: 0.6;">SUJAL DAIRY</p>
-        <p style="margin-top: 1rem;">Managing QMS and FSMS documentation and executing rigorous quality protocols for industrial production.</p>
-    </div>
+    <!-- SKILLS -->
+    <section id="skills" class="py-40 px-8 border-t border-gold/5">
+        <!-- Static skills, same as your original UI -->
+    </section>
 
-    <div class="card">
-        <span class="card-meta">2020 — 2024 • Remote</span>
-        <h3 class="card-title">Data Analyst & Project Planner</h3>
-        <p style="font-weight: 700; opacity: 0.6;">FREELANCE STRATEGIC ADVISORY</p>
-        <p style="margin-top: 1rem;">Driving growth through market analysis and Power BI visualization.</p>
-    </div>
-</section>
-
-<footer id="contact" class="footer-minimal">
-    <div class="container">
-        <div class="contact-grid">
-            <div>
-                <h2 class="cta-title">Let's <br><span class="purple-text">Connect.</span></h2>
-                <a href="assets/Resume_Sashiraj_Subedi.pdf" download class="hire-btn">
-                    Download CV <i data-lucide="download"></i>
-                </a>
+    <!-- PROJECTS -->
+    <section id="projects" class="py-40 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-32 reveal">
+                <span class="serif italic text-3xl text-gold mb-4 block">02</span>
+                <h2 class="serif text-7xl font-light">Strategic Projects</h2>
+                <p class="text-[10px] uppercase tracking-[0.4em] opacity-40 mt-4 italic">Showcasing ability, skills, and specific contributions</p>
             </div>
-            <div class="connect-links">
-                <a href="https://wa.me/9779863037489" class="connect-card">
-                    <i data-lucide="message-circle"></i>
-                    <div><span class="card-meta">WhatsApp</span><p>+977 9863037489</p></div>
-                </a>
-                <a href="viber://chat?number=%2B9779863037489" class="connect-card">
-                    <i data-lucide="phone-call"></i>
-                    <div><span class="card-meta">Viber</span><p>+977 9863037489</p></div>
-                </a>
-                <a href="mailto:mrsashiraj@gmail.com" class="connect-card">
-                    <i data-lucide="mail"></i>
-                    <div><span class="card-meta">Email</span><p>mrsashiraj@gmail.com</p></div>
-                </a>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="projects-list">
+                <!-- JS will populate project cards here -->
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- PROFESSIONAL TIMELINE -->
+    <section id="timeline" class="py-40 px-8 bg-gold/[0.02]">
+        <div class="max-w-7xl mx-auto" id="timeline-list">
+            <!-- JS will populate timeline -->
+        </div>
+    </section>
+
+    <!-- ACADEMIC PAPERS -->
+    <section id="journal" class="py-40 px-8 bg-[#0a0a0a] text-chalk">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20" id="papers-list">
+            <!-- JS will populate papers -->
+        </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATION -->
+    <section id="education" class="py-40 px-8">
+        <div class="max-w-7xl mx-auto" id="education-list">
+            <!-- JS will populate education -->
+        </div>
+    </section>
+
+    <!-- VENTURES -->
+    <section id="ventures" class="py-40 px-8 bg-gold/[0.03] border-t border-gold/5">
+        <div class="max-w-7xl mx-auto" id="ventures-list">
+            <!-- JS will populate ventures -->
+        </div>
+    </section>
+
+    <!-- CONNECT -->
+    <section id="connect" class="py-60 px-8 bg-rich text-chalk text-center">
+        <div class="reveal max-w-4xl mx-auto">
+            <span class="serif italic text-2xl text-gold mb-8 block">Dialogue</span>
+            <h2 class="serif text-[clamp(2.5rem,8vw,6rem)] leading-none mb-20 font-light">
+                Let's architect the<br><span class="italic font-normal">Next Frontier.</span>
+            </h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-16 mb-32">
+                <a href="mailto:mrsashiraj@gmail.com" class="text-2xl serif italic hover:text-gold transition-colors">mrsashiraj@gmail.com</a>
+                <a href="tel:+9779863037489" class="text-2xl serif hover:text-gold transition-colors">+977 9863037489</a>
+            </div>
+            <div class="flex justify-center gap-12 text-[9px] uppercase tracking-[0.5em] opacity-30">
+                <a href="http://www.sashiraj.com.np" class="hover:text-gold hover:opacity-100 transition-all border-b border-transparent hover:border-gold">Website</a>
+                <a href="#" class="hover:text-gold hover:opacity-100 transition-all">LinkedIn</a>
+                <a href="#" class="hover:text-gold hover:opacity-100 transition-all">GitHub</a>
+                <a href="#" class="hover:text-gold hover:opacity-100 transition-all">X</a>
+                <a href="#" class="hover:text-gold hover:opacity-100 transition-all">Instagram</a>
+                <a href="https://wa.me/+9779863037489" class="hover:text-gold hover:opacity-100 transition-all">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="py-12 px-8 flex flex-col md:flex-row justify-between items-center text-[8px] uppercase tracking-[0.4em] opacity-20 border-t border-gold/5 bg-rich text-chalk">
+    <p>© 2026 Sashiraj Subedi.</p>
+    <p>Strategic Identity System.</p>
 </footer>
 
-<script>lucide.createIcons();</script>
+<!-- JS -->
+<script src="js/main.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/ventures.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/papers.js"></script>
+<script src="js/education.js"></script>
+
 </body>
 </html>
