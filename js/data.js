@@ -1,61 +1,46 @@
-// js/data.js
-const myProjects = [
-    { 
-        title: "Tarkari Mart Logistics", 
-        category: "Operations Strategy", 
-        year: "2023", 
-        desc: "Developed a hybrid B2B supply chain model; optimized logistics to reduce spoilage by 15% and boost farmer profitability. [cite: 54]",
-        image: "assets/images/tarkari.jpg", 
-        link: "http://www.sashiraj.com.np" 
-    },
-    { 
-        title: "Smart Kharcha", 
-        category: "Financial Data", 
-        year: "2024", 
-        desc: "Designed a financial modeling tool providing predictive budget insights and data-driven savings recommendations. [cite: 56]",
-        image: "assets/images/budget.jpg", 
-        link: "#" 
-    }
+// Projects
+const projects = [
+    { title: "Tarkari Mart", category: "Operations", description: "Optimized B2B logistics...", tags:["Supply Chain","Data Modeling"], pdf:"pdfs/paper1.pdf" },
+    { title: "Sahayatri", category: "Mobility", description: "Designed a riding companion network...", tags:["Network Design","UX"], pdf:"pdfs/paper2.pdf" },
+    { title: "Smart Kharcha", category: "FinTech", description: "Developed a financial modeling tool...", tags:["Financial Modeling","Analytics"], pdf:"" },
+    { title: "Paisa", category: "Web3", description: "Exploration of cryptocurrency frameworks...", tags:["Blockchain","Economy"], pdf:"" }
 ];
 
-const experienceData = [
-    {
-        role: "QC/QA",
-        company: "Sujal Dairy",
-        location: "Nepal",
-        period: "Feb 2024 — Present",
-        impact: [
-            "Managed QMS and FSMS documentation, ensuring regulatory readiness. [cite: 18]",
-            "Conducted daily quality inspections and protocols for finished dairy products. [cite: 19]",
-            "Investigated production issues and collaborated on cross-functional solutions. [cite: 20]"
-        ]
-    },
-    {
-        role: "Data Analyst & Project Planning",
-        company: "Freelance",
-        location: "Remote",
-        period: "Sept 2020 — Present",
-        impact: [
-            "Executed data analysis projects, delivering data-driven insights and recommendations. [cite: 25]",
-            "Prepared professional market analysis reports using Power BI and Google Analytics. [cite: 26]"
-        ]
-    }
+// Academic Papers
+const papers = [
+    { title: "Physicochemical Analysis of Yogurt", description:"Research on shelf-life and properties...", pdf:"pdfs/paper1.pdf", role:"Primary Investigator" }
 ];
 
-const labData = {
-    bi: [
-        { title: "Python (Pandas, NumPy)", label: "Data Analysis", icon: "code" }, [cite: 11]
-        { title: "SQL & Power BI", label: "Intelligence", icon: "bar-chart" }, [cite: 11]
-        { title: "Google Analytics", label: "Market Insights", icon: "globe" } [cite: 11, 51]
-    ],
-    qc: [
-        { title: "ISO 9001 / 22000", label: "Compliance", icon: "shield" }, [cite: 12]
-        { title: "QMS & FSMS", label: "Documentation", icon: "file-text" }, [cite: 18]
-        { title: "Audit Protocols", label: "Inspection", icon: "check-circle" } [cite: 12, 19]
-    ]
-};
+// Skills
+const skills = [
+    { title:"Data Analysis & BI", description:"Extracting actionable insights...", tags:["Python","SQL","Power BI","Excel"] },
+    { title:"Quality & Compliance", description:"Ensuring industrial standards...", tags:["ISO 9001","ISO 22000","Inspections"] },
+    { title:"Project Management", description:"Leading initiatives from concept to execution...", tags:["Market Viability","Supply Chain","Problem Solving"] }
+];
 
-const educationData = [
-    { degree: "Bachelor's Degree in Science", institution: "Tribhuvan University", period: "2020 — Present" }, [cite: 40, 41, 45]
-    { degree: "Highschool in Biology and Mathematics", institution: "Kathmandu Bernhardt College", period: "2017 — 2019" } [cite: 42, 44, 47]
+// Timeline
+const timeline = [
+    { year:"2024 - Now", title:"QC/QA", company:"Sujal Dairy, Nepal", description:"Managed FSMS/QMS documentation and inspections..." },
+    { year:"2021 - 2022", title:"Data Enumerator", company:"Central Bureau of Statistics", description:"Coordinated national census data collection..." },
+    { year:"2020", title:"Assistant Executive", company:"T and B Construction Company", description:"Coordinated project planning and execution..." }
+];
+
+// Ventures
+const ventures = [
+    { title:"Munal", category:"Automotive Start-up · Luxury Identity", description:"Engineering raw performance with aerodynamic luxury..." },
+    { title:"Damai", category:"Textile & Retail · Scalable Logistics", description:"Agile manufacturing delivering architectural fashion..." },
+    { title:"Sarky", category:"Footwear · Rugged Urban Utility", description:"Durable, resilient urban footwear..." },
+    { title:"Goreto", category:"Travel Tech · Community & Intelligence", description:"Automated travel companions and intelligent itineraries..." }
+];
+
+// Contacts
+const contacts = [
+    { type: "Email", link: "mailto:mrsashiraj@gmail.com", display: "mrsashiraj@gmail.com" },
+    { type: "Phone", link: "tel:+9779863037489", display: "+977 9863037489" },
+    { type: "Website", link: "http://www.sashiraj.com.np", display: "Official Website" },
+    { type: "LinkedIn", link: "https://linkedin.com/in/sashiraj", display: "LinkedIn" },
+    { type: "GitHub", link: "https://github.com/sashiraj", display: "GitHub" },
+    { type: "X", link: "https://x.com/sashiraj", display: "X" },
+    { type: "Instagram", link: "https://instagram.com/sashiraj", display: "Instagram" },
+    { type: "WhatsApp", link: "https://wa.me/9779863037489", display: "WhatsApp" }
 ];
