@@ -4,37 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sashiraj Subedi | Strategy & Applied Intelligence</title>
-    <meta name="description" content="Sashiraj Subedi – Project Execution, Applied Intelligence, Data Analysis, Strategic Ventures, and Academic Research.">
+    <meta name="description" content="Portfolio of Sashiraj Subedi — project execution, applied intelligence, startups, research, and professional skills.">
+    <link rel="icon" href="assets/favicon.ico">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@100;200;300;400;600&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Cormorant Garamond', 'serif'],
-                    },
-                    colors: {
-                        rich: '#050505',
-                        sand: '#D4C9B3',
-                        gold: '#B69240',
-                        chalk: '#FDFCFB'
-                    }
-                }
-            }
-        }
-    </script>
-
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="noise">
 
-<div id="progress-bar" style="width:0%"></div>
+<div id="progress-bar" style="width: 0%"></div>
 
 <!-- FLOATING CTC -->
 <a href="#connect" id="ctc" class="floating-ctc group">
@@ -63,7 +42,7 @@
 </nav>
 
 <main>
-    <!-- 1. ABOUT -->
+    <!-- About -->
     <section id="about" class="h-screen flex flex-col justify-center items-center px-6 relative">
         <div class="reveal active text-center max-w-5xl">
             <span class="text-[10px] uppercase tracking-[0.8em] text-gold mb-8 block">Project Execution & Applied Intelligence</span>
@@ -71,94 +50,48 @@
                 Engineering <span class="italic font-normal text-gold">Prestige</span><br>into Global Systems.
             </h1>
             <p class="max-w-2xl mx-auto text-[11px] uppercase tracking-[0.3em] leading-relaxed opacity-60 font-light">
-                Based in Kathmandu. Detail-oriented professional specializing in project execution, data-driven planning, and quality management.
-                Founder of scaling startups and architect of industrial business models.
+                Based in Kathmandu. Detail-oriented professional specializing in project execution, data-driven planning, and quality management. Founder of scaling startups and architect of industrial business models.
             </p>
         </div>
     </section>
 
-    <!-- 2. SKILLS -->
+    <!-- Skills -->
     <section id="skills" class="py-40 px-8 border-t border-gold/5">
         <div class="max-w-7xl mx-auto">
             <div class="mb-24 reveal">
                 <span class="serif italic text-3xl text-gold mb-4 block">01</span>
                 <h2 class="serif text-6xl">Technical & Strategic Skills</h2>
             </div>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="reveal">
-                    <h4 class="serif text-2xl mb-6 italic">Data Analysis & BI</h4>
-                    <p class="text-xs font-light opacity-60 leading-relaxed mb-6">Extracting actionable insights from complex datasets.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 border border-gold/20 text-[8px] uppercase tracking-widest">Python (Pandas)</span>
-                        <span class="px-3 py-1 border border-gold/20 text-[8px] uppercase tracking-widest">SQL (MySQL)</span>
-                        <span class="px-3 py-1 border border-gold/20 text-[8px] uppercase tracking-widest">Power BI</span>
-                        <span class="px-3 py-1 border border-gold/20 text-[8px] uppercase tracking-widest">MS Excel</span>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <h4 class="serif text-2xl mb-6 italic">Quality & Compliance</h4>
-                    <p class="text-xs font-light opacity-60 leading-relaxed mb-6">Ensuring industrial standards and operational excellence.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 border border-gold/20 text-[8px] uppercase tracking-widest">ISO 9001 (QMS)</span>
-                        <span class="px-3 py-1 border border-gold/20 text-[8px] uppercase tracking-widest">ISO 22000 (FSMS)</span>
-                        <span class="px-3 py-1 border border-gold/20 text-[8px] uppercase tracking-widest">Inspections</span>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <h4 class="serif text-2xl mb-6 italic">Project Management</h4>
-                    <p class="text-xs font-light opacity-60 leading-relaxed mb-6">Leading initiatives from conceptualization to execution.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 border border-gold/20 text-[8px] uppercase tracking-widest">Market Viability</span>
-                        <span class="px-3 py-1 border border-gold/20 text-[8px] uppercase tracking-widest">Supply Chain</span>
-                        <span class="px-3 py-1 border border-gold/20 text-[8px] uppercase tracking-widest">Problem Solving</span>
-                    </div>
-                </div>
-            </div>
+            <div class="grid md:grid-cols-3 gap-12" id="skills-container"></div>
         </div>
     </section>
 
-    <!-- 3. PROJECTS -->
+    <!-- Projects -->
     <section id="projects" class="py-40 px-8">
         <div class="max-w-7xl mx-auto">
             <div class="mb-32 reveal">
                 <span class="serif italic text-3xl text-gold mb-4 block">02</span>
                 <h2 class="serif text-7xl font-light">Strategic Projects</h2>
-                <p class="text-[10px] uppercase tracking-[0.4em] opacity-40 mt-4 italic">Showcasing ability, skills, and specific contributions</p>
+                <p class="text-[10px] uppercase tracking-[0.4em] opacity-40 mt-4 italic">Showcasing ability, skills, and contributions</p>
             </div>
-            <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="projects-container"></div>
         </div>
     </section>
 
-    <!-- 4. TIMELINE -->
+    <!-- Timeline -->
     <section id="timeline" class="py-40 px-8 bg-gold/[0.02]">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-24 reveal">
-                <span class="serif italic text-3xl text-gold mb-4 block">03</span>
-                <h2 class="serif text-6xl">Professional Timeline</h2>
-            </div>
-            <div id="timeline-container" class="space-y-4"></div>
-        </div>
+        <div class="max-w-7xl mx-auto" id="timeline-container"></div>
     </section>
 
-    <!-- 5. ACADEMIC PAPERS -->
+    <!-- Academic Papers -->
     <section id="journal" class="py-40 px-8 bg-[#0a0a0a] text-chalk">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
-            <div id="academic-container" class="reveal"></div>
-        </div>
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20" id="papers-container"></div>
     </section>
 
-    <!-- 6. EDUCATION & CERTIFICATIONS -->
-    <section id="education" class="py-40 px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-24 reveal">
-                <span class="serif italic text-3xl text-gold mb-4 block">05</span>
-                <h2 class="serif text-6xl">Education & Certification</h2>
-            </div>
-            <div id="education-container" class="grid lg:grid-cols-2 gap-20"></div>
-        </div>
-    </section>
+    <!-- Education -->
+    <section id="education" class="py-40 px-8" id="education-container"></section>
 
-    <!-- 7. VENTURES -->
+    <!-- Ventures -->
     <section id="ventures" class="py-40 px-8 bg-gold/[0.03] border-t border-gold/5">
         <div class="max-w-7xl mx-auto">
             <div class="mb-32 reveal">
@@ -170,30 +103,16 @@
         </div>
     </section>
 
-    <!-- 8. CONNECT / SOCIAL -->
+    <!-- Connect -->
     <section id="connect" class="py-60 px-8 bg-rich text-chalk text-center">
         <div class="reveal max-w-4xl mx-auto">
             <span class="serif italic text-2xl text-gold mb-8 block">Dialogue</span>
             <h2 class="serif text-[clamp(2.5rem,8vw,6rem)] leading-none mb-20 font-light">
                 Let's architect the<br><span class="italic font-normal">Next Frontier.</span>
             </h2>
-            
-            <div class="flex flex-col md:flex-row justify-center items-center gap-16 mb-32">
-                <a href="mailto:mrsashiraj@gmail.com" class="text-2xl serif italic hover:text-gold transition-colors">mrsashiraj@gmail.com</a>
-                <a href="tel:+9779863037489" class="text-2xl serif hover:text-gold transition-colors">+977 9863037489</a>
-            </div>
-
-            <div class="flex justify-center gap-12 text-[9px] uppercase tracking-[0.5em] opacity-30 flex-wrap">
-                <a href="http://www.sashiraj.com.np" class="hover:text-gold hover:opacity-100 transition-all border-b border-transparent hover:border-gold">Official Website</a>
-                <a href="#" class="hover:text-gold hover:opacity-100 transition-all">LinkedIn</a>
-                <a href="#" class="hover:text-gold hover:opacity-100 transition-all">GitHub</a>
-                <a href="#" class="hover:text-gold hover:opacity-100 transition-all">Instagram</a>
-                <a href="#" class="hover:text-gold hover:opacity-100 transition-all">X / Twitter</a>
-                <a href="https://wa.me/9779863037489" class="hover:text-gold hover:opacity-100 transition-all">WhatsApp</a>
-            </div>
+            <div id="contacts-container" class="flex flex-col md:flex-row justify-center items-center gap-16 mb-32"></div>
         </div>
     </section>
-
 </main>
 
 <footer class="py-12 px-8 flex flex-col md:flex-row justify-between items-center text-[8px] uppercase tracking-[0.4em] opacity-20 border-t border-gold/5 bg-rich text-chalk">
@@ -201,6 +120,7 @@
     <p>Strategic Identity System.</p>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
