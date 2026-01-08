@@ -3,13 +3,11 @@
     --text: #1A1A1A;
     --accent: #B69240;
 }
-
 .dark {
     --bg: #050505;
     --text: #FDFCFB;
     --accent: #D4C9B3;
 }
-
 body {
     background-color: var(--bg);
     color: var(--text);
@@ -17,7 +15,6 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
-
 .noise::before {
     content: "";
     position: fixed;
@@ -27,133 +24,22 @@ body {
     pointer-events: none;
     z-index: 9999;
 }
-
 .serif { font-family: 'Cormorant Garamond', serif; }
-
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    filter: blur(5px);
+.reveal { 
+    opacity: 0; transform: translateY(30px); filter: blur(5px);
     transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
-    filter: blur(0px); 
-}
-
+.reveal.active { opacity: 1; transform: translateY(0); filter: blur(0px); }
 .btn-luxury {
-    position: relative;
-    display: inline-block;
-    transition: all 0.4s ease;
+    position: relative; display: inline-block; transition: all 0.4s ease;
 }
 .btn-luxury::after {
-    content: '';
-    position: absolute;
-    bottom: -2px; left: 0; width: 0%; height: 1px;
-    background: var(--accent);
-    transition: width 0.4s ease;
+    content: ''; position: absolute; bottom: -2px; left: 0; width: 0%; height: 1px;
+    background: var(--accent); transition: width 0.4s ease;
 }
 .btn-luxury:hover::after { width: 100%; }
-
-.floating-ctc {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 90;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.floating-ctc.visible {
-    opacity: 1;
-    transform: scale(1);
-}
-
-#progress-bar {
-    position: fixed;
-    top: 0; left: 0; height: 1px;
-    background: var(--accent);
-    z-index: 1000;
-    transition: width 0.1s ease;
-}
-
-.venture-card {
-    border-top: 1px solid rgba(182, 146, 64, 0.1);
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    transition: all 0.6s ease;
-}
-.venture-card:hover {
-    border-top-color: var(--accent);
-    background: rgba(182, 146, 64, 0.02);
-}
-
-.project-grid-item {
-    border: 1px solid rgba(182, 146, 64, 0.1);
-    transition: all 0.4s ease;
-    cursor: pointer;
-}
-.project-grid-item:hover {
-    border-color: var(--accent);
-    background: rgba(182, 146, 64, 0.03);
-}
-
-.timeline-card {
-    padding: 3rem;
-    border: 1px solid rgba(182,146,64,0.05);
-    transition: all 0.4s ease;
-}
-.timeline-card:hover {
-    border-color: var(--accent);
-    background: rgba(182,146,64,0.03);
-}
-
-.academic-card {
-    padding: 3rem;
-    border: 1px solid rgba(182,146,64,0.1);
-    transition: all 0.4s ease;
-    background-color: var(--bg);
-}
-.academic-card:hover {
-    border-color: var(--accent);
-    background-color: rgba(182,146,64,0.02);
-}
-
-.education-card {
-    padding: 2rem;
-    border: 1px solid rgba(182,146,64,0.1);
-    transition: all 0.4s ease;
-}
-.education-card:hover {
-    border-color: var(--accent);
-    background-color: rgba(182,146,64,0.02);
-}
-
-.contact-link {
-    transition: color 0.3s, opacity 0.3s, border 0.3s;
-}
-.contact-link:hover {
-    color: var(--accent);
-    opacity: 1;
-    border-bottom: 1px solid var(--accent);
-}
-
-/* Responsive text adjustments */
-@media (max-width:1024px) {
-    h1 { font-size: clamp(2rem, 8vw, 5rem); }
-    h2 { font-size: clamp(2rem, 6vw, 4rem); }
-}
-
-/* Misc utility tweaks */
-.uppercase { text-transform: uppercase; }
-.italic { font-style: italic; }
-.font-light { font-weight: 300; }
-.tracking-tighter { letter-spacing: -0.02em; }
-.tracking-widest { letter-spacing: 0.15em; }
-.opacity-50 { opacity: 0.5; }
-.opacity-60 { opacity: 0.6; }
-.opacity-30 { opacity: 0.3; }
-.text-xs { font-size: 0.65rem; }
-.text-sm { font-size: 0.75rem; }
-.text-lg { font-size: 1.125rem; }
+.floating-ctc { position: fixed; bottom: 2rem; right: 2rem; z-index: 90; opacity: 0; transform: scale(0.9); transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+.floating-ctc.visible { opacity: 1; transform: scale(1);}
+#progress-bar { position: fixed; top: 0; left: 0; height: 1px; background: var(--accent); z-index: 1000; transition: width 0.1s ease;}
+.venture-card, .project-grid-item { border: 1px solid rgba(182,146,64,0.1); transition: all 0.4s ease; padding: 4rem; }
+.venture-card:hover, .project-grid-item:hover { border-color: var(--accent); background: rgba(182,146,64,0.03);}
