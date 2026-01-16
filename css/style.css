@@ -1,139 +1,155 @@
-/* ROOT COLORS */
 :root {
-    --bg: #FDFCFB;
-    --text: #1A1A1A;
-    --accent: #B69240;
+  --bg: #FDFCFB;
+  --text: #1A1A1A;
+  --accent: #B69240;
 }
 
 .dark {
-    --bg: #050505;
-    --text: #FDFCFB;
-    --accent: #D4C9B3;
+  --bg: #050505;
+  --text: #FDFCFB;
+  --accent: #D4C9B3;
 }
 
 /* BODY */
 body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* NOISE EFFECT */
+/* NOISE OVERLAY */
 .noise::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity: 0.04;
-    pointer-events: none;
-    z-index: 9999;
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9999;
 }
 
-/* SERIF FONT */
+/* SERIF */
 .serif {
-    font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-/* REVEAL ANIMATIONS */
+/* REVEAL ANIMATION */
 .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    filter: blur(5px);
-    transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(5px);
+  transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0px);
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
 
-/* LUXURY BUTTON UNDERLINE EFFECT */
+/* BUTTON HOVER EFFECT */
 .btn-luxury {
-    position: relative;
-    display: inline-block;
-    transition: all 0.4s ease;
+  position: relative;
+  display: inline-block;
+  transition: all 0.4s ease;
 }
 .btn-luxury::after {
-    content: '';
-    position: absolute;
-    bottom: -2px; left: 0; width: 0%; height: 1px;
-    background: var(--accent);
-    transition: width 0.4s ease;
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0; width: 0%; height: 1px;
+  background: var(--accent);
+  transition: width 0.4s ease;
 }
-.btn-luxury:hover::after {
-    width: 100%;
-}
+.btn-luxury:hover::after { width: 100%; }
 
-/* FLOATING CTA BUTTON */
+/* FLOATING CONTACT BUTTON */
 .floating-ctc {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 90;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 90;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .floating-ctc.visible {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* PROGRESS BAR */
 #progress-bar {
-    position: fixed;
-    top: 0; left: 0;
-    height: 1px;
-    background: var(--accent);
-    z-index: 1000;
-    transition: width 0.1s ease;
+  position: fixed;
+  top: 0; left: 0; height: 1px;
+  background: var(--accent);
+  z-index: 1000;
+  transition: width 0.1s ease;
 }
 
-/* VENTURE CARDS */
+/* VENTURE CARD */
 .venture-card {
-    border-top: 1px solid rgba(182, 146, 64, 0.1);
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    transition: all 0.6s ease;
+  border-top: 1px solid rgba(182, 146, 64, 0.1);
+  padding: 4rem 2rem;
+  transition: all 0.6s ease;
 }
 .venture-card:hover {
-    border-top-color: var(--accent);
-    background: rgba(182, 146, 64, 0.02);
+  border-top-color: var(--accent);
+  background: rgba(182, 146, 64, 0.02);
 }
 
-/* PROJECT GRID ITEMS */
+/* PROJECT GRID ITEM */
 .project-grid-item {
-    border: 1px solid rgba(182, 146, 64, 0.1);
-    transition: all 0.4s ease;
+  border: 1px solid rgba(182, 146, 64, 0.1);
+  padding: 2rem;
+  transition: all 0.4s ease;
 }
 .project-grid-item:hover {
-    border-color: var(--accent);
-    background: rgba(182, 146, 64, 0.03);
+  border-color: var(--accent);
+  background: rgba(182, 146, 64, 0.03);
 }
 
-/* PAPERS / EDUCATION BOX */
-.paper-card, .edu-card {
-    border: 1px solid rgba(182, 146, 64, 0.1);
-    padding: 2rem;
-    transition: all 0.4s ease;
+/* TIMELINE CARDS */
+.timeline-card {
+  padding: 3rem;
+  border: 1px solid rgba(182,146,64,0.05);
+  transition: all 0.4s ease;
 }
-.paper-card:hover, .edu-card:hover {
-    border-color: var(--accent);
-    background: rgba(182, 146, 64, 0.03);
-}
-
-/* LINKS */
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
+.timeline-card:hover {
+  background: rgba(182,146,64,0.05);
 }
 
-/* SMALL RESPONSIVE TWEAKS */
-@media (max-width: 1024px) {
-    .hidden.lg\\:flex {
-        display: none !important;
-    }
+/* PAPERS */
+.paper-card {
+  padding: 2rem;
+  border: 1px solid rgba(182,146,64,0.1);
+  background: var(--bg);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+.paper-card:hover {
+  border-color: var(--accent);
+  background: rgba(182,146,64,0.02);
+}
+
+/* EDUCATION & CERTIFICATION */
+.education-card {
+  padding: 2rem;
+  border: 1px solid rgba(182,146,64,0.1);
+  transition: all 0.3s ease;
+}
+.education-card:hover {
+  border-color: var(--accent);
+  background: rgba(182,146,64,0.02);
+}
+
+/* LINK HOVER */
+a:hover {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .floating-ctc { bottom: 1rem; right: 1rem; }
 }
