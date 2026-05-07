@@ -25,23 +25,6 @@ Personal portfolio site for Sashiraj Subedi — Data Scientist, AI/ML practition
 - Scroll-reveal animations
 - WhatsApp contact button
 
-## Local Development
-
-No build step required. Open `index.html` directly in a browser, or serve with any static server:
-
-```bash
-# Python
-python -m http.server 8000
-
-# Node
-npx serve .
-```
-
-## Deployment
-
-Works on any static host: GitHub Pages, Vercel, Netlify, Cloudflare Pages.
-
-For **GitHub Pages**, push to a repo and enable Pages from the `main` branch root.
 
 ## Admin Panel
 
