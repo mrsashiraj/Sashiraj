@@ -45,6 +45,5 @@ For **GitHub Pages**, push to a repo and enable Pages from the `main` branch roo
 
 ## Admin Panel
 
-Press **Ctrl+Shift+A** to open the CMS. Add or edit projects, ventures, research papers, and LinkedIn posts. All data persists in the browser's `localStorage`.
+ Add or edit projects, ventures, research papers, and LinkedIn posts. All data persists in the browser's `localStorage`.
 
-> Note: The AI post-categorisation feature calls the Anthropic API directly from the browser. For production use, proxy this through a backend to keep your API key secure.
