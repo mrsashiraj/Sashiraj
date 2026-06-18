@@ -6,12 +6,15 @@ let DB = { projects: load('projects'), ventures: load('ventures'), papers: load(
 let activeM = null;
 let apEditingId = { projects: null, ventures: null, papers: null };
 
-/* ━━━ THEME ━━━ */
+/* ━━━ THEME ━━━
+   CSS uses .dark on <body> for dark mode.
+   localStorage: 'd' = dark, 'l' = light (default is light / no class).
+*/
 function toggleTheme() {
-  document.body.classList.toggle('light');
-  localStorage.setItem('t', document.body.classList.contains('light') ? 'l' : 'd');
+  document.body.classList.toggle('dark');
+  localStorage.setItem('t', document.body.classList.contains('dark') ? 'd' : 'l');
 }
-if (localStorage.getItem('t') === 'l') document.body.classList.add('light');
+if (localStorage.getItem('t') === 'd') document.body.classList.add('dark');
 
 /* ━━━ DRAWER / NAV ━━━ */
 function toggleDr() {
@@ -128,7 +131,7 @@ function renderSkCards() {
   track.style.transition = 'none';
   track.innerHTML = SK_DATA[skType].map(d => `
     <div class="sk-card" data-card>
-      <div class="sk-card-num">${d.num}</div>
+      <div class="card-num-big" aria-hidden="true">${d.num}</div>
       <div class="sk-card-layer">${d.layer}</div>
       <h3 class="sk-card-title">${d.title}</h3>
       <div class="sk-bars">${d.skills.map(s => {
@@ -146,10 +149,9 @@ function skMove(dir) { window['sk-wrap_move'] && window['sk-wrap_move'](dir); }
 /* ━━━ RENDER PROJECTS ━━━ */
 function renderProjects() {
   const el = document.getElementById('pg');
-  el.style.background = 'var(--line)';
   el.innerHTML = DB.projects.map((x, i) => `
     <div class="pc" tabindex="0" role="listitem" aria-label="${x.title}" onclick="openM('projects','${x.id}')" onkeydown="if(event.key==='Enter'||event.key===' ')openM('projects','${x.id}')">
-      <div class="pc-num">${String(i + 1).padStart(2, '0')}</div>
+      <div class="card-num-big" aria-hidden="true">${String(i + 1).padStart(2, '0')}</div>
       <div class="pc-tag">${x.tag}</div>
       <h3 class="pc-title">${x.title}</h3>
       <p class="pc-desc">${x.info}</p>
@@ -164,7 +166,7 @@ function renderVentures() {
   if (!DB.ventures.length) { track.innerHTML = '<div style="padding:40px;color:var(--sub)">No ventures yet.</div>'; return; }
   track.innerHTML = DB.ventures.map((x, i) => `
     <div class="vc" data-card tabindex="0" onclick="openM('ventures','${x.id}')" onkeydown="if(event.key==='Enter'||event.key===' ')openM('ventures','${x.id}')" aria-label="${x.title}">
-      <div class="vc-n">${String(i + 1).padStart(2, '0')}</div>
+      <div class="card-num-big" aria-hidden="true">${String(i + 1).padStart(2, '0')}</div>
       <div class="vc-tag">${x.tag}</div>
       <h3 class="vc-title">${x.title}</h3>
       <p class="vc-desc">${x.info}</p>
@@ -178,8 +180,9 @@ function vcMove(dir) { window['vc-wrap_move'] && window['vc-wrap_move'](dir); }
 /* ━━━ RENDER PAPERS ━━━ */
 function renderPapers() {
   const el = document.getElementById('ppg');
-  el.innerHTML = DB.papers.map(x => `
+  el.innerHTML = DB.papers.map((x, i) => `
     <div class="ppc" tabindex="0" role="listitem" onclick="openM('papers','${x.id}')" onkeydown="if(event.key==='Enter'||event.key===' ')openM('papers','${x.id}')" aria-label="${x.title}">
+      <div class="card-num-big" aria-hidden="true">${String(i + 1).padStart(2, '0')}</div>
       <div class="ppc-ref">${x.tag}</div>
       <h3 class="ppc-title">${x.title}</h3>
       <p class="ppc-body">${x.info}</p>
@@ -289,8 +292,8 @@ function apClearForm(sec) {
 function apSave(sec) {
   let item = {}, valid = true;
   const maps = {
-    projects: { prefix: 'p', fields: ['title', 'tag', 'info', 'specs', 'status'], req: ['title', 'info'], msg: 'apf-p-msg' },
-    ventures: { prefix: 'v', fields: ['title', 'tag', 'info', 'specs', 'status'], req: ['title', 'info'], msg: 'apf-v-msg' },
+    projects: { prefix: 'p',  fields: ['title', 'tag', 'info', 'specs', 'status'], req: ['title', 'info'], msg: 'apf-p-msg' },
+    ventures: { prefix: 'v',  fields: ['title', 'tag', 'info', 'specs', 'status'], req: ['title', 'info'], msg: 'apf-v-msg' },
     papers:   { prefix: 'pp', fields: ['title', 'tag', 'info', 'specs', 'status'], req: ['title', 'info'], msg: 'apf-pp-msg' }
   };
   const cfg = maps[sec]; if (!cfg) return;
@@ -308,19 +311,25 @@ function apSave(sec) {
   if (sec === 'papers') renderPapers();
   showToast('Saved.');
 }
+
+/* apSavePost — guard against double-submit */
+let _postBusy = false;
 async function apSavePost() {
+  if (_postBusy) return;
   const raw = document.getElementById('apf-pt-text').value.trim();
   if (!raw) { document.getElementById('apf-pt-msg').textContent = 'Please paste a post.'; return; }
+  _postBusy = true;
   const btn = document.getElementById('apf-pt-btn');
-  btn.textContent = 'Processing…'; btn.style.opacity = '.6'; document.getElementById('apf-pt-msg').textContent = 'AI categorising…';
+  btn.textContent = 'Processing…'; btn.disabled = true;
+  document.getElementById('apf-pt-msg').textContent = 'AI categorising…';
   let meta = { tag: 'Insight', date: new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' }), reactions: { like: 14, comment: 4 } };
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514', max_tokens: 300,
-        system: 'Return ONLY valid JSON: {"tag":"one of: Strategy,Operations,Ventures,Data,Leadership,Other","date":"short date like Apr 2025","reactions":{"like":<10-80>,"comment":<3-20>}}',
+        model: 'claude-sonnet-4-6', max_tokens: 300,
+        system: 'Return ONLY valid JSON with no preamble or markdown: {"tag":"one of: Strategy,Operations,Ventures,Data,Leadership,Other","date":"short date like Apr 2025","reactions":{"like":<10-80>,"comment":<3-20>}}',
         messages: [{ role: 'user', content: `Categorise this LinkedIn post:\n\n${raw}` }]
       })
     });
@@ -329,9 +338,12 @@ async function apSavePost() {
   } catch (e) {}
   DB.posts.unshift({ id: 'p' + Date.now(), featured: false, tag: meta.tag || 'Insight', date: meta.date, reactions: meta.reactions, text: raw });
   save('posts', DB.posts); apRefreshList('posts'); apUpdateCounts(); apCloseForm('posts');
-  btn.textContent = 'Publish to Feed'; btn.style.opacity = '1'; document.getElementById('apf-pt-msg').textContent = 'AI auto-categorises';
+  btn.textContent = 'Publish to Feed'; btn.disabled = false;
+  document.getElementById('apf-pt-msg').textContent = 'AI auto-categorises';
+  _postBusy = false;
   showToast('Post published.');
 }
+
 function apDelete(sec, id) {
   DB[sec] = DB[sec].filter(x => x.id !== id); save(sec, DB[sec]); apRefreshList(sec); apUpdateCounts();
   if (sec === 'projects') renderProjects();
@@ -343,7 +355,7 @@ function apRefreshList(sec) {
   const list = document.getElementById('apl-' + sec);
   if (!DB[sec].length) { list.innerHTML = '<div class="ap-empty">Nothing here yet.</div>'; return; }
   if (sec === 'posts') {
-    list.innerHTML = DB[sec].map(p => `<div class="ap-item"><div class="ap-item-head"><div><span class="ap-item-tag">${p.tag}</span><span style="font-family:'DM Mono',monospace;font-size:8px;color:var(--sub);margin-left:10px">${p.date}</span></div><div class="ap-item-actions"><button class="ap-del-btn" onclick="apDelete('posts','${p.id}')">Delete</button></div></div><div class="ap-post-preview">${p.text.replace(/\n/g, ' ')}</div></div>`).join('');
+    list.innerHTML = DB[sec].map(p => `<div class="ap-item"><div class="ap-item-head"><div><span class="ap-item-tag">${p.tag}</span><span style="font-family:'Space Grotesk',sans-serif;font-size:8px;color:var(--sub);margin-left:10px;letter-spacing:.14em;text-transform:uppercase">${p.date}</span></div><div class="ap-item-actions"><button class="ap-del-btn" onclick="apDelete('posts','${p.id}')">Delete</button></div></div><div class="ap-post-preview">${p.text.replace(/\n/g, ' ')}</div></div>`).join('');
   } else {
     list.innerHTML = DB[sec].map(x => `<div class="ap-item"><div class="ap-item-head"><div><span class="ap-item-tag">${x.tag || '—'}</span><span class="ap-item-title" style="margin-left:10px;font-size:clamp(16px,1.8vw,20px)">${x.title}</span></div><div class="ap-item-actions"><button class="ap-edit-btn" onclick="apOpenForm('${sec}','${x.id}')">Edit</button><button class="ap-del-btn" onclick="apDelete('${sec}','${x.id}')">Delete</button></div></div><div class="ap-item-body">${x.info || ''}</div></div>`).join('');
   }
@@ -358,20 +370,18 @@ function showToast(msg, dur = 2800) {
 
 /* ━━━ CONTACT FORM ━━━ */
 function sendMsg() {
-  const name     = document.getElementById('f-name');
-  const org      = document.getElementById('f-org');
-  const email    = document.getElementById('f-email');
-  const purpose  = document.getElementById('f-purpose');
-  const msg      = document.getElementById('f-msg');
-  const btn      = document.getElementById('f-btn');
+  const name    = document.getElementById('f-name');
+  const org     = document.getElementById('f-org');
+  const email   = document.getElementById('f-email');
+  const purpose = document.getElementById('f-purpose');
+  const msg     = document.getElementById('f-msg');
+  const btn     = document.getElementById('f-btn');
 
-  // Validate required fields
   if (!name.value.trim() || !email.value.trim() || !msg.value.trim()) {
     showToast('Please fill in your name, email and message.');
     return;
   }
 
-  // Build mailto — opens native mail client with pre-filled content
   const to      = 'mrsashiraj@gmail.com';
   const subject = purpose.value.trim()
     ? `[Portfolio] ${purpose.value.trim()} — from ${name.value.trim()}`
@@ -391,18 +401,14 @@ function sendMsg() {
 
   const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-  // Feedback then open mail client
   btn.textContent = 'Opening mail…';
   btn.disabled = true;
-
   window.location.href = mailto;
 
-  // Reset button after a moment
   setTimeout(() => {
-    btn.textContent = 'Send Message';
+    btn.textContent = 'Open in Mail';
     btn.disabled = false;
     showToast('Mail client opened — message ready to send.');
-    // Clear form
     [name, org, email, purpose, msg].forEach(el => { if (el) el.value = ''; });
   }, 1800);
 }
