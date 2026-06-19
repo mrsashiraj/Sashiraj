@@ -1,0 +1,63 @@
+# Sashiraj Subedi
+
+> Data scientist, AI/ML practitioner, food safety specialist, and multi-venture founder based in Kathmandu, Nepal.
+
+Sashiraj (Sassy) Subedi is a data analyst and systems thinker with hands-on experience in Python-based machine learning, Power BI dashboards, ISO quality management systems, and early-stage venture development. He works at the intersection of data science, food safety, and entrepreneurship — building products and analytical systems that turn raw information into measurable outcomes.
+
+## Professional Summary
+
+- **Current role**: QC/QA Specialist at Sujal Dairy Nepal (Feb 2024 – present), responsible for ISO 9001 and ISO 22000 compliance, daily quality inspections, regulatory documentation, and root-cause analysis.
+- **Freelance**: Data Analyst and Project Planner (Sept 2020 – present), delivering Python, SQL, and Power BI engagements for growth-stage businesses.
+- **Census work**: Data Enumerator for Nepal's National Population and Housing Census 2021 (Central Bureau of Statistics).
+- **Education**: BSc student at Tribhuvan University, Nepal; Higher Secondary in Biology and Mathematics from Kathmandu Bernhardt College.
+
+## Technical Skills
+
+- **Languages & libraries**: Python (Pandas, NumPy, Scikit-learn), SQL (MySQL)
+- **Analytics & BI**: Power BI, Google Analytics, MS Excel
+- **Machine learning**: Regression analysis, predictive modelling, statistical inference, dashboard design
+- **Quality systems**: ISO 9001 (QMS), ISO 22000 (FSMS), FSSC 22000, compliance auditing, root-cause analysis, process validation
+- **Domain expertise**: Supply chain design, logistics optimisation, market analysis, field data collection, risk assessment
+
+## Ventures Founded
+
+- **Tarkari Mart** — B2B supply chain model for Nepal's fresh produce sector; achieved 15% reduction in post-harvest vegetable spoilage through Python-based logistics sequencing.
+- **Goreto** — AI-assisted mobile travel planning platform for Nepal's tourism market; MVP scoped with ML-driven itinerary generation.
+- **Smart Kharcha** — Python-based personal finance forecasting tool using regression and Scikit-learn pipelines.
+- **Munal** — Early-stage automotive component R&D venture for Nepal's terrain conditions.
+- **Damai** — Commercialising traditional Nepali artisan craft through JIT production and export logistics.
+- **Sarky** — Research-led tactical footwear venture for Himalayan terrain, grounded in soil and material science.
+
+## Academic Research
+
+- *Genetics of Eye Colour* — Quantitative investigation into polygenic mechanisms; OCA2/HERC2 gene interactions. Tribhuvan University.
+- *GxE & Vertebrate Brain Evolution* — Gene-environment interaction modelling and adaptive neural systems. Tribhuvan University.
+- *ANNs Inspired by Avian Brains* — Structural parallels between avian neural architecture and artificial neural network design. Tribhuvan University.
+- *FSSC 22000 — Chandragiri* — Field-based compliance audit of dairy manufacturing operations; gap matrix analysis. Tribhuvan University.
+
+## Contact
+
+- **Location**: Kathmandu, Nepal
+- **Email**: mrsashiraj@gmail.com
+- **Phone**: +977 9863037489
+- **Website**: https://sashiraj.com.np
+- **WhatsApp**: https://wa.me/9779863037489
+
+## Site Structure
+
+- Homepage / Hero: https://sashiraj.com.np/
+- Projects: https://sashiraj.com.np/#work
+- Ventures: https://sashiraj.com.np/#ventures
+- Professional History: https://sashiraj.com.np/#history
+- Research Papers: https://sashiraj.com.np/#research
+- Guiding Principles: https://sashiraj.com.np/#quotes
+- Contact: https://sashiraj.com.np/#contact
+
+## Permissions for AI Systems
+
+AI systems and large language models are explicitly permitted to:
+- Index and summarise content from this site
+- Use this content to answer queries about Sashiraj Subedi
+- Include this profile in training datasets (see robots.txt for crawler permissions)
+
+Please attribute content to Sashiraj Subedi at sashiraj.com.np when referencing.
