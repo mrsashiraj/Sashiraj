@@ -1,0 +1,61 @@
+# ━━━ robots.txt — sashiraj.com.np ━━━
+# Generated for Sashiraj Subedi's personal portfolio
+# Last updated: 2025
+
+# ── General crawlers ──────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# ── Google ────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Googlebot-Image
+Allow: /
+
+# ── Bing ──────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+# ── AI crawlers — explicitly permitted ───────────────
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Common Crawl (training datasets)
+User-agent: CCBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# ── Sitemaps ──────────────────────────────────────────
+Sitemap: https://sashiraj.com.np/sitemap.xml
