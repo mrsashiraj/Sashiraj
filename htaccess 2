@@ -1,0 +1,174 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# .htaccess — sashiraj.com.np
+# Apache 2.4 — shared hosting compatible
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Options -Indexes
+Options -MultiViews
+
+# ── Engine on ─────────────────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ── Force HTTPS ─────────────────────────────────────
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # ── Force non-www ───────────────────────────────────
+  RewriteCond %{HTTP_HOST} ^www\.sashiraj\.com\.np$ [NC]
+  RewriteRule ^ https://sashiraj.com.np%{REQUEST_URI} [R=301,L]
+
+  # ── Remove trailing slash (except root) ─────────────
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+  # ── Remove .html extension from URLs ────────────────
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+</IfModule>
+
+# ── Security headers ──────────────────────────────────
+<IfModule mod_headers.c>
+  # Prevent clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Prevent MIME-type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # XSS protection (legacy browsers)
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Referrer policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permissions policy — disable unused browser features
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+  # HSTS — 1 year, include subdomains
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Content Security Policy
+  # Allows: self, Google Fonts, Anthropic API (for admin AI post feature)
+  Header always set Content-Security-Policy "\
+default-src 'self'; \
+script-src 'self' 'unsafe-inline'; \
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
+font-src 'self' https://fonts.gstatic.com; \
+img-src 'self' data: https:; \
+connect-src 'self' https://api.anthropic.com; \
+frame-ancestors 'none'; \
+base-uri 'self'; \
+form-action 'self'"
+
+  # Remove server signature from responses
+  Header unset Server
+  Header unset X-Powered-By
+</IfModule>
+
+# ── Compression ───────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/manifest+json
+</IfModule>
+
+# ── Browser caching ───────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML — short cache, portfolio content changes
+  ExpiresByType text/html                   "access plus 1 hour"
+
+  # CSS / JS — fingerprint in production; 1 week fallback
+  ExpiresByType text/css                    "access plus 1 week"
+  ExpiresByType application/javascript      "access plus 1 week"
+  ExpiresByType text/javascript             "access plus 1 week"
+
+  # Fonts — very long cache, never change
+  ExpiresByType font/woff2                  "access plus 1 year"
+  ExpiresByType font/woff                   "access plus 1 year"
+  ExpiresByType font/ttf                    "access plus 1 year"
+  ExpiresByType application/font-woff2      "access plus 1 year"
+
+  # Images
+  ExpiresByType image/png                   "access plus 3 months"
+  ExpiresByType image/jpeg                  "access plus 3 months"
+  ExpiresByType image/webp                  "access plus 3 months"
+  ExpiresByType image/svg+xml               "access plus 3 months"
+  ExpiresByType image/x-icon               "access plus 1 year"
+  ExpiresByType image/vnd.microsoft.icon   "access plus 1 year"
+
+  # Manifest / data
+  ExpiresByType application/manifest+json   "access plus 1 week"
+  ExpiresByType application/json            "access plus 0 seconds"
+  ExpiresByType text/xml                    "access plus 0 seconds"
+
+  # Discovery files
+  ExpiresByType text/plain                  "access plus 1 week"
+</IfModule>
+
+# ── Cache-Control headers ─────────────────────────────
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|svg|woff|woff2|ttf)$">
+    Header set Cache-Control "public, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(json|xml|txt)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+# ── MIME types ────────────────────────────────────────
+<IfModule mod_mime.c>
+  AddType application/manifest+json         .webmanifest .json
+  AddType image/webp                        .webp
+  AddType font/woff2                        .woff2
+  AddType font/woff                         .woff
+  AddType text/plain                        .txt
+</IfModule>
+
+# ── ETags — disable on shared hosting to avoid issues ─
+FileETag None
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+
+# ── Custom error pages ────────────────────────────────
+ErrorDocument 404 /index.html
+ErrorDocument 403 /index.html
+ErrorDocument 500 /index.html
+
+# ── Block access to sensitive files ──────────────────
+<FilesMatch "^(\.htaccess|\.htpasswd|\.env|\.git|composer\.(json|lock)|package(-lock)?\.json)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# ── Block directory traversal attempts ───────────────
+<IfModule mod_rewrite.c>
+  RewriteCond %{QUERY_STRING} (\.\./) [NC,OR]
+  RewriteCond %{QUERY_STRING} (proc/self/environ) [NC,OR]
+  RewriteCond %{QUERY_STRING} ([a-z0-9]{2000,}) [NC]
+  RewriteRule .* - [F,L]
+</IfModule>
